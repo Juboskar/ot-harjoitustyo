@@ -1,0 +1,83 @@
+
+    uusi kansio
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7085a2d15a9cdaabd07d465ad162d53e188ffcfb
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 14:04:42 2020 +0200
+
+    muutoksia
+
+ eka.txt      |  5 ++---
+ kolmas.txt   |  2 ++
+ tiedosto.txt | 12 ------------
+ toinen.txt   |  0
+ 4 files changed, 4 insertions(+), 15 deletions(-)
+
+commit 1b9adf5a3fbbf204c1842dd185732f8af8bfcbdc
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 14:01:54 2020 +0200
+
+    nimi muutettu
+
+ eka.txt | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit b8058ed06871c9c34af8be8f33ca21471e521682
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 14:00:19 2020 +0200
+
+    Haloo
+
+ tiedosto.txt | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 83ad458672ad905f6aa5df667bb2213f71c4a54d
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 13:58:45 2020 +0200
+
+    tekstiä lisätty
+
+ tiedosto.txt | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit c887ce5dfb9205646e314954fb1f9b7a2389eae0
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 13:57:11 2020 +0200
+
+    kolmas lisäty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e9e361c9ca048718f5ef35149e263a6d9f22f43c
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 13:54:00 2020 +0200
+
+    lisätty kansio
+
+ stuff/hallo.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e2308cabaf8b69181be50fed0357f165ff6b2bfa
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 13:52:31 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 46fefecf562434dfc679e24e47457b60416a93b5
+Author: Oskari-Juvakka <oskari.juvakka@gmail.com>
+Date:   Tue Oct 27 12:52:15 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
