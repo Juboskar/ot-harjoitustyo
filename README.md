@@ -1,4 +1,9 @@
-# _*HALLO MARKDOWN NOTAATIO*_
+# Ohjelmistotekniikka, harjoitustyö
+
+## Tehtävät
+
+### Viikko 1
+
 [gitlog.txt](https://github.com/Juboskar/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](https://github.com/Juboskar/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
