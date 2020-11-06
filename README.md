@@ -8,4 +8,6 @@
 
 [komentorivi.txt](https://github.com/Juboskar/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+### Viikko 2
+
 [testikattavuus.png](https://github.com/Juboskar/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png)
