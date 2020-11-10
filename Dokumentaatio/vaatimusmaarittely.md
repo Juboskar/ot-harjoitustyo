@@ -19,6 +19,10 @@ Alkuvaiheessa keskitytään asumisen, liikkumisen ja ruoan päästöihin.
 Laskentaperusteena käytetään ilmastodieetti -palvelun [laskentaperusteita]
 (https://ilmastodieetti.ymparisto.fi/ilmastodieetti/documentation/Laskentaperusteet.pdf).
 
+## Alustava käyttöliittymäluonnos
+
+<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/kayttoliittymaluonnos.png" width="750">
+
 ## Jatkokehitysideoita
 
 Sovellus voisi tarjota käyttäjälle vinkkejä omien suurimpien päästölähteiden vähennysvinkkejä ja pelillistää päiväkirjan pitämistä tarjoamalla palkintoja perättäisten päivien "striikin" ylläpidosta ja muista.
