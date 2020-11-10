@@ -21,7 +21,7 @@ Laskentaperusteena käytetään ilmastodieetti -palvelun [laskentaperusteita]
 
 ## Alustava käyttöliittymäluonnos
 
-<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/kayttoliittymaluonnos.png" width="750">
+<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/kayttoliittymaluonnos.png" width="1000">
 
 ## Jatkokehitysideoita
 
