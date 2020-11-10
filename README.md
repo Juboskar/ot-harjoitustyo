@@ -11,3 +11,7 @@
 ### Viikko 2
 
 [testikattavuus.png](https://github.com/Juboskar/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png)
+
+## Projekti
+
+[Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/vaatimusmaarittely.md)
