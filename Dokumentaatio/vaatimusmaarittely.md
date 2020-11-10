@@ -16,8 +16,7 @@ Sovellus eroaa monesta muusta verkossakin saatavilla olevista laskureista sillä
 
 Alkuvaiheessa keskitytään asumisen, liikkumisen ja ruoan päästöihin.
 
-Laskentaperusteena käytetään ilmastodieetti -palvelun [laskentaperusteita]
-(https://ilmastodieetti.ymparisto.fi/ilmastodieetti/documentation/Laskentaperusteet.pdf).
+Laskentaperusteena käytetään ilmastodieetti -palvelun [laskentaperusteita](https://ilmastodieetti.ymparisto.fi/ilmastodieetti/documentation/Laskentaperusteet.pdf).
 
 ## Alustava käyttöliittymäluonnos
 
