@@ -6,7 +6,7 @@ Sovelluksen tarkoitus on laskea ja erityisesti pitää päiväkirjaa hiilijalanj
 
 ## Käyttäjät
 
-Alkuvaiheessa sovelluksella on ainoastaan yksi käyttäjärooli eli normaali käyttäjä. Myöhemmin sovellukseen saatetaan lisätä suuremmilla oikeuksilla varustettu käyttäjä, jolla on mahdollisuus muokata hiilijalanjälkeä laskevien lähtöoletusten arvoja (ehkä, voi olla ettei tarpeellista).
+Alkuvaiheessa sovelluksella on ainoastaan yksi käyttäjärooli eli normaali käyttäjä.
 
 ## Perusversion tarjoama toiminnallisuus
 
