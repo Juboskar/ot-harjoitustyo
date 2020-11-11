@@ -14,4 +14,4 @@
 
 ## Projekti
 
-[Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/PaastoPaivakirja/Dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/Dokumentaatio/vaatimusmaarittely.md)
