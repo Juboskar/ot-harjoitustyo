@@ -12,10 +12,11 @@
 
 [testikattavuus.png](https://github.com/Juboskar/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png)
 
-## Projekti
+## Päästöpäiväkirja
 
 [Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/Dokumentaatio/vaatimusmaarittely.md)
-[Työaikakirjanpito](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/Dokumentaatio/vaatimusmaarittely.md)
+
+[Työaikakirjanpito](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/Dokumentaatio/tyoaikakirjanpito.md)
 
 ### Suorittaminen
 
