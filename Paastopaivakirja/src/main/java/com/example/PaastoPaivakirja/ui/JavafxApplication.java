@@ -1,5 +1,6 @@
-package com.example.PaastoPaivakirja;
+package com.example.PaastoPaivakirja.ui;
 
+import com.example.PaastoPaivakirja.PaastoPaivakirjaApplication;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
