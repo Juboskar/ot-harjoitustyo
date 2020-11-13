@@ -20,4 +20,4 @@
 
 ### Suorittaminen
 
-Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla mvn Spring-boot:run
+Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla mvn spring-boot:run
