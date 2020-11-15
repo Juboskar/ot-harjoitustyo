@@ -8,4 +8,4 @@
 
 ### Suorittaminen
 
-Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run```
+Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run``` ja/tai komennolla ```mvn compile exec:java -Dexec.mainClass=com.example.PaastoPaivakirja.PaastoPaivakirjaApplication```
