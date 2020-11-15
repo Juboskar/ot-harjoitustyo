@@ -20,6 +20,7 @@ public class JavafxApplication extends Application {
 
     private ConfigurableApplicationContext context;
     private Scene loginScene;
+    private Scene newUserScene;
     private Stage stage;
     
     @Override
@@ -29,6 +30,12 @@ public class JavafxApplication extends Application {
         LoginSceneController loginSceneController = loginSceneLoader.getController();
         loginSceneController.setApplication(this);
         loginScene = new Scene(loginPane);
+        
+        FXMLLoader newUserSceneLoader = new FXMLLoader(getClass().getResource("/fxml/NewUserScene.fxml"));       
+        Parent newUserPane = newUserSceneLoader.load();
+        NewUserSceneController newUserSceneController = newUserSceneLoader.getController();
+        newUserSceneController.setApplication(this);
+        newUserScene = new Scene(newUserPane);    
         
         ApplicationContextInitializer<GenericApplicationContext> initializer
                 = (GenericApplicationContext applicationContext) -> {
@@ -56,6 +63,10 @@ public class JavafxApplication extends Application {
     
     public void setLoginScene() {
         stage.setScene(loginScene);
+    }
+
+    public void setNewUserScene() {
+        stage.setScene(newUserScene);
     }
 }
 
