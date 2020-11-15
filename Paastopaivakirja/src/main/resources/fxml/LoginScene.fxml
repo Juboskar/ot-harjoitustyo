@@ -12,10 +12,10 @@
     <children>
         <Text layoutX="17.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Käyttäjätunnus" />
         <Text layoutX="17.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salasana" />
-        <TextField fx:id="username" layoutX="111.0" layoutY="66.0" prefHeight="25.0" prefWidth="126.0" />
-        <PasswordField fx:id="password" layoutX="111.0" layoutY="106.0" prefHeight="25.0" prefWidth="126.0" />
-        <Button fx:id="login" onAction="#handleLogin" layoutX="111.0" layoutY="153.0" mnemonicParsing="false" text="Kirjaudu" />
+        <TextField fx:id="usernameField" layoutX="111.0" layoutY="66.0" prefHeight="25.0" prefWidth="126.0" />
+        <PasswordField fx:id="passwordField" layoutX="111.0" layoutY="106.0" prefHeight="25.0" prefWidth="126.0" />
+        <Button fx:id="loginButton" onAction="#handleLogin" layoutX="111.0" layoutY="153.0" mnemonicParsing="false" text="Kirjaudu" />
         <Separator layoutX="251.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
-        <Button fx:id="register" onAction="#handleNewUser" layoutX="324.0" layoutY="106.0" mnemonicParsing="false" text="Luo uusi tunnus" />
+        <Button fx:id="registerButton" onAction="#handleNewUser" layoutX="324.0" layoutY="106.0" mnemonicParsing="false" text="Luo uusi tunnus" />
     </children>
 </AnchorPane>
