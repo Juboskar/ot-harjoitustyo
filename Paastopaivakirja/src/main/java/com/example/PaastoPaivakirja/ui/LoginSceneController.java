@@ -6,7 +6,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,14 +24,11 @@ import org.springframework.stereotype.Component;
 @FxmlView("/fxml/LoginScene.fxml")
 public class LoginSceneController  {
     
-    private JavafxApplication application;
+    @Autowired
+    private MainController main;
     
     @Autowired
     private LoginService loginService;
-
-    public void setApplication(JavafxApplication application) {
-        this.application = application;
-    }
 
     @FXML
     private TextField usernameField;
@@ -37,12 +38,12 @@ public class LoginSceneController  {
     
     @FXML
     private void handleLogin(ActionEvent event) {     
-        System.out.println(loginService.getText());
+        loginService.login(usernameField.getText(), passwordField.getText());
     }
     
     @FXML
     private void handleNewUser(ActionEvent event) {
-        application.setNewUserScene();
+        main.showNewUserView();       
     }
 
 

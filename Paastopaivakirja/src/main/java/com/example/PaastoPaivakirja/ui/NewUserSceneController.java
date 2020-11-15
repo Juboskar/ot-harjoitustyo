@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * @author Oskari
  */
 @Component
-@FxmlView("/fxml/NewUserScene")
+@FxmlView("/fxml/NewUserScene.fxml")
 public class NewUserSceneController {
 
     private JavafxApplication application;
