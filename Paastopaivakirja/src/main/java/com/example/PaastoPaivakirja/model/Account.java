@@ -1,4 +1,4 @@
-package com.example.PaastoPaivakirja.dao;
+package com.example.PaastoPaivakirja.model;
 
 import javax.persistence.Entity;
 import lombok.AllArgsConstructor;
