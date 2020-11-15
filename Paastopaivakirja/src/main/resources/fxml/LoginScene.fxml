@@ -8,6 +8,6 @@
 
 <AnchorPane stylesheets="@styles/styles.css" id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9" fx:controller="com.example.PaastoPaivakirja.ui.LoginSceneController">
     <children>
-        <Button fx:id="button" layoutX="32.0" layoutY="107.0" onAction="#HelloWorld" text="Hello" />
+        <Button fx:id="button" layoutX="32.0" layoutY="107.0" onAction="#Login" text="Kirjaudu" />
     </children>
 </AnchorPane>
