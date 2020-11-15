@@ -1,0 +1,37 @@
+/laskarit/viikko2/Unicafe/target
+
+/Paastopaivakirja/.mvn
+/Paastopaivakirja/mvnw
+/Paastopaivakirja/mvnw.cmd
+/Paastopaivakirja/target/
+/Paastopaivakirja/mvn/wrapper/maven-wrapper.jar
+/Paastopaivakirja/src/main/**/target/
+/Paastopaivakirja/src/test/**/target/
+
+### STS ###
+/Paastopaivakirja/.apt_generated
+/Paastopaivakirja/.classpath
+/Paastopaivakirja/.factorypath
+/Paastopaivakirja/.project
+/Paastopaivakirja/.settings
+/Paastopaivakirja/.springBeans
+/Paastopaivakirja/.sts4-cache
+
+### IntelliJ IDEA ###
+/Paastopaivakirja/.idea
+/Paastopaivakirja/*.iws
+/Paastopaivakirja/*.iml
+/Paastopaivakirja/*.ipr
+
+### NetBeans ###
+/Paastopaivakirja/nbproject/private/
+/Paastopaivakirja/nbbuild/
+/Paastopaivakirja/dist/
+/Paastopaivakirja/nbdist/
+/Paastopaivakirja/.nb-gradle/
+/Paastopaivakirja/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+/Paastopaivakirja/.vscode/
