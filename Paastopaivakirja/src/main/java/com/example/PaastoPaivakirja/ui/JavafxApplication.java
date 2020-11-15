@@ -3,6 +3,8 @@ package com.example.PaastoPaivakirja.ui;
 import com.example.PaastoPaivakirja.PaastoPaivakirjaApplication;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
@@ -20,9 +22,17 @@ import org.springframework.context.support.GenericApplicationContext;
 public class JavafxApplication extends Application {
 
     private ConfigurableApplicationContext context;
-
+    private Scene loginScene;
+    private Stage stage;
+    
     @Override
-    public void init() {
+    public void init() throws Exception {
+        FXMLLoader loginSceneLoader = new FXMLLoader(getClass().getResource("/fxml/LoginScene.fxml"));
+        Parent loginPane = loginSceneLoader.load();
+        LoginSceneController loginSceneController = loginSceneLoader.getController();
+        loginSceneController.setApplication(this);
+        loginScene = new Scene(loginPane);
+        
         ApplicationContextInitializer<GenericApplicationContext> initializer
                 = (GenericApplicationContext applicationContext) -> {
                     applicationContext.registerBean(Application.class, () -> JavafxApplication.this);
@@ -36,21 +46,19 @@ public class JavafxApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
-        //väliaikaista koodia 
-        Text text = new Text("HELLO SPRING JAVAFX WORLD!!!");
-        FlowPane flowPane = new FlowPane();
-        flowPane.getChildren().add(text);
-        Scene scene = new Scene(flowPane);
-        stage.setScene(scene);
-        stage.show();
-        
+        this.stage = stage;
+        setLoginScene();
+        stage.show();        
     }
 
     @Override
     public void stop() throws Exception {
         this.context.close();
         Platform.exit();
+    }
+    
+    public void setLoginScene() {
+        stage.setScene(loginScene);
     }
 }
 
