@@ -7,16 +7,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 
 /**
  *
  * @author Oskari
  */
 @Component
-public class LoginSceneController implements Initializable {
-
+@FxmlView("/fxml/LoginScene.fxml")
+public class LoginSceneController  {
+    
     private JavafxApplication application;
     
     @Autowired
@@ -33,8 +36,8 @@ public class LoginSceneController implements Initializable {
     private TextField passwordField;
     
     @FXML
-    private void handleLogin(ActionEvent event) {
-        System.out.println("Hello world");
+    private void handleLogin(ActionEvent event) {     
+        System.out.println(loginService.getText());
     }
     
     @FXML
@@ -42,9 +45,5 @@ public class LoginSceneController implements Initializable {
         application.setNewUserScene();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        //todo
-    }
 
 }

@@ -9,6 +9,7 @@ import com.example.PaastoPaivakirja.domain.LoginService;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +18,8 @@ import org.springframework.stereotype.Component;
  * @author Oskari
  */
 @Component
-public class NewUserSceneController implements Initializable {
+@FxmlView("/fxml/NewUserScene")
+public class NewUserSceneController {
 
     private JavafxApplication application;
 
@@ -28,8 +30,4 @@ public class NewUserSceneController implements Initializable {
         this.application = application;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    //todo
-    }
 }

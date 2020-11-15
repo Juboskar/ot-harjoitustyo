@@ -1,4 +1,4 @@
-package com.example.PaastoPaivakirja.model;
+package com.example.PaastoPaivakirja.dao;
 
 import javax.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -18,5 +18,5 @@ public class Account extends AbstractPersistable<Long> {
 
     private String username;
     private String password;
-
+    
 }

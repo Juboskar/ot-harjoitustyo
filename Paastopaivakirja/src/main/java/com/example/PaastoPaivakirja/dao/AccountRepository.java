@@ -1,6 +1,5 @@
 package com.example.PaastoPaivakirja.dao;
 
-import com.example.PaastoPaivakirja.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

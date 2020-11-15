@@ -1,12 +1,16 @@
 package com.example.PaastoPaivakirja.ui;
 
 import com.example.PaastoPaivakirja.PaastoPaivakirjaApplication;
+import com.example.PaastoPaivakirja.domain.LoginService;
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import net.rgielen.fxweaver.core.FxWeaver;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -22,37 +26,20 @@ public class JavafxApplication extends Application {
     private Scene loginScene;
     private Scene newUserScene;
     private Stage stage;
-    
+
     @Override
     public void init() throws Exception {
-        FXMLLoader loginSceneLoader = new FXMLLoader(getClass().getResource("/fxml/LoginScene.fxml"));
-        Parent loginPane = loginSceneLoader.load();
-        LoginSceneController loginSceneController = loginSceneLoader.getController();
-        loginSceneController.setApplication(this);
-        loginScene = new Scene(loginPane);
-        
-        FXMLLoader newUserSceneLoader = new FXMLLoader(getClass().getResource("/fxml/NewUserScene.fxml"));       
-        Parent newUserPane = newUserSceneLoader.load();
-        NewUserSceneController newUserSceneController = newUserSceneLoader.getController();
-        newUserSceneController.setApplication(this);
-        newUserScene = new Scene(newUserPane);    
-        
-        ApplicationContextInitializer<GenericApplicationContext> initializer
-                = (GenericApplicationContext applicationContext) -> {
-                    applicationContext.registerBean(Application.class, () -> JavafxApplication.this);
-                    applicationContext.registerBean(Parameters.class, () -> getParameters());
-                };
+        String[] args = getParameters().getRaw().toArray(new String[0]);
         this.context = new SpringApplicationBuilder()
                 .sources(PaastoPaivakirjaApplication.class)
-                .initializers(initializer)
-                .run(getParameters().getRaw().toArray(new String[0]));
+                .run(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
         setLoginScene();
-        stage.show();        
+        stage.show();
     }
 
     @Override
@@ -60,13 +47,18 @@ public class JavafxApplication extends Application {
         this.context.close();
         Platform.exit();
     }
-    
+
     public void setLoginScene() {
+        FxWeaver fxWeaverLogin = context.getBean(FxWeaver.class);
+        Parent loginPane = fxWeaverLogin.loadView(LoginSceneController.class);
+        loginScene = new Scene(loginPane);
         stage.setScene(loginScene);
     }
 
     public void setNewUserScene() {
+        FxWeaver fxWeaverNewUser = context.getBean(FxWeaver.class);
+        Parent newUserPane = fxWeaverNewUser.loadView(NewUserSceneController.class);
+        loginScene = new Scene(newUserPane);
         stage.setScene(newUserScene);
     }
 }
-
