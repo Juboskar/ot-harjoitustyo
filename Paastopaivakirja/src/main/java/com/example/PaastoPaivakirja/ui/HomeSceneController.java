@@ -22,24 +22,24 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @FxmlView("/fxml/HomeScene.fxml")
-public class HomeSceneController implements Initializable {
-    
+public class HomeSceneController {
+
     @Autowired
     LoginService loginService;
-    
+
     @Autowired
     private MainController main;
-    
+
     @FXML
     Text name;
-    
+
     @FXML
     public void logOut(ActionEvent event) {
         main.showLoginScene();
     }
-    
-    @Override
+
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
         name.setText(loginService.getCurrentUser());
-    }   
+    }
 }
