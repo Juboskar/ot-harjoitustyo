@@ -16,23 +16,18 @@ public class LoginService {
     @Autowired
     AccountRepository accountRepository;
 
-    public void login(String username) {
+    public boolean login(String username) {
         if (accountRepository.findByUsername(username) != null) {
-            System.out.println("Olet kirjautuneena");
-        } else {
-            System.out.println("Käyttäjää ei löydy");
-        }
+            return true;
+        } 
+        return false;
     }
 
     public void createAccount(String username) {
-
         if (accountRepository.findByUsername(username) == null) {
             Account account = new Account();
             account.setUsername(username);
             accountRepository.save(account);
-            System.out.println("Käyttäjä luotu");
-        } else {
-            System.out.println("On jo olemassa");
         }
     }
 }

@@ -16,6 +16,7 @@
             <Button onAction="#handleLogin" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" text="Kirjaudu" />
             <TextField fx:id="usernameField" layoutX="81.0" layoutY="178.0" />
             <Text layoutX="81.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Käyttäjätunnus:" />
+            <Text fx:id="infoField" layoutX="81.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />
       </children>
     </AnchorPane>
   </children>

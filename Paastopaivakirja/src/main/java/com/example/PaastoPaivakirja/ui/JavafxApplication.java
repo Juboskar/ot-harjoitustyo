@@ -16,7 +16,6 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 public class JavafxApplication extends Application {
     
-    private FxWeaver fxWeaver;
     private MainController mainController;
     private ConfigurableApplicationContext context;
     
@@ -26,7 +25,6 @@ public class JavafxApplication extends Application {
         this.context = new SpringApplicationBuilder()
                 .sources(PaastoPaivakirjaApplication.class)
                 .run(args);
-        fxWeaver = context.getBean(FxWeaver.class);
         mainController = context.getBean(MainController.class);
     }
     

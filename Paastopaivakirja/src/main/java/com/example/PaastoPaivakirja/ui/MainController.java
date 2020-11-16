@@ -21,18 +21,25 @@ public class MainController {
 
     public void start(Stage stage) {
         this.stage = stage;
-        this.showLoginView();
+        this.showLoginScene();
     }
 
-    public void showLoginView() {
+    public void showLoginScene() {
         Parent root = fxWeaver.loadView(LoginSceneController.class);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     
-    public void showNewUserView() {
+    public void showNewUserScene() {
         Parent root = fxWeaver.loadView(NewUserSceneController.class);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void showHomeScene() {
+        Parent root = fxWeaver.loadView(HomeSceneController.class);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
