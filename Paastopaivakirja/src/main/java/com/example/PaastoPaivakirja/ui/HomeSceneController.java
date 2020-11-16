@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @FxmlView("/fxml/HomeScene.fxml")
-public class HomeSceneController {
+public class HomeSceneController{
 
     @Autowired
     LoginService loginService;
@@ -39,7 +39,12 @@ public class HomeSceneController {
     }
 
     @FXML
-    public void initialize(URL url, ResourceBundle rb) {
+    public void calculateYearlyEmissions(ActionEvent event) {
+        main.showYearlyEmissionScene();
+    }
+
+    @FXML
+    public void initialize() {
         name.setText(loginService.getCurrentUser());
     }
 }

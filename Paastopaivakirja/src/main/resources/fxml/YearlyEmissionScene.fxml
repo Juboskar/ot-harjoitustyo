@@ -1,1 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+
+<VBox fx:controller="com.example.PaastoPaivakirja.ui.YearlyEmissionSceneController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <RadioButton fx:id="radioButton1" layoutX="49.0" layoutY="80.0" mnemonicParsing="false" text="Kerrostalo" />
+                <RadioButton fx:id="radioButton2" layoutX="49.0" layoutY="110.0" mnemonicParsing="false" text="Rivitalo" />
+                <RadioButton fx:id="radioButton3" layoutX="49.0" layoutY="140.0" mnemonicParsing="false" text="Omakotitalo" />
+                <Text layoutX="49.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asumismuoto:" wrappingWidth="109.13671875" />
+                <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Laske" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

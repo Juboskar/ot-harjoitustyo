@@ -18,6 +18,7 @@
                 <Button onAction="#logOut" layoutX="450.0" layoutY="238.0" mnemonicParsing="false" text="Kirjaudu ulos" />
                 <Text layoutX="418.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tervetuloa" wrappingWidth="149.0" />
                 <Text fx:id="name" layoutX="418.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="149.0" />
+                <Button onAction="#calculateYearlyEmissions" layoutX="25.0" layoutY="148.0" mnemonicParsing="false" text="Laske kiinteät vuosipäästöt" />
             </children>
         </AnchorPane>
     </children>

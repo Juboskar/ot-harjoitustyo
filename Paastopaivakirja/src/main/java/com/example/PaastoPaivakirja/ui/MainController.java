@@ -44,4 +44,11 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
+    
+     public void showYearlyEmissionScene() {
+        Parent root = fxWeaver.loadView(YearlyEmissionSceneController.class);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
