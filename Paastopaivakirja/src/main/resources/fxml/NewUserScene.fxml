@@ -8,15 +8,16 @@
 <?import javafx.scene.text.Text?>
 
 <VBox fx:controller="com.example.PaastoPaivakirja.ui.NewUserSceneController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <AnchorPane stylesheets="@styles/styles.css" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <Button onAction="#returnToLogin" layoutX="424.0" layoutY="178.0" mnemonicParsing="false" text="Takaisin" />
-            <Separator layoutX="317.0" layoutY="100.0" orientation="VERTICAL" prefHeight="200.0" />
-            <Button onAction="#handleCreateAccount" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" text="Luo uusi käyttäjä!" />
-            <TextField fx:id="usernameField" layoutX="81.0" layoutY="178.0" />
-            <Text layoutX="81.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valitse käyttäjätunnus:" />
-      </children>
-    </AnchorPane>
-  </children>
+    <children>
+        <AnchorPane stylesheets="@styles/styles.css" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button onAction="#returnToLogin" layoutX="424.0" layoutY="178.0" mnemonicParsing="false" text="Takaisin" />
+                <Separator layoutX="317.0" layoutY="100.0" orientation="VERTICAL" prefHeight="200.0" />
+                <Button onAction="#handleCreateAccount" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" text="Luo uusi käyttäjä!" />
+                <TextField fx:id="usernameField" layoutX="81.0" layoutY="178.0" />
+                <Text layoutX="81.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valitse käyttäjätunnus:" />
+                <Text fx:id="infoText" layoutX="81.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />     
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>

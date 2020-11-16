@@ -16,15 +16,27 @@ public class LoginService {
     @Autowired
     AccountRepository accountRepository;
 
+    String currentUser;
+
     public boolean login(String username) {
-        return accountRepository.findByUsername(username) != null;
+        if (accountRepository.findByUsername(username) != null) {
+            currentUser = username;
+            return true;
+        }
+        return false;
     }
 
-    public void createAccount(String username) {
+    public boolean createAccount(String username) {
         if (accountRepository.findByUsername(username) == null) {
             Account account = new Account();
             account.setUsername(username);
             accountRepository.save(account);
+            return true;
         }
+        return false;
+    }
+
+    public String getCurrentUser() {
+        return currentUser;
     }
 }
