@@ -22,11 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class PaastoPaivakirjaApplication {
 
     @Bean
-    public PasswordEncoder encoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
     public FxWeaver fxWeaver(ConfigurableApplicationContext applicationContext) {
         return new SpringFxWeaver(applicationContext);
     }

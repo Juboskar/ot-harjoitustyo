@@ -14,12 +14,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class MainController {
 
+    @Autowired
     FxWeaver fxWeaver;
+
     Stage stage;
 
-    public void start(Stage stage, FxWeaver fxWeaver) {
+    public void start(Stage stage) {
         this.stage = stage;
-        this.fxWeaver = fxWeaver;
         this.showLoginView();
     }
 

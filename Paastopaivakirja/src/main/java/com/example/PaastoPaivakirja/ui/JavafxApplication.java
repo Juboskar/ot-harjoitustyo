@@ -32,7 +32,7 @@ public class JavafxApplication extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        mainController.start(stage, fxWeaver);
+        mainController.start(stage);
     }
     
     @Override

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="277.0" prefWidth="508.0" stylesheets="@styles/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PaastoPaivakirja.ui.LoginSceneController">
-    <children>
-        <Text layoutX="17.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Käyttäjätunnus" />
-        <Text layoutX="17.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salasana" />
-        <TextField fx:id="usernameField" layoutX="111.0" layoutY="66.0" prefHeight="25.0" prefWidth="126.0" />
-        <PasswordField fx:id="passwordField" layoutX="111.0" layoutY="106.0" prefHeight="25.0" prefWidth="126.0" />
-        <Button fx:id="loginButton" onAction="#handleLogin" layoutX="111.0" layoutY="153.0" mnemonicParsing="false" text="Kirjaudu" />
-        <Separator layoutX="251.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
-        <Button fx:id="registerButton" onAction="#handleNewUser" layoutX="324.0" layoutY="106.0" mnemonicParsing="false" text="Luo uusi tunnus" />
-    </children>
-</AnchorPane>
+<VBox fx:controller="com.example.PaastoPaivakirja.ui.LoginSceneController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane stylesheets="@styles/styles.css" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Button onAction="#handleNewUser" layoutX="424.0" layoutY="178.0" mnemonicParsing="false" text="Luo uusi käyttäjä" />
+            <Separator layoutX="317.0" layoutY="100.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Button onAction="#handleLogin" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" text="Kirjaudu" />
+            <TextField fx:id="usernameField" layoutX="81.0" layoutY="178.0" />
+            <Text layoutX="81.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Käyttäjätunnus:" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

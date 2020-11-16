@@ -6,9 +6,9 @@
 package com.example.PaastoPaivakirja.ui;
 
 import com.example.PaastoPaivakirja.domain.LoginService;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,13 +21,22 @@ import org.springframework.stereotype.Component;
 @FxmlView("/fxml/NewUserScene.fxml")
 public class NewUserSceneController {
 
-    private JavafxApplication application;
-
+    @Autowired
+    private MainController main;
+    
     @Autowired
     private LoginService loginService;
-    
-    public void setApplication(JavafxApplication application) {
-        this.application = application;
-    }
 
+    @FXML
+    TextField usernameField;
+
+    @FXML
+    private void handleCreateAccount(ActionEvent event) {
+        loginService.createAccount(usernameField.getText());
+    }
+    
+    @FXML
+    private void returnToLogin(ActionEvent event) {
+        main.showLoginView();
+    }
 }

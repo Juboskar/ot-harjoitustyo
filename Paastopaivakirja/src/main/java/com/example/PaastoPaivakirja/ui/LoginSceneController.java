@@ -33,17 +33,15 @@ public class LoginSceneController  {
     @FXML
     private TextField usernameField;
     
-    @FXML
-    private TextField passwordField;
     
     @FXML
-    private void handleLogin(ActionEvent event) {     
-        loginService.login(usernameField.getText(), passwordField.getText());
+    private void handleLogin(ActionEvent event) {  
+        loginService.login(usernameField.getText());
     }
     
     @FXML
     private void handleNewUser(ActionEvent event) {
-        main.showNewUserView();       
+       main.showNewUserView();
     }
 
 

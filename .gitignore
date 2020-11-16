@@ -1,6 +1,7 @@
 /laskarit/viikko2/Unicafe/target
 
 /Paastopaivakirja/database.mv.db
+/Paastopaivakirja/database.trace.db
 /Paastopaivakirja/.mvn
 /Paastopaivakirja/mvnw
 /Paastopaivakirja/mvnw.cmd
