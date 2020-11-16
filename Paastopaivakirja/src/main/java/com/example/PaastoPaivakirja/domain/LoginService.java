@@ -17,10 +17,7 @@ public class LoginService {
     AccountRepository accountRepository;
 
     public boolean login(String username) {
-        if (accountRepository.findByUsername(username) != null) {
-            return true;
-        } 
-        return false;
+        return accountRepository.findByUsername(username) != null;
     }
 
     public void createAccount(String username) {
