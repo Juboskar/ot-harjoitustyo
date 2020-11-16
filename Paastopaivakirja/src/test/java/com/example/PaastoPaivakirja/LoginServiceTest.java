@@ -25,7 +25,9 @@ public class LoginServiceTest {
     @Autowired
     LoginService loginService;
 
-    //JPARepositoriot ei toimi jostain syystä testeissä. Palaan selvittämään
+    /*JPARepositoriot ei toimi jostain syystä testeissä. 
+    Palaan myöhemmin selvittämään syytä*/
+    
     @Autowired
     AccountRepository accountRepository;
 

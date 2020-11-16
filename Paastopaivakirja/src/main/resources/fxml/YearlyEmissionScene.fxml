@@ -14,6 +14,7 @@
                 <Slider onValueChange="#setNumber" layoutX="128.0" layoutY="47.0" max="300.0" />
                 <Text fx:id="sliderValue" layoutX="277.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                 <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Laske" />          
+                <Button onAction="#returnToHome" layoutX="534.0" layoutY="43.0" mnemonicParsing="false" text="Palaa" />     
             </children>
         </AnchorPane>
     </children>

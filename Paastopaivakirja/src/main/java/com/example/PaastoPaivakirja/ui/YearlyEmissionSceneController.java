@@ -40,14 +40,18 @@ public class YearlyEmissionSceneController {
     Text sliderValue;
 
     @FXML
-    public void submit() {        
+    public void submit() {
         emissionService.calculateYearly(sliderValue.getText());
     }
 
     @FXML
-    public void setNumber(ObservableValue<Number> ovn, Number before, Number after) {
-        sliderValue.setText(after.intValue() +" m2");
+    public void returnToHome() {
+        main.showHomeScene();
     }
-    
-    
+
+    @FXML
+    public void setNumber(ObservableValue<Number> ovn, Number before, Number after) {
+        sliderValue.setText(after.intValue() + " m2");
+    }
+
 }
