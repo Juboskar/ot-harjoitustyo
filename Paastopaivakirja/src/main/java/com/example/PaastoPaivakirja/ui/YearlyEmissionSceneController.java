@@ -7,9 +7,12 @@ package com.example.PaastoPaivakirja.ui;
 
 import com.example.PaastoPaivakirja.domain.EmissionService;
 import com.example.PaastoPaivakirja.domain.LoginService;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Text;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -34,27 +37,17 @@ public class YearlyEmissionSceneController {
     ToggleGroup group;
 
     @FXML
-    RadioButton radioButton1;
+    Text sliderValue;
 
     @FXML
-    RadioButton radioButton2;
-
-    @FXML
-    RadioButton radioButton3;
-
-    @FXML
-    public void submit() {
-        RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
-        String toggleGroupValue = selectedRadioButton.getText();
-        emissionService.calculateYearly(toggleGroupValue);
+    public void submit() {        
+        emissionService.calculateYearly(sliderValue.getText());
     }
 
     @FXML
-    public void initialize() {
-        group = new ToggleGroup();
-        radioButton1.setToggleGroup(group);
-        radioButton2.setToggleGroup(group);
-        radioButton3.setToggleGroup(group);
+    public void setNumber(ObservableValue<Number> ovn, Number before, Number after) {
+        sliderValue.setText(after.intValue() +" m2");
     }
-
+    
+    
 }
