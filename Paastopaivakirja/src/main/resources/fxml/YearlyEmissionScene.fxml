@@ -11,10 +11,13 @@
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
                 <Text layoutX="30.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asunnon koko neliömetreinä:" wrappingWidth="109.13671875" />
-                <Slider onValueChange="#setNumber" layoutX="128.0" layoutY="47.0" max="300.0" />
-                <Text fx:id="sliderValue" layoutX="277.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                <Slider onValueChange="#setSize" layoutX="128.0" layoutY="47.0" min="1.0" max="300.0" />
+                <Text fx:id="sizeSliderValue" layoutX="277.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
                 <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Laske" />          
                 <Button onAction="#returnToHome" layoutX="534.0" layoutY="43.0" mnemonicParsing="false" text="Palaa" />     
+                <Text layoutX="30.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asukkaiden määrä" wrappingWidth="93.13671875" />
+                <Slider onValueChange="#setPersons" layoutX="128.0" layoutY="86.0" min="1.0" max="10.0" />
+                <Text fx:id="personsSliderValue" layoutX="277.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
             </children>
         </AnchorPane>
     </children>

@@ -16,8 +16,9 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @AllArgsConstructor
 public class Account extends AbstractPersistable<Long> {
 
-    private String username;   
- 
+    private String username;
+
+    //vai yearemissio entity, jossa tarkempi erittely?
     private int yearEmissions;
-    
+
 }

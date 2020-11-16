@@ -34,24 +34,30 @@ public class YearlyEmissionSceneController {
     @Autowired
     private EmissionService emissionService;
 
-    ToggleGroup group;
 
     @FXML
-    Text sliderValue;
+    Text sizeSliderValue;
+    
+    @FXML
+    Text personsSliderValue;
 
     @FXML
     public void submit() {
-        emissionService.calculateYearly(sliderValue.getText());
+        //todo, lähetetään tiedot emissionsevicelle
     }
 
+    @FXML
+    public void setSize(ObservableValue<Number> ovn, Number before, Number after) {
+        sizeSliderValue.setText(after.intValue() + " m2");
+    }
+
+    @FXML
+    public void setPersons(ObservableValue<Number> ovn, Number before, Number after) {
+        personsSliderValue.setText(after.intValue() + " hlö");
+    }
+    
     @FXML
     public void returnToHome() {
         main.showHomeScene();
     }
-
-    @FXML
-    public void setNumber(ObservableValue<Number> ovn, Number before, Number after) {
-        sliderValue.setText(after.intValue() + " m2");
-    }
-
 }

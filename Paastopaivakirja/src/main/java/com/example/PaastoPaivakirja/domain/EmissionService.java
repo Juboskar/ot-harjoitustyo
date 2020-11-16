@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmissionService {
 
-    public void calculateYearly(String valinta) {
-        System.out.println(valinta);
-    }
+    //todo
+    //yearemission entity?
 }
