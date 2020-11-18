@@ -2,9 +2,9 @@
 
 ## Päästöpäiväkirja
 
-[Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/Dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/vaatimusmaarittely.md)
 
-[Työaikakirjanpito](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/Dokumentaatio/tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/tyoaikakirjanpito.md)
 
 ### Tällä hetkellä:
 
