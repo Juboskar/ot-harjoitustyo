@@ -2,6 +2,7 @@ package com.example.PaastoPaivakirja.model;
 
 import javax.persistence.Entity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
