@@ -1,20 +1,17 @@
 package com.example.PaastoPaivakirja;
 
-import com.example.PaastoPaivakirja.dao.AccountRepository;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
 
 @ActiveProfiles("test")
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class PaastoPaivakirjaApplicationTest {
-
-    @Autowired
-    AccountRepository accountRepository;
+public class PaastoPaivakirjaApplicationTest {
 
     @Test
-    void contextLoads() {
-        
+    public void contextLoads() {
     }
 }
