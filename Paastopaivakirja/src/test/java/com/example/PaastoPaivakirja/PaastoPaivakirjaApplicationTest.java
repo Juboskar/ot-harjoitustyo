@@ -9,9 +9,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles("test")
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PaastoPaivakirjaApplicationTest {
+public class PaastopaivakirjaApplicationTest {
 
     @Test
     public void contextLoads() {
+    
     }
 }
