@@ -21,27 +21,22 @@ public class EmissionService {
     @Autowired
     AccountRepository accountRepository;
 
-    public int findUserHouseSize(String username) {
+    
+    /*TODO: muutettava niin, että nämä tiedot haetaan yhdellä kertaa,
+    tässä ei ole mitään järkeä*/
+    
+    public YearlyEmission findEmissionInfo(String username) {
         Account account = accountRepository.findByUsername(username);
-        return account.getYearlyEmission().getHouseSize();
+        return account.getYearlyEmission();
     }
 
-    public int findUserPopulation(String username) {
-        Account account = accountRepository.findByUsername(username);
-        return account.getYearlyEmission().getPopulation();
-    }
-
-    public int findUserElectricity(String username) {
-        Account account = accountRepository.findByUsername(username);
-        return account.getYearlyEmission().getElectricity();
-    }
-
-    public void submitNewValues(int houseSize, int population, int electricity, String username) {
+    public void submitNewValues(int houseSize, int population, int electricity, House house, String username) {
         Account account = accountRepository.findByUsername(username);
         YearlyEmission emission = account.getYearlyEmission();
         emission.setHouseSize(houseSize);
         emission.setPopulation(population);
         emission.setElectricity(electricity);
+        emission.setHouse(house);
         yearlyEmissionRepository.save(emission);
     }
 }

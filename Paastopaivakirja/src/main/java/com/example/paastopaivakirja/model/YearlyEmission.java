@@ -5,6 +5,7 @@
  */
 package com.example.paastopaivakirja.model;
 
+import com.example.paastopaivakirja.domain.House;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,7 @@ public class YearlyEmission extends AbstractPersistable<Long> {
     private int emission;
     private int houseSize;
     private int population;
+    private House house;
 
     @OneToOne
     private Account account;

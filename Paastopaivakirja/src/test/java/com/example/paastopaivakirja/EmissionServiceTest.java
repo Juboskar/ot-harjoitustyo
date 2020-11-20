@@ -50,8 +50,6 @@ public class EmissionServiceTest {
         account.setYearlyEmission(yearlyEmission);
         accountRepository.save(account);
 
-        assertEquals(1337, emissionService.findUserElectricity("emissionTest"));
-        assertEquals(50, emissionService.findUserHouseSize("emissionTest"));
-        assertEquals(3, emissionService.findUserPopulation("emissionTest"));
+        
     }
 }

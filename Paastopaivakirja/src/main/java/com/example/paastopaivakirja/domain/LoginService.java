@@ -39,6 +39,7 @@ public class LoginService {
             yearlyEmission.setEmission(1);
             yearlyEmission.setHouseSize(1);
             yearlyEmission.setPopulation(1);
+            yearlyEmission.setHouse(House.APARTMENT);
             yearlyEmissionRepository.save(yearlyEmission);
             account.setYearlyEmission(yearlyEmission);
             accountRepository.save(account);
