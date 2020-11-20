@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @FxmlView("/fxml/HomeScene.fxml")
-public class HomeSceneController{
+public class HomeSceneController {
 
     @Autowired
     LoginService loginService;
