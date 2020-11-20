@@ -1,4 +1,4 @@
-package com.example.PaastoPaivakirja.ui;
+package com.example.paastopaivakirja.ui;
 
 import com.example.paastopaivakirja.domain.LoginService;
 
