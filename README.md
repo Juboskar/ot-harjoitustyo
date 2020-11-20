@@ -12,4 +12,4 @@ Projektissa pystyy luomaan käyttäjätunnuksen, jolla pääsee omalle sivulleen
 
 ### Suorittaminen
 
-Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run``` ja/tai komennolla ```mvn compile exec:java -Dexec.mainClass=com.example.PaastoPaivakirja.paastopaivakirjaApplication```
+Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run``` ja/tai komennolla ```mvn compile exec:java -Dexec.mainClass=com.example.paastopaivakirja.PaastopaivakirjaApplication```
