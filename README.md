@@ -8,8 +8,8 @@
 
 ### Tällä hetkellä:
 
-Projektissa pystyy luomaan käyttäjätunnuksen, jolla pääsee omalle sivulleen. Omalla sivulla ei oikein ole vielä toiminnallisuutta. Ensimmäiset testit saatu toimiman! Jacoco reportin saa generoitua.
+Projektissa pystyy luomaan käyttäjätunnuksen, jolla pääsee omalle sivulleen. Omalla sivullaan vi tällä hetkellä laskea ainoastaan kiinteät vuosipäästöt. Valinnat tallentuvat ja niitä voi palata myöhemmin muokkaamaan. Ensimmäiset testit toiminnassa! Jacoco:report ja checkstyle saa käytössä.
 
-### Suorittaminen
+### Käynnistäminen
 
 Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run```
