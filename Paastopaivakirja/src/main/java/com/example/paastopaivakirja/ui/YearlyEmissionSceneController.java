@@ -41,6 +41,9 @@ public class YearlyEmissionSceneController {
 
     @FXML
     public void submit() {
+        emissionService.submitNewValues((int) houseSizeSlider.getValue(),
+                (int) populationSlider.getValue(),
+                loginService.getCurrentUser());
     }
 
     @FXML

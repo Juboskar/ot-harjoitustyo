@@ -21,17 +21,24 @@ public class EmissionService {
 
     @Autowired
     AccountRepository accountRepository;
-    
+
     @Transactional
     public int findUserHouseSize(String username) {
-        System.out.println(username);
         Account account = accountRepository.findByUsername(username);
         return account.getYearlyEmission().getHouseSize();
     }
 
     @Transactional
     public int findUserPopulation(String username) {
-        Account account =  accountRepository.findByUsername(username);
+        Account account = accountRepository.findByUsername(username);
         return account.getYearlyEmission().getPopulation();
+    }
+
+    public void submitNewValues(int houseSize, int population, String username) {
+        Account account = accountRepository.findByUsername(username);
+        YearlyEmission emission = account.getYearlyEmission();
+        emission.setHouseSize(houseSize);
+        emission.setPopulation(population);
+        yearlyEmissionRepository.save(emission);
     }
 }

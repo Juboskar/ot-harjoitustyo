@@ -6,7 +6,6 @@
 package com.example.paastopaivakirja.model;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
