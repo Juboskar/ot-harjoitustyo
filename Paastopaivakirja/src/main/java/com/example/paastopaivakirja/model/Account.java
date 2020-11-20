@@ -1,6 +1,9 @@
 package com.example.paastopaivakirja.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +21,7 @@ public class Account extends AbstractPersistable<Long> {
 
     private String username;
 
-    //vai yearemissio entity, jossa tarkempi erittely?
-    private int yearEmissions;
+    @OneToOne(fetch=FetchType.EAGER)
+    private YearlyEmission yearlyEmission;
 
 }
