@@ -39,6 +39,6 @@ public class LoginServiceTest {
     public void testLogin() {
         loginService.createAccount("realUser");
         assertTrue(loginService.login("realUser"));
-        assertFalse(loginService.login("notuser"));
+        assertFalse(loginService.login("notUser"));
     }
 }
