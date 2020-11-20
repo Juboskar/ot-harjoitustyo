@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Bean;
  * @author Oskari
  */
 @SpringBootApplication
-public class PaastoPaivakirjaApplication {
+public class PaastopaivakirjaApplication {
 
     @Bean
     public FxWeaver fxWeaver(ConfigurableApplicationContext applicationContext) {

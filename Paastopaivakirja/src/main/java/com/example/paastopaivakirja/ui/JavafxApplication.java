@@ -1,6 +1,6 @@
 package com.example.paastopaivakirja.ui;
 
-import com.example.paastopaivakirja.PaastoPaivakirjaApplication;
+import com.example.paastopaivakirja.PaastopaivakirjaApplication;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -20,7 +20,7 @@ public class JavafxApplication extends Application {
     public void init() throws Exception {
         String[] args = getParameters().getRaw().toArray(new String[0]);
         this.context = new SpringApplicationBuilder()
-                .sources(PaastoPaivakirjaApplication.class)
+                .sources(PaastopaivakirjaApplication.class)
                 .run(args);
         mainController = context.getBean(MainController.class);
     }
