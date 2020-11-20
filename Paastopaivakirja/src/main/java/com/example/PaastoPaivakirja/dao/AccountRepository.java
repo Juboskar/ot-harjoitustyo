@@ -1,6 +1,7 @@
-package com.example.PaastoPaivakirja.dao;
+package com.example.paastopaivakirja.dao;
 
-import com.example.PaastoPaivakirja.model.Account;
+import com.example.paastopaivakirja.model.Account;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

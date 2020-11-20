@@ -1,6 +1,6 @@
-package com.example.PaastoPaivakirja.ui;
+package com.example.paastopaivakirja.ui;
 
-import com.example.PaastoPaivakirja.domain.LoginService;
+import com.example.paastopaivakirja.domain.LoginService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

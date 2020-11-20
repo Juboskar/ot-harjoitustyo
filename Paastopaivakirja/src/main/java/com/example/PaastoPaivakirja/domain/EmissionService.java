@@ -1,4 +1,4 @@
-package com.example.PaastoPaivakirja.domain;
+package com.example.paastopaivakirja.domain;
 
 import org.springframework.stereotype.Service;
 

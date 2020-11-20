@@ -1,9 +1,8 @@
-package com.example.PaastoPaivakirja.domain;
+package com.example.paastopaivakirja.domain;
 
-import com.example.PaastoPaivakirja.dao.AccountRepository;
-import com.example.PaastoPaivakirja.model.Account;
+import com.example.paastopaivakirja.dao.AccountRepository;
+import com.example.paastopaivakirja.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
 
 /**

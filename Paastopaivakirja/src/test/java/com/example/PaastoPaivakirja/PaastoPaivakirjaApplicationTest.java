@@ -1,4 +1,4 @@
-package com.example.PaastoPaivakirja;
+package com.example.paastopaivakirja;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

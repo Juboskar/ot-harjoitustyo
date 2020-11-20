@@ -1,12 +1,9 @@
-package com.example.PaastoPaivakirja.ui;
+package com.example.paastopaivakirja.ui;
 
-import com.example.PaastoPaivakirja.PaastoPaivakirjaApplication;
+import com.example.paastopaivakirja.PaastoPaivakirjaApplication;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxWeaver;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 

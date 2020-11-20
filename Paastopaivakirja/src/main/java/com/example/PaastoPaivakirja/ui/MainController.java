@@ -1,4 +1,4 @@
-package com.example.PaastoPaivakirja.ui;
+package com.example.paastopaivakirja.ui;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -50,5 +50,5 @@ public class MainController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
+    } 
 }

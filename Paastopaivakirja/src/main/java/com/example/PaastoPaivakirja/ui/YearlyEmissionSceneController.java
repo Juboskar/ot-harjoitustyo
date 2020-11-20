@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.PaastoPaivakirja.ui;
 
-import com.example.PaastoPaivakirja.domain.EmissionService;
-import com.example.PaastoPaivakirja.domain.LoginService;
+import com.example.paastopaivakirja.domain.EmissionService;
+import com.example.paastopaivakirja.domain.LoginService;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Slider;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;

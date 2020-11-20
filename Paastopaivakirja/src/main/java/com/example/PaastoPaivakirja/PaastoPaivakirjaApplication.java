@@ -1,7 +1,7 @@
-package com.example.PaastoPaivakirja;
+package com.example.paastopaivakirja;
 
-import com.example.PaastoPaivakirja.ui.JavafxApplication;
-import com.example.PaastoPaivakirja.ui.MainController;
+import com.example.paastopaivakirja.ui.JavafxApplication;
+
 import java.util.TimeZone;
 import javafx.application.Application;
 import javax.annotation.PostConstruct;
@@ -10,9 +10,6 @@ import net.rgielen.fxweaver.spring.SpringFxWeaver;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  *

@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.example.PaastoPaivakirja;
+package com.example.paastopaivakirja;
 
-import com.example.PaastoPaivakirja.dao.AccountRepository;
-import com.example.PaastoPaivakirja.domain.LoginService;
-import com.example.PaastoPaivakirja.model.Account;
+import com.example.paastopaivakirja.dao.AccountRepository;
+import com.example.paastopaivakirja.domain.LoginService;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
