@@ -1,6 +1,5 @@
 package com.example.paastopaivakirja.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
@@ -21,7 +20,7 @@ public class Account extends AbstractPersistable<Long> {
 
     private String username;
 
-    @OneToOne(fetch=FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private YearlyEmission yearlyEmission;
 
 }

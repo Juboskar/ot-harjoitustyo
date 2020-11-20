@@ -10,14 +10,17 @@
     <children>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <Text layoutX="30.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asunnon koko neliömetreinä:" wrappingWidth="109.13671875" />
+                <Text layoutX="30.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asunnon koko neliömetreinä:" wrappingWidth="109.13671875" />
                 <Slider fx:id="houseSizeSlider" onValueChange="#setHouseSize" layoutX="128.0" layoutY="47.0" min="1.0" max="300.0" />
                 <Text fx:id="houseSizeSliderValue" layoutX="277.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
                 <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Laske" />          
                 <Button onAction="#returnToHome" layoutX="534.0" layoutY="43.0" mnemonicParsing="false" text="Palaa" />     
-                <Text layoutX="30.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asukkaiden määrä" wrappingWidth="93.13671875" />
+                <Text layoutX="30.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asukkaiden määrä" wrappingWidth="93.13671875" />
                 <Slider fx:id="populationSlider" onValueChange="#setPopulation" layoutX="128.0" layoutY="86.0" min="1.0" max="10.0" />
                 <Text fx:id="populationSliderValue" layoutX="277.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+                <Text layoutX="30.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sähkönkulutus vuodessa" wrappingWidth="100.4609375" />
+                <Slider fx:id="electricitySlider" onValueChange="#setElectricity" layoutX="128.0" layoutY="125.0" min="1.0" max="5000.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="electricitySliderValue" layoutX="277.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
             </children>
         </AnchorPane>
     </children>

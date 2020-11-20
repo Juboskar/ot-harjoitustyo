@@ -34,15 +34,22 @@ public class YearlyEmissionSceneController {
     Slider populationSlider;
 
     @FXML
+    Slider electricitySlider;
+
+    @FXML
     Text houseSizeSliderValue;
 
     @FXML
     Text populationSliderValue;
 
     @FXML
+    Text electricitySliderValue;
+
+    @FXML
     public void submit() {
         emissionService.submitNewValues((int) houseSizeSlider.getValue(),
                 (int) populationSlider.getValue(),
+                (int) electricitySlider.getValue(),
                 loginService.getCurrentUser());
     }
 
@@ -57,6 +64,11 @@ public class YearlyEmissionSceneController {
     }
 
     @FXML
+    public void setElectricity(ObservableValue<Number> ovn, Number before, Number after) {
+        electricitySliderValue.setText(after.intValue() + " kWh");
+    }
+
+    @FXML
     public void returnToHome() {
         main.showHomeScene();
     }
@@ -66,9 +78,12 @@ public class YearlyEmissionSceneController {
         String user = loginService.getCurrentUser();
         int userHouseSize = emissionService.findUserHouseSize(user);
         houseSizeSlider.setValue(userHouseSize);
-        houseSizeSliderValue.setText(userHouseSize + "m2");
+        houseSizeSliderValue.setText(userHouseSize + " m2");
         int userPopulation = emissionService.findUserPopulation(user);
         populationSlider.setValue(userPopulation);
-        populationSliderValue.setText(userPopulation + "hlö");
+        populationSliderValue.setText(userPopulation + " hlö");
+        int userElectricity = emissionService.findUserElectricity(user);
+        electricitySlider.setValue(userElectricity);
+        electricitySliderValue.setText(userElectricity + " kwh");
     }
 }
