@@ -6,6 +6,8 @@
 
 [Työaikakirjanpito](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/tyoaikakirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/arkkitehtuuri.md) (päivittyy)
+
 ### Tällä hetkellä:
 
 Projektissa pystyy luomaan käyttäjätunnuksen, jolla pääsee omalle sivulleen. Omalla sivullaan vi tällä hetkellä laskea ainoastaan kiinteät vuosipäästöt. Valinnat tallentuvat ja niitä voi palata myöhemmin muokkaamaan. Ensimmäiset testit toiminnassa! Jacoco:report ja checkstyle saa käytössä.
