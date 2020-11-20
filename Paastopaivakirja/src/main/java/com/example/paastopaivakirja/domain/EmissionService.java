@@ -20,10 +20,6 @@ public class EmissionService {
 
     @Autowired
     AccountRepository accountRepository;
-
-    
-    /*TODO: muutettava niin, että nämä tiedot haetaan yhdellä kertaa,
-    tässä ei ole mitään järkeä*/
     
     public YearlyEmission findEmissionInfo(String username) {
         Account account = accountRepository.findByUsername(username);
