@@ -31,8 +31,9 @@ public class LoginServiceTest {
 
     @Test
     public void testCreateAccount() {
-        loginService.createAccount("test");
+        assertTrue(loginService.createAccount("test"));
         assertEquals(accountRepository.findByUsername("test").getUsername(), "test");
+        assertFalse(loginService.createAccount("test"));
     }
 
     @Test
@@ -40,5 +41,6 @@ public class LoginServiceTest {
         loginService.createAccount("realUser");
         assertTrue(loginService.login("realUser"));
         assertFalse(loginService.login("notUser"));
+        assertEquals("realUser", loginService.getCurrentUser());
     }
 }

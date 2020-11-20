@@ -96,17 +96,16 @@ public class YearlyEmissionSceneController {
         int userHouseSize = emission.getHouseSize();
         houseSizeSlider.setValue(userHouseSize);
         houseSizeSliderValue.setText(userHouseSize + " m2");
-
+      
         int userPopulation = emission.getPopulation();
         populationSlider.setValue(userPopulation);
         populationSliderValue.setText(userPopulation + " hlö");
-
+      
         int userElectricity = emission.getElectricity();
         electricitySlider.setValue(userElectricity);
         electricitySliderValue.setText(userElectricity + " kwh");
 
         House house = emission.getHouse();
-
         ToggleGroup group = new ToggleGroup();
         apartmentRadioButton.setToggleGroup(group);
         houseRadioButton.setToggleGroup(group);
