@@ -38,6 +38,7 @@ public class EmissionService {
 
     public int calculateYearlyEmission(String username) {
         YearlyEmission emission = accountRepository.findByUsername(username).getYearlyEmission();
+        
         /*asumisen peruspäästöt, rakentaminen yms: asunnon koko * asumistyypin co2 -kerroin */
         int calculatedBuildingEmission = emission.getHouseSize()
                 * emission.getHouse().getEmission();
