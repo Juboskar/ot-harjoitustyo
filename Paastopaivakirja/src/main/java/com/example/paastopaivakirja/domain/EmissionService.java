@@ -38,17 +38,22 @@ public class EmissionService {
 
     public int calculateYearlyEmission(String username) {
         YearlyEmission emission = accountRepository.findByUsername(username).getYearlyEmission();
-        /*asumisen perustpäästöt, rakentaminen yms*/
+        /*asumisen peruspäästöt, rakentaminen yms: asunnon koko * asumistyypin co2 -kerroin */
         int calculatedBuildingEmission = emission.getHouseSize()
                 * emission.getHouse().getEmission();
-        /*sähkönkulutuspäästöt*/
+
+        /*sähkönkulutuspäästöt (keskimääräinen, ekosähköllä 0-kerroin): kwh * 281 co2/kwh * eko  */
         int calculatedElectricityEmission
                 = emission.getElectricity() * 281 * emission.getElectricityTypeFactor();
-        /*lämmönkulutus (suomen keskimääräinen, kaukolämpö)*/
+
+        /*lämmönkulutuspäästöt (suomen keskimääräinen, kaukolämpö): asunnon koko * 241kwh * 267co2/kwh*/
         int warmingEmission = emission.getHouseSize() * 241 * 267;
 
+        /*asumisen yhteispäästöt jaettuna talouden henkilömäärällä:*/
         int total = (calculatedBuildingEmission + calculatedElectricityEmission + warmingEmission)
                 / emission.getPopulation();
+        
+        /*muunnetaan grammoista kilogrammoihin*/
         return total / 1000;
     }
 }
