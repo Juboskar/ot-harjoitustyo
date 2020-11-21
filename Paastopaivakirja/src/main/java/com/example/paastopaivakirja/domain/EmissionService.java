@@ -20,19 +20,35 @@ public class EmissionService {
 
     @Autowired
     AccountRepository accountRepository;
-    
+
     public YearlyEmission findEmissionInfo(String username) {
-        Account account = accountRepository.findByUsername(username);
-        return account.getYearlyEmission();
+        return accountRepository.findByUsername(username).getYearlyEmission();
     }
 
-    public void submitNewValues(int houseSize, int population, int electricity, House house, String username) {
-        Account account = accountRepository.findByUsername(username);
-        YearlyEmission emission = account.getYearlyEmission();
+    public void submitNewValues(int houseSize, int population, int electricity,
+            int electricityTypeFactor, House house, String username) {
+        YearlyEmission emission = accountRepository.findByUsername(username).getYearlyEmission();
         emission.setHouseSize(houseSize);
         emission.setPopulation(population);
         emission.setElectricity(electricity);
+        emission.setElectricityTypeFactor(electricityTypeFactor);
         emission.setHouse(house);
         yearlyEmissionRepository.save(emission);
+    }
+
+    public int calculateYearlyEmission(String username) {
+        YearlyEmission emission = accountRepository.findByUsername(username).getYearlyEmission();
+        /*asumisen perustpäästöt, rakentaminen yms*/
+        int calculatedBuildingEmission = emission.getHouseSize()
+                * emission.getHouse().getEmission();
+        /*sähkönkulutuspäästöt*/
+        int calculatedElectricityEmission
+                = emission.getElectricity() * 281 * emission.getElectricityTypeFactor();
+        /*lämmönkulutus (suomen keskimääräinen, kaukolämpö)*/
+        int warmingEmission = emission.getHouseSize() * 241 * 267;
+
+        int total = (calculatedBuildingEmission + calculatedElectricityEmission + warmingEmission)
+                / emission.getPopulation();
+        return total / 1000;
     }
 }

@@ -24,7 +24,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class YearlyEmission extends AbstractPersistable<Long> {
 
     private int electricity;
-    private int emission;
+    private int electricityTypeFactor;
     private int houseSize;
     private int population;
     private House house;

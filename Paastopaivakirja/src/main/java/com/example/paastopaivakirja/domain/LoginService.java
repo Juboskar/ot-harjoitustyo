@@ -13,15 +13,15 @@ import com.example.paastopaivakirja.dao.YearlyEmissionRepository;
  */
 @Service
 public class LoginService {
-
+    
     @Autowired
     AccountRepository accountRepository;
-
+    
     @Autowired
     YearlyEmissionRepository yearlyEmissionRepository;
-
+    
     String currentUser;
-
+    
     public boolean login(String username) {
         if (accountRepository.findByUsername(username) != null) {
             currentUser = username;
@@ -29,15 +29,15 @@ public class LoginService {
         }
         return false;
     }
-
+    
     public boolean createAccount(String username) {
         if (accountRepository.findByUsername(username) == null) {
             Account account = new Account();
             account.setUsername(username);
             YearlyEmission yearlyEmission = new YearlyEmission();
-            yearlyEmission.setElectricity(1000);
-            yearlyEmission.setEmission(1);
-            yearlyEmission.setHouseSize(1);
+            yearlyEmission.setElectricity(1900);
+            yearlyEmission.setElectricityTypeFactor(1);
+            yearlyEmission.setHouseSize(41);
             yearlyEmission.setPopulation(1);
             yearlyEmission.setHouse(House.APARTMENT);
             yearlyEmissionRepository.save(yearlyEmission);
@@ -47,7 +47,7 @@ public class LoginService {
         }
         return false;
     }
-
+    
     public String getCurrentUser() {
         return currentUser;
     }

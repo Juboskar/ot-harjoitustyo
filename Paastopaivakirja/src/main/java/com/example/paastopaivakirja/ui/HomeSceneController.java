@@ -1,5 +1,6 @@
 package com.example.paastopaivakirja.ui;
 
+import com.example.paastopaivakirja.domain.EmissionService;
 import com.example.paastopaivakirja.domain.LoginService;
 
 import javafx.event.ActionEvent;
@@ -21,10 +22,16 @@ public class HomeSceneController {
     LoginService loginService;
 
     @Autowired
+    EmissionService emissionService;
+
+    @Autowired
     private MainController main;
 
     @FXML
     Text name;
+
+    @FXML
+    Text yearlyTotal;
 
     @FXML
     public void logOut(ActionEvent event) {
@@ -38,6 +45,8 @@ public class HomeSceneController {
 
     @FXML
     public void initialize() {
-        name.setText(loginService.getCurrentUser());
+        String user = loginService.getCurrentUser();
+        name.setText(user);
+        yearlyTotal.setText("Kiinteät vuosipäästösi: " + emissionService.calculateYearlyEmission(user) +"kg co2" );
     }
 }

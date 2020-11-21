@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.CheckBox?>
 
 <VBox fx:controller="com.example.paastopaivakirja.ui.YearlyEmissionSceneController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
@@ -21,11 +22,13 @@
                 <Text layoutX="30.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sähkönkulutus vuodessa" wrappingWidth="100.4609375" />
                 <Slider fx:id="electricitySlider" onValueChange="#setElectricity" layoutX="128.0" layoutY="125.0" min="1.0" max="5000.0" prefHeight="14.0" prefWidth="140.0" />
                 <Text fx:id="electricitySliderValue" layoutX="277.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                <CheckBox fx:id="ecoCheck" layoutX="134.0" layoutY="150.0" mnemonicParsing="false" text="Käytän ekosähköä" />
                 <Separator layoutX="76.0" layoutY="170.0" prefWidth="200.0" />
                 <Text layoutX="30.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asumismuoto:" wrappingWidth="100.4609375" />
                 <RadioButton fx:id="apartmentRadioButton" layoutX="128.0" layoutY="210.0" mnemonicParsing="false" text="kerrostalo" />
-                <RadioButton fx:id="houseRadioButton" layoutX="128.0" layoutY="230.0" mnemonicParsing="false" text="rivitalo/omakotitalo" />
-                <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Laske" />          
+                <RadioButton fx:id="houseRadioButton" layoutX="128.0" layoutY="230.0" mnemonicParsing="false" text="omakotitalo" />
+                <RadioButton fx:id="rowHouseRadioButton" layoutX="128.0" layoutY="250.0" mnemonicParsing="false" text="rivitalo" />
+                <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Tallenna ja palaa" />          
                 <Button onAction="#returnToHome" layoutX="534.0" layoutY="43.0" mnemonicParsing="false" text="Palaa" />
             </children>
         </AnchorPane>

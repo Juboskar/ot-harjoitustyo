@@ -43,7 +43,6 @@ public class EmissionServiceTest {
         account.setUsername("emissionTest");
         YearlyEmission yearlyEmission = new YearlyEmission();
         yearlyEmission.setElectricity(1337);
-        yearlyEmission.setEmission(123);
         yearlyEmission.setHouseSize(50);
         yearlyEmission.setPopulation(3);
         yearlyEmissionRepository.save(yearlyEmission);
