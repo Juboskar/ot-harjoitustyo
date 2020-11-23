@@ -80,11 +80,8 @@ public class FoodService {
         if (foodEmission == null) {
             return 0;
         }
-
-        /*
-        Lasketaan jokaisen tuotteen päästöt kunkin ruoka-aineen hiilikertoimella
-        ja lisätään lähtöarvoihin. Kananmunan paino lasketaan kertomalla 60g:llä.
-         */
+        /* Lasketaan jokaisen tuotteen päästöt kunkin ruoka-aineen hiilikertoimella
+        ja lisätään lähtöarvoihin. Kananmunan paino lasketaan kertomalla 60g:llä. */
         int calculated = 0;
         calculated += foodEmission.getCow() * 15;
         calculated += foodEmission.getPig() * 5;
@@ -94,8 +91,6 @@ public class FoodService {
         calculated += foodEmission.getMilk() * 1;
         calculated += foodEmission.getRice() * 5;
         calculated += foodEmission.getVegetable() * 5;
-
-        /*ravintolapalvelun hiilipäästöt, 140g co2 *€ */
         calculated += foodEmission.getRestaurant() * 140;
         return calculated;
     }

@@ -47,4 +47,11 @@ public class LoginServiceTest {
         assertFalse(loginService.login("notUser"));
         assertEquals("realUser", loginService.getCurrentUser());
     }
+
+    @Test
+    public void testStartDate() {
+        LocalDate date = LocalDate.of(2020, Month.MAY, 6);
+        loginService.createAccount("startDateUser", date);
+        assertEquals(loginService.getStartDate("startDateUser"), date);
+    }
 }

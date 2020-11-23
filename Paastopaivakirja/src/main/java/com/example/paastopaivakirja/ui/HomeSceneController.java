@@ -82,8 +82,10 @@ public class HomeSceneController {
         String user = loginService.getCurrentUser();
         name.setText("Tervetuloa " + user);
         yearlyTotal.setText("Kiinteät vuosipäästösi: " + emissionService.calculateYearlyEmission(user) + "kg co2");
-        todaysTotal.setText("Tämänpäiväiset päästösi: " + foodService.calculateTodaysFoodEmission(user, LocalDate.now()) + " g/co2");
-        startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + loginService.getStartDate());
+        int calculatedEmission = foodService.calculateTodaysFoodEmission(user, LocalDate.now())
+                + trafficService.calculateTodaysTrafficEmission(user, LocalDate.now());
+        todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " g/co2");
+        startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + loginService.getStartDate(user));
         foodCheck.setVisible(foodService.checkIfExists(user, LocalDate.now()));
         trafficCheck.setVisible(trafficService.checkIfExists(user, LocalDate.now()));
         consumptionCheck.setVisible(false);

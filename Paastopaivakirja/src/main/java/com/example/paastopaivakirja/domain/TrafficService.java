@@ -81,4 +81,24 @@ public class TrafficService {
         trafficEmissionRepository.save(trafficEmission);
     }
 
+    public int calculateTodaysTrafficEmission(String username, LocalDate date) {
+        Account user = accountRepository.findByUsername(username);
+        TrafficEmission trafficEmission = trafficEmissionRepository.findByAccountAndLocalDate(user, date);
+        if (trafficEmission == null) {
+            return 0;
+        }
+        /*kerrotaan kunkin liikennemuodon kilometrimäärät keskimääräisillä päästmäärillä.
+        Lentokoneen ja laivan päästöt WWF:n laskurista.*/
+        int calculated = 0;
+        calculated += trafficEmission.getAirplane() * 289;
+        calculated += trafficEmission.getCar() * 200;
+        calculated += trafficEmission.getLongDistanceBus() * 54;
+        calculated += trafficEmission.getLongDistanceTrain() * 1;
+        calculated += trafficEmission.getMetro() * 1;
+        calculated += trafficEmission.getShip() * 167.00;
+        calculated += trafficEmission.getShortDistanceBus() * 68;
+        calculated += trafficEmission.getShortDistanceTrain() * 1;
+        calculated += trafficEmission.getTram() * 1;
+        return calculated;
+    }
 }

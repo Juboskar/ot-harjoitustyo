@@ -10,7 +10,7 @@ public enum House {
     HOUSE;
 
     public int getEmission() {
-         switch (this) {
+        switch (this) {
             case HOUSE:
                 return 6900;
             case ROWHOUSE:

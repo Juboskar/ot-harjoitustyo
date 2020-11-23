@@ -55,7 +55,7 @@ public class LoginService {
         return currentUser;
     }
 
-    public LocalDate getStartDate() {
-        return accountRepository.findByUsername(currentUser).getStartDate();
+    public LocalDate getStartDate(String username) {
+        return accountRepository.findByUsername(username).getStartDate();
     }
 }
