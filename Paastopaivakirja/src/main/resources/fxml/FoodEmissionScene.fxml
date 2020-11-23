@@ -6,35 +6,43 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-       <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-         <children>
-            <Button layoutX="434.0" layoutY="340.0" mnemonicParsing="false" text="Tallenna ja siirry seuraavaan" />
-            <Text layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Täydennä tänään käyttämäsi ruoka-aineet" wrappingWidth="134.0" />
-            <Text layoutX="25.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nauta ja lammas" wrappingWidth="93.13671875" />
-            <Slider layoutX="128.0" layoutY="85.0" max="500.0" />
-            <Text layoutX="277.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
-            <Text layoutX="25.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sika ja siipikarja" wrappingWidth="100.4609375" />
-            <Slider layoutX="128.0" layoutY="125.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
-            <Text layoutX="276.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
-            <Text layoutX="25.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kala ja äyriäiset" wrappingWidth="100.4609375" />
-            <Slider layoutX="128.0" layoutY="165.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
-            <Text layoutX="277.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
-            <Text layoutX="25.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juusto ja maitotuotteet" wrappingWidth="100.4609375" />
-            <Slider layoutX="128.0" layoutY="205.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
-            <Text layoutX="276.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
-            <Text layoutX="25.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Riisi" wrappingWidth="100.4609375" />
-            <Slider layoutX="128.0" layoutY="245.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
-            <Text layoutX="276.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
-            <Text layoutX="25.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Munat" wrappingWidth="100.4609375" />
-            <Slider layoutX="128.0" layoutY="285.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
-            <Text layoutX="275.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kpl" />
-            <Text layoutX="25.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ravintoloihin ja kahviloihin käyttämäsi rahamäärä" wrappingWidth="100.4609375" />
-            <Slider layoutX="128.0" layoutY="345.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
-            <Text layoutX="277.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kpl" />
-            <Button layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palauta oletusarvot" />
-         </children>
-    </AnchorPane>
-  </children>
+<VBox fx:controller="com.example.paastopaivakirja.ui.FoodEmissionSceneController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button layoutX="434.0" layoutY="340.0" mnemonicParsing="false" text="Tallenna ja siirry seuraavaan" />
+                <Text layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Täydennä tänään käyttämäsi ruoka-aineet" wrappingWidth="134.0" />
+                
+                <Text layoutX="25.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nauta ja lammas" wrappingWidth="93.13671875" />
+                <Slider fx:id="cowSlider" onValueChange="#setCow" layoutX="128.0" layoutY="85.0" max="500.0" />
+                <Text fx:id="cowSliderValue" layoutX="277.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 g" />
+                
+                <Text layoutX="25.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sika ja siipikarja" wrappingWidth="100.4609375" />
+                <Slider fx:id="pigSlider" onValueChange="#setPig" layoutX="128.0" layoutY="125.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="pigSliderValue" layoutX="276.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 g" />
+                
+                <Text layoutX="25.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kala ja äyriäiset" wrappingWidth="100.4609375" />
+                <Slider fx:id="fishSlider" onValueChange="#setFish" layoutX="128.0" layoutY="165.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="fishSliderValue" layoutX="277.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 g" />
+                
+                <Text layoutX="25.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juusto ja maitotuotteet" wrappingWidth="100.4609375" />
+                <Slider fx:id="cheeseSlider" onValueChange="#setCheese" layoutX="128.0" layoutY="205.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="cheeseSliderValue" layoutX="276.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
+                
+                <Text layoutX="25.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Riisi" wrappingWidth="100.4609375" />
+                <Slider fx:id="riceSlider" onValueChange="#setRice" layoutX="128.0" layoutY="245.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="riceSliderValue" layoutX="276.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kg" />
+                
+                <Text layoutX="25.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Munat" wrappingWidth="100.4609375" />
+                <Slider fx:id="eggSlider" onValueChange="#setEgg" layoutX="128.0" layoutY="285.0" max="10.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="eggSliderValue" layoutX="275.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 kpl" />
+               
+                <Text layoutX="25.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ravintoloihin ja kahviloihin käyttämäsi rahamäärä" wrappingWidth="100.4609375" />
+                <Slider fx:id="restaurantSlider" onValueChange="#setRestaurant" layoutX="128.0" layoutY="345.0" max="500.0" prefHeight="14.0" prefWidth="140.0" />
+                <Text fx:id="restaurantSliderValue" layoutX="277.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 €" />
+                
+                <Button layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palauta oletusarvot" />
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>
