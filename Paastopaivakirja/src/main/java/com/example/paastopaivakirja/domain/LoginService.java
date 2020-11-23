@@ -6,6 +6,8 @@ import com.example.paastopaivakirja.model.YearlyEmission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.paastopaivakirja.dao.YearlyEmissionRepository;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -13,15 +15,15 @@ import com.example.paastopaivakirja.dao.YearlyEmissionRepository;
  */
 @Service
 public class LoginService {
-    
+
     @Autowired
     AccountRepository accountRepository;
-    
+
     @Autowired
     YearlyEmissionRepository yearlyEmissionRepository;
-    
+
     String currentUser;
-    
+
     public boolean login(String username) {
         if (accountRepository.findByUsername(username) != null) {
             currentUser = username;
@@ -29,11 +31,12 @@ public class LoginService {
         }
         return false;
     }
-    
-    public boolean createAccount(String username) {
+
+    public boolean createAccount(String username, LocalDate date) {
         if (accountRepository.findByUsername(username) == null) {
             Account account = new Account();
             account.setUsername(username);
+            account.setStartDate(date);
             YearlyEmission yearlyEmission = new YearlyEmission();
             yearlyEmission.setElectricity(1900);
             yearlyEmission.setElectricityTypeFactor(1);
@@ -47,8 +50,12 @@ public class LoginService {
         }
         return false;
     }
-    
+
     public String getCurrentUser() {
         return currentUser;
+    }
+
+    public LocalDate getStartDate() {
+        return accountRepository.findByUsername(currentUser).getStartDate();
     }
 }

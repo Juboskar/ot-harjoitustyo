@@ -1,5 +1,6 @@
 package com.example.paastopaivakirja.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -22,6 +23,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Account extends AbstractPersistable<Long> {
 
     private String username;
+    
+    LocalDate startDate;
 
     @OneToOne(fetch = FetchType.EAGER)
     private YearlyEmission yearlyEmission;

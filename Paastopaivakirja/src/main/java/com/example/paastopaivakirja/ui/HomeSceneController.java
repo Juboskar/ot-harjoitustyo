@@ -32,6 +32,9 @@ public class HomeSceneController {
 
     @FXML
     Text yearlyTotal;
+    
+    @FXML
+    Text startDate;
 
     @FXML
     public void logOut(ActionEvent event) {
@@ -51,7 +54,8 @@ public class HomeSceneController {
     @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
-        name.setText(user);
+        name.setText("Tervetuloa " + user);
         yearlyTotal.setText("Kiinteät vuosipäästösi: " + emissionService.calculateYearlyEmission(user) + "kg co2");
+        startDate.setText("Vuosipäästöjen laskeminen aloitettu: " + loginService.getStartDate());
     }
 }

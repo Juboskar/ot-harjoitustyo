@@ -3,6 +3,8 @@ package com.example.paastopaivakirja;
 import com.example.paastopaivakirja.dao.AccountRepository;
 import com.example.paastopaivakirja.domain.LoginService;
 import com.example.paastopaivakirja.model.Account;
+import java.time.LocalDate;
+import java.time.Month;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -31,14 +33,16 @@ public class LoginServiceTest {
 
     @Test
     public void testCreateAccount() {
-        assertTrue(loginService.createAccount("test"));
+        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
+        assertTrue(loginService.createAccount("test", date));
         assertEquals(accountRepository.findByUsername("test").getUsername(), "test");
-        assertFalse(loginService.createAccount("test"));
+        assertFalse(loginService.createAccount("test", date));
     }
 
     @Test
     public void testLogin() {
-        loginService.createAccount("realUser");
+        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
+        loginService.createAccount("realUser", date);
         assertTrue(loginService.login("realUser"));
         assertFalse(loginService.login("notUser"));
         assertEquals("realUser", loginService.getCurrentUser());

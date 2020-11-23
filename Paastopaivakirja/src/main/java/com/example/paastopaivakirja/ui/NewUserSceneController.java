@@ -1,6 +1,7 @@
 package com.example.paastopaivakirja.ui;
 
 import com.example.paastopaivakirja.domain.LoginService;
+import java.time.LocalDate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,7 +33,8 @@ public class NewUserSceneController {
 
     @FXML
     private void handleCreateAccount(ActionEvent event) {
-        if (loginService.createAccount(usernameField.getText())) {
+       
+        if (loginService.createAccount(usernameField.getText(), LocalDate.now())) {
             infoText.setText("Käyttäjä luotu");
         } else {
             infoText.setText("Kokeile jotain muuta käyttäjätunnusta");
