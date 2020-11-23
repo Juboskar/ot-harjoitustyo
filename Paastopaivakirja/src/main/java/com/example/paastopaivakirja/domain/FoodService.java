@@ -1,8 +1,10 @@
-
 package com.example.paastopaivakirja.domain;
 
 import com.example.paastopaivakirja.dao.AccountRepository;
 import com.example.paastopaivakirja.dao.FoodEmissionRepository;
+import com.example.paastopaivakirja.model.Account;
+import com.example.paastopaivakirja.model.FoodEmission;
+import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +21,78 @@ public class FoodService {
     @Autowired
     FoodEmissionRepository foodEmissionRepository;
 
+    public FoodEmission findEmissionInfo(String username, LocalDate date) {
+        Account user = accountRepository.findByUsername(username);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        if (foodEmission == null) {
+            foodEmission = new FoodEmission();
+            foodEmission.setAccount(user);
+            foodEmission.setDate(date);
+            setDefaultValues(foodEmission);
+        }
+        return foodEmissionRepository.findByAccountAndDate(user, date);
+    }
+
+    public void setDefault(String username, LocalDate date) {
+        Account user = accountRepository.findByUsername(username);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        setDefaultValues(foodEmission);
+    }
+
+    private void setDefaultValues(FoodEmission foodEmission) {
+        foodEmission.setCow(58);
+        foodEmission.setPig(173);
+        foodEmission.setFish(86);
+        foodEmission.setCheese(43);
+        foodEmission.setRice(12);
+        foodEmission.setEgg(1);
+        foodEmission.setRestaurant(10);
+        foodEmission.setMilk(54);
+        foodEmission.setVegetable(20);
+        foodEmissionRepository.save(foodEmission);
+    }
+
+    public void submit(String username, LocalDate date, int cow, int pig, int fish,
+            int cheese, int rice, int egg, int restaurant, int milk, int vegetable) {
+        Account user = accountRepository.findByUsername(username);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        foodEmission.setCow(cow);
+        foodEmission.setPig(pig);
+        foodEmission.setFish(fish);
+        foodEmission.setCheese(cheese);
+        foodEmission.setRice(rice);
+        foodEmission.setEgg(egg);
+        foodEmission.setRestaurant(restaurant);
+        foodEmission.setMilk(milk);
+        foodEmission.setVegetable(vegetable);
+        foodEmissionRepository.save(foodEmission);
+    }
+
+    public int calculateTodaysFoodEmission(String username, LocalDate date) {
+        Account user = accountRepository.findByUsername(username);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        if (foodEmission == null) {
+            return 0;
+        }
+
+        /*
+        Lasketaan jokaisen tuotteen päästöt kunkin ruoka-aineen hiilikertoimella
+        ja lisätään lähtöarvoihin. Kananmunan paino lasketaan kertomalla 60g:llä.
+         */
+        int calculated = 0;
+        calculated += foodEmission.getCow() * 15;
+        calculated += foodEmission.getPig() * 5;
+        calculated += foodEmission.getCheese() * 10;
+        calculated += foodEmission.getEgg() * 60 * 2.5;
+        calculated += foodEmission.getFish() * 1.5;
+        calculated += foodEmission.getMilk() * 1;
+        calculated += foodEmission.getRice() * 5;
+        calculated += foodEmission.getVegetable() * 5;
+
+        /*ravintolapalvelun hiilipäästöt*/
+        calculated += foodEmission.getRestaurant() * 140;
+
+        
+        return calculated;
+    }
 }

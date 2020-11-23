@@ -24,7 +24,7 @@ public class Account extends AbstractPersistable<Long> {
 
     private String username;
     
-    LocalDate startDate;
+    private LocalDate startDate;
 
     @OneToOne(fetch = FetchType.EAGER)
     private YearlyEmission yearlyEmission;
