@@ -83,16 +83,14 @@ public class FoodService {
         calculated += foodEmission.getCow() * 15;
         calculated += foodEmission.getPig() * 5;
         calculated += foodEmission.getCheese() * 10;
-        calculated += foodEmission.getEgg() * 60 * 2.5;
-        calculated += foodEmission.getFish() * 1.5;
+        calculated += foodEmission.getEgg() * 60 * (5/2);
+        calculated += foodEmission.getFish() * (3/2);
         calculated += foodEmission.getMilk() * 1;
         calculated += foodEmission.getRice() * 5;
         calculated += foodEmission.getVegetable() * 5;
 
-        /*ravintolapalvelun hiilipäästöt*/
+        /*ravintolapalvelun hiilipäästöt, 140g co2 *€ */
         calculated += foodEmission.getRestaurant() * 140;
-
-        
         return calculated;
     }
 }
