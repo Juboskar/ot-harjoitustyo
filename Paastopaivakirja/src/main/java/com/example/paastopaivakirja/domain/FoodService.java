@@ -21,6 +21,15 @@ public class FoodService {
     @Autowired
     FoodEmissionRepository foodEmissionRepository;
 
+    public boolean checkIfExists(String username, LocalDate date) {
+        Account user = accountRepository.findByUsername(username);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        if (foodEmission == null) {
+            return false;
+        }
+        return true;
+    }
+
     public FoodEmission findEmissionInfo(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
         FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
@@ -83,8 +92,8 @@ public class FoodService {
         calculated += foodEmission.getCow() * 15;
         calculated += foodEmission.getPig() * 5;
         calculated += foodEmission.getCheese() * 10;
-        calculated += foodEmission.getEgg() * 60 * (5/2);
-        calculated += foodEmission.getFish() * (3/2);
+        calculated += foodEmission.getEgg() * 60 * (5 / 2);
+        calculated += foodEmission.getFish() * (3 / 2);
         calculated += foodEmission.getMilk() * 1;
         calculated += foodEmission.getRice() * 5;
         calculated += foodEmission.getVegetable() * 5;
