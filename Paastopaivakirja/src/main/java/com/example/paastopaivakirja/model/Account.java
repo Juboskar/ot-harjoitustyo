@@ -1,7 +1,10 @@
 package com.example.paastopaivakirja.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,4 +26,6 @@ public class Account extends AbstractPersistable<Long> {
     @OneToOne(fetch = FetchType.EAGER)
     private YearlyEmission yearlyEmission;
 
+    @OneToMany(mappedBy="account", fetch = FetchType.EAGER)
+    private List<FoodEmission> foodEmission = new ArrayList<>();
 }

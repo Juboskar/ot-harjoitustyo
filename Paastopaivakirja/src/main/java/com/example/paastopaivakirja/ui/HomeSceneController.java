@@ -44,9 +44,14 @@ public class HomeSceneController {
     }
 
     @FXML
+    public void calculateToday(ActionEvent event) {
+        main.showFoodEmissionScene();
+    }
+
+    @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
         name.setText(user);
-        yearlyTotal.setText("Kiinteät vuosipäästösi: " + emissionService.calculateYearlyEmission(user) +"kg co2" );
+        yearlyTotal.setText("Kiinteät vuosipäästösi: " + emissionService.calculateYearlyEmission(user) + "kg co2");
     }
 }

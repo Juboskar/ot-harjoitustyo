@@ -1,7 +1,6 @@
 package com.example.paastopaivakirja.domain;
 
 import com.example.paastopaivakirja.dao.AccountRepository;
-import com.example.paastopaivakirja.model.Account;
 import com.example.paastopaivakirja.model.YearlyEmission;
 
 import org.springframework.beans.factory.annotation.Autowired;
