@@ -10,3 +10,4 @@
 | 17.11. | 2  | Testit saatu viimein toimimaan Lombokin kanssa |
 | 20.11. | 8  | Checkstyleä, pakkauksen uudelleennimeämistä ja tietokantojen työstä |
 | 21.11. | 3  | Kiinteiden vuosipäästöjen laskeminen |
+| 23.11. | 9  | Toteutettu ruokapäästöjen laskeminen ja aloitettu liikennepäästölaskuria |
