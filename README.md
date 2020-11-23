@@ -10,7 +10,7 @@
 
 ### Tällä hetkellä:
 
-Projektissa pystyy luomaan käyttäjätunnuksen, jolla pääsee omalle sivulleen. Omalla sivullaan voi tällä hetkellä laskea ainoastaan kiinteät vuosipäästöt ja senhetkisen päivän ruoka-aineiden päästöt. Valinnat tallentuvat ja niitä voi palata myöhemmin muokkaamaan. Ensimmäiset testit toiminnassa! Jacoco:report ja checkstyle käytössä.
+Projektissa pystyy luomaan käyttäjätunnuksen, jolla pääsee omalle sivulleen. Omalla sivullaan voi tällä hetkellä laskea ainoastaan kiinteät vuosipäästöt ja senhetkisen päivän ruoka-aineiden päästöt. Puuttuu enää liikenteen ja kulutuksen päivittäiset päästöt ja päivien yhteenvetotoiminnot. Valinnat tallentuvat ja niitä voi palata myöhemmin muokkaamaan. Ensimmäiset testit toiminnassa! Jacoco:report ja checkstyle käytössä.
 
 ### Käynnistäminen
 
