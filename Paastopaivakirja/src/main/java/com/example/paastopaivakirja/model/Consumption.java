@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.example.paastopaivakirja.model;
 
 import java.time.LocalDate;
@@ -16,22 +21,18 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FoodEmission extends AbstractPersistable<Long> {
+public class Consumption extends AbstractPersistable<Long> {
 
     private LocalDate localDate;
 
-    private int cow;
-    private int pig;
-    private int fish;
-    private int cheese;
-    private int rice;
-    private int egg;
-    private int milk;
-    private int vegetable;
-            
-    private int restaurant;
+    private int clothes;
+    private int shoes;
+    private int electronics;
+    private int books;
+    private int freetime;
+    private int phone;
+    private int miscellaneous;
 
     @ManyToOne
     private Account account;
-
 }

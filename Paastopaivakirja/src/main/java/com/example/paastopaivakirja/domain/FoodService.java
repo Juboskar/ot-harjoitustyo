@@ -23,28 +23,25 @@ public class FoodService {
 
     public boolean checkIfExists(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
-        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
-        if (foodEmission == null) {
-            return false;
-        }
-        return true;
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndLocalDate(user, date);
+        return foodEmission != null;
     }
 
     public FoodEmission findEmissionInfo(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
-        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndLocalDate(user, date);
         if (foodEmission == null) {
             foodEmission = new FoodEmission();
             foodEmission.setAccount(user);
-            foodEmission.setDate(date);
+            foodEmission.setLocalDate(date);
             setDefaultValues(foodEmission);
         }
-        return foodEmissionRepository.findByAccountAndDate(user, date);
+        return foodEmissionRepository.findByAccountAndLocalDate(user, date);
     }
 
     public void setDefault(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
-        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndLocalDate(user, date);
         setDefaultValues(foodEmission);
     }
 
@@ -64,7 +61,7 @@ public class FoodService {
     public void submit(String username, LocalDate date, int cow, int pig, int fish,
             int cheese, int rice, int egg, int restaurant, int milk, int vegetable) {
         Account user = accountRepository.findByUsername(username);
-        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndLocalDate(user, date);
         foodEmission.setCow(cow);
         foodEmission.setPig(pig);
         foodEmission.setFish(fish);
@@ -79,7 +76,7 @@ public class FoodService {
 
     public int calculateTodaysFoodEmission(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
-        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndDate(user, date);
+        FoodEmission foodEmission = foodEmissionRepository.findByAccountAndLocalDate(user, date);
         if (foodEmission == null) {
             return 0;
         }

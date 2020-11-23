@@ -23,12 +23,18 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Account extends AbstractPersistable<Long> {
 
     private String username;
-    
+
     private LocalDate startDate;
 
     @OneToOne(fetch = FetchType.EAGER)
     private YearlyEmission yearlyEmission;
 
-    @OneToMany(mappedBy="account", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "account")
     private List<FoodEmission> foodEmission = new ArrayList<>();
+
+    @OneToMany(mappedBy = "account")
+    private List<TrafficEmission> trafficEmission = new ArrayList<>();
+
+    @OneToMany(mappedBy = "account")
+    private List<Consumption> consumption = new ArrayList<>();
 }

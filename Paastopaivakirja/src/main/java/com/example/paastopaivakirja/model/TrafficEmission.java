@@ -16,22 +16,20 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FoodEmission extends AbstractPersistable<Long> {
+public class TrafficEmission extends AbstractPersistable<Long> {
 
     private LocalDate localDate;
 
-    private int cow;
-    private int pig;
-    private int fish;
-    private int cheese;
-    private int rice;
-    private int egg;
-    private int milk;
-    private int vegetable;
-            
-    private int restaurant;
+    private int car;
+    private int shortDistanceBus;
+    private int tram;
+    private int shortDistanceTrain;
+    private int metro;
+    private int longDistanceBus;
+    private int longDistanceTrain;
+    private int ship;
+    private int airplane;
 
     @ManyToOne
     private Account account;
-
 }

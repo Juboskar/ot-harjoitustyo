@@ -140,7 +140,6 @@ public class FoodEmissionSceneController {
                 (int) restaurantSlider.getValue(),
                 (int) milkSlider.getValue(),
                 (int) vegetableSlider.getValue());
-
         main.showHomeScene();
     }
 

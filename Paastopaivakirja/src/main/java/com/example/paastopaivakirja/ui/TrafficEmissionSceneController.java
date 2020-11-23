@@ -1,5 +1,9 @@
 package com.example.paastopaivakirja.ui;
 
+import com.example.paastopaivakirja.domain.LoginService;
+import com.example.paastopaivakirja.domain.TrafficService;
+import com.example.paastopaivakirja.model.TrafficEmission;
+import java.time.LocalDate;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
@@ -18,7 +22,13 @@ public class TrafficEmissionSceneController {
 
     @Autowired
     MainController main;
-    
+
+    @Autowired
+    LoginService loginService;
+
+    @Autowired
+    TrafficService trafficService;
+
     @FXML
     Slider carSlider;
 
@@ -44,7 +54,7 @@ public class TrafficEmissionSceneController {
     Slider shipSlider;
 
     @FXML
-    Slider airplainSlider;
+    Slider airplaneSlider;
 
     @FXML
     Text carSliderValue;
@@ -120,6 +130,16 @@ public class TrafficEmissionSceneController {
 
     @FXML
     public void submit() {
+        trafficService.submit(loginService.getCurrentUser(), LocalDate.now(),
+                (int) carSlider.getValue(),
+                (int) shortDistanceBusSlider.getValue(),
+                (int) tramSlider.getValue(),
+                (int) shortDistanceTrainSlider.getValue(),
+                (int) metroSlider.getValue(),
+                (int) longDistanceBusSlider.getValue(),
+                (int) longDistanceTrainSlider.getValue(),
+                (int) shipSlider.getValue(),
+                (int) airplaneSlider.getValue());
         main.showHomeScene();
     }
 
@@ -128,4 +148,45 @@ public class TrafficEmissionSceneController {
 
     }
 
+    @FXML
+    public void initialize() {
+        String user = loginService.getCurrentUser();
+        TrafficEmission emission = trafficService.findEmissionInfo(user, LocalDate.now());
+
+        int car = emission.getCar();
+        carSlider.setValue(car);
+        carSliderValue.setText(car + " km");
+
+        int shortDistanceBus = emission.getShortDistanceBus();
+        shortDistanceBusSlider.setValue(shortDistanceBus);
+        shortDistanceBusSliderValue.setText(shortDistanceBus + " km");
+
+        int tram = emission.getTram();
+        tramSlider.setValue(tram);
+        tramSliderValue.setText(tram + " km");
+
+        int shortDistanceTrain = emission.getShortDistanceTrain();
+        shortDistanceTrainSlider.setValue(shortDistanceTrain);
+        shortDistanceTrainSliderValue.setText(shortDistanceTrain + " km");
+
+        int metro = emission.getMetro();
+        metroSlider.setValue(metro);
+        metroSliderValue.setText(metro + " km");
+
+        int longDistanceBus = emission.getLongDistanceBus();
+        longDistanceBusSlider.setValue(longDistanceBus);
+        longDistanceBusSliderValue.setText(longDistanceBus + " km");
+
+        int longDistanceTrain = emission.getLongDistanceTrain();
+        longDistanceTrainSlider.setValue(longDistanceTrain);
+        longDistanceTrainSliderValue.setText(longDistanceTrain + " km");
+
+        int ship = emission.getShip();
+        shipSlider.setValue(ship);
+        shipSliderValue.setText(ship + " km");
+
+        int airplane = emission.getAirplane();
+        airplaneSlider.setValue(airplane);
+        airplaneSliderValue.setText(airplane + " km");
+    }
 }
