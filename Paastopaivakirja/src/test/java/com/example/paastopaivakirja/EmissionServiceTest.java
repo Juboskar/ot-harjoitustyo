@@ -49,6 +49,7 @@ public class EmissionServiceTest {
         account.setYearlyEmission(yearlyEmission);
         accountRepository.save(account);
 
-        
+        assertEquals(emissionService.findEmissionInfo("emissionTest"), yearlyEmission);
+
     }
 }
