@@ -113,8 +113,8 @@ public class ConsumptionSceneController {
 
     @FXML
     public void setDefault() {
-    consumptionService.setDefault(loginService.getCurrentUser(), LocalDate.now());
-    main.showConsumptionScene();
+        consumptionService.setDefault(loginService.getCurrentUser(), LocalDate.now());
+        main.showConsumptionScene();
     }
 
     @FXML

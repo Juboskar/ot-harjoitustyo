@@ -91,11 +91,11 @@ public class HomeSceneController {
         String user = loginService.getCurrentUser();
         LocalDate date = LocalDate.now();
         name.setText("Tervetuloa " + user);
-        int yearlyEmission = emissionService.calculateYearlyEmission(user)/1000;
+        int yearlyEmission = emissionService.calculateYearlyEmission(user) / 1000;
         yearlyTotal.setText("Kiinteät vuosipäästösi: " + yearlyEmission + "kg/co2");
         int calculatedEmission = (foodService.calculateTodaysFoodEmission(user, date)
                 + trafficService.calculateTodaysTrafficEmission(user, date)
-                + consumptionService.calculateTodaysConsumptionEmission(user, date))/1000;
+                + consumptionService.calculateTodaysConsumptionEmission(user, date)) / 1000;
         todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " kg/co2");
         startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + loginService.getStartDate(user));
         foodCheck.setVisible(foodService.checkIfExists(user, date));

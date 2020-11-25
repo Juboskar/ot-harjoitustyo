@@ -53,8 +53,8 @@ public class MainController {
         Parent root = fxWeaver.loadView(TrafficEmissionSceneController.class);
         this.show(root);
     }
-    
-     public void showConsumptionScene() {
+
+    public void showConsumptionScene() {
         Parent root = fxWeaver.loadView(ConsumptionSceneController.class);
         this.show(root);
     }
