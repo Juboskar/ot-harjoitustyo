@@ -39,9 +39,9 @@ public class ConsumptionService {
         }
         return consumptionRepository.findByAccountAndLocalDate(user, date);
     }
-    
-    public void setDefault(String username, LocalDate date){
-     Account user = accountRepository.findByUsername(username);
+
+    public void setDefault(String username, LocalDate date) {
+        Account user = accountRepository.findByUsername(username);
         Consumption consumption = consumptionRepository.findByAccountAndLocalDate(user, date);
         setDefaultValues(consumption);
     }
@@ -72,6 +72,20 @@ public class ConsumptionService {
     }
 
     public int calculateTodaysConsumptionEmission(String username, LocalDate date) {
-        return 0;
+        Account user = accountRepository.findByUsername(username);
+        Consumption consumption = consumptionRepository.findByAccountAndLocalDate(user, date);
+        if (consumption == null) {
+            return 0;
+        }
+        /*muunnetaan senteiksi ja kerrotaan kulutettu rahamäärä kyseisen kategorian hiilikertoimella*/
+        int calculated = 0;
+        calculated += consumption.getBooks() * 320;
+        calculated += consumption.getClothes() * 470;
+        calculated += consumption.getElectronics() * 890;
+        calculated += consumption.getFreetime() * 390;
+        calculated += consumption.getMiscellaneous() * 240;
+        calculated += consumption.getPhone() * 280;
+        calculated += consumption.getShoes() * 290;
+        return calculated;
     }
 }

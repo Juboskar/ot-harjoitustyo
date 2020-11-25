@@ -50,7 +50,6 @@ public class EmissionService {
                 / emission.getPopulation();
         /*muista kuin pävittäin mitattavista ruoka aineista tulevat keskimääräiset vuosipäästöt*/
         total += 400000;
-        /*muunnetaan grammoista kilogrammoihin*/
-        return total / 1000;
+        return total;
     }
 }
