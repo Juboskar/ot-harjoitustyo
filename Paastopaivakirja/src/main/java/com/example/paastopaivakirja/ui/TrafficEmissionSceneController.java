@@ -145,7 +145,8 @@ public class TrafficEmissionSceneController {
 
     @FXML
     public void setDefaultValues() {
-
+        trafficService.setDefault(loginService.getCurrentUser(), LocalDate.now());
+        main.showTrafficEmissionScene();
     }
 
     @FXML

@@ -37,7 +37,7 @@
                 <Slider fx:id="phoneSlider" onValueChange="#setPhone" layoutX="128.0" layoutY="285.0" max="500.0"  prefHeight="14.0" prefWidth="140.0" />
                 <Text fx:id="phoneSliderValue" layoutX="275.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 €" />
                                
-                <Button layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palauta oletusarvot" />
+                <Button onAction="#setDefault" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Nollaa" />
         
                 <Text layoutX="345.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Muu kulutus" wrappingWidth="93.13671875" />
                 <Slider fx:id="miscellaneousSlider" layoutX="423.0" layoutY="85.0" max="500.0" onValueChange="#setMiscellaneous" />

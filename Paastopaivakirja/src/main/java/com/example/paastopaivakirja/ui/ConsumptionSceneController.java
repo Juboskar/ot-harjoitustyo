@@ -5,7 +5,10 @@
  */
 package com.example.paastopaivakirja.ui;
 
+import com.example.paastopaivakirja.domain.ConsumptionService;
 import com.example.paastopaivakirja.domain.LoginService;
+import com.example.paastopaivakirja.model.Consumption;
+import java.time.LocalDate;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
@@ -24,7 +27,10 @@ public class ConsumptionSceneController {
 
     @Autowired
     LoginService loginService;
-    
+
+    @Autowired
+    ConsumptionService consumptionService;
+
     @Autowired
     MainController main;
 
@@ -106,8 +112,57 @@ public class ConsumptionSceneController {
     }
 
     @FXML
+    public void setDefault() {
+    consumptionService.setDefault(loginService.getCurrentUser(), LocalDate.now());
+    main.showConsumptionScene();
+    }
+
+    @FXML
     public void submit() {
+
+        consumptionService.submit(loginService.getCurrentUser(), LocalDate.now(),
+                (int) clothesSlider.getValue(),
+                (int) shoesSlider.getValue(),
+                (int) electronicsSlider.getValue(),
+                (int) booksSlider.getValue(),
+                (int) freetimeSlider.getValue(),
+                (int) phoneSlider.getValue(),
+                (int) miscellaneousSlider.getValue());
         main.showHomeScene();
+    }
+
+    @FXML
+    public void initialize() {
+        String user = loginService.getCurrentUser();
+        Consumption consumption = consumptionService.findEmissionInfo(user, LocalDate.now());
+
+        int clothes = consumption.getClothes();
+        clothesSlider.setValue(clothes);
+        clothesSliderValue.setText(clothes + " €");
+
+        int shoes = consumption.getShoes();
+        shoesSlider.setValue(shoes);
+        shoesSliderValue.setText(shoes + " €");
+
+        int electronics = consumption.getElectronics();
+        electronicsSlider.setValue(electronics);
+        electronicsSliderValue.setText(electronics + " €");
+
+        int books = consumption.getBooks();
+        booksSlider.setValue(books);
+        booksSliderValue.setText(books + " €");
+
+        int freetime = consumption.getFreetime();
+        freetimeSlider.setValue(freetime);
+        freetimeSliderValue.setText(freetime + " €");
+
+        int phone = consumption.getPhone();
+        phoneSlider.setValue(phone);
+        phoneSliderValue.setText(phone + " €");
+
+        int miscellaneous = consumption.getMiscellaneous();
+        miscellaneousSlider.setValue(miscellaneous);
+        miscellaneousSliderValue.setText(miscellaneous + " €");
     }
 
 }

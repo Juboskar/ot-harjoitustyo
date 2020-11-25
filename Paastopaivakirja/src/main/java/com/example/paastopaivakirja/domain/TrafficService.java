@@ -51,15 +51,15 @@ public class TrafficService {
     }
 
     private void setDefaultValues(TrafficEmission trafficEmission) {
-        trafficEmission.setAirplane(1);
-        trafficEmission.setCar(1);
-        trafficEmission.setLongDistanceBus(1);
-        trafficEmission.setLongDistanceTrain(1);
-        trafficEmission.setMetro(1);
-        trafficEmission.setShip(1);
-        trafficEmission.setShortDistanceBus(1);
-        trafficEmission.setShortDistanceTrain(1);
-        trafficEmission.setTram(1);
+        trafficEmission.setAirplane(0);
+        trafficEmission.setCar(0);
+        trafficEmission.setLongDistanceBus(0);
+        trafficEmission.setLongDistanceTrain(0);
+        trafficEmission.setMetro(0);
+        trafficEmission.setShip(0);
+        trafficEmission.setShortDistanceBus(0);
+        trafficEmission.setShortDistanceTrain(0);
+        trafficEmission.setTram(0);
         trafficEmissionRepository.save(trafficEmission);
 
     }

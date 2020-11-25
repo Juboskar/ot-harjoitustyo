@@ -1,5 +1,6 @@
 package com.example.paastopaivakirja.ui;
 
+import com.example.paastopaivakirja.domain.ConsumptionService;
 import com.example.paastopaivakirja.domain.EmissionService;
 import com.example.paastopaivakirja.domain.FoodService;
 import com.example.paastopaivakirja.domain.LoginService;
@@ -32,6 +33,9 @@ public class HomeSceneController {
 
     @Autowired
     TrafficService trafficService;
+
+    @Autowired
+    ConsumptionService consumptionService;
 
     @Autowired
     MainController main;
@@ -76,7 +80,7 @@ public class HomeSceneController {
     public void calculateTodaysTraffic(ActionEvent event) {
         main.showTrafficEmissionScene();
     }
-    
+
     @FXML
     public void calculateTodaysConsumption(ActionEvent event) {
         main.showConsumptionScene();
@@ -85,14 +89,16 @@ public class HomeSceneController {
     @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
+        LocalDate date = LocalDate.now();
         name.setText("Tervetuloa " + user);
         yearlyTotal.setText("Kiinteät vuosipäästösi: " + emissionService.calculateYearlyEmission(user) + "kg co2");
-        int calculatedEmission = foodService.calculateTodaysFoodEmission(user, LocalDate.now())
-                + trafficService.calculateTodaysTrafficEmission(user, LocalDate.now());
+        int calculatedEmission = foodService.calculateTodaysFoodEmission(user, date)
+                + trafficService.calculateTodaysTrafficEmission(user, date)
+                + consumptionService.calculateTodaysConsumptionEmission(user, date);
         todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " g/co2");
         startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + loginService.getStartDate(user));
-        foodCheck.setVisible(foodService.checkIfExists(user, LocalDate.now()));
-        trafficCheck.setVisible(trafficService.checkIfExists(user, LocalDate.now()));
-        consumptionCheck.setVisible(false);
+        foodCheck.setVisible(foodService.checkIfExists(user, date));
+        trafficCheck.setVisible(trafficService.checkIfExists(user, date));
+        consumptionCheck.setVisible(consumptionService.checkIfExists(user, date));
     }
 }
