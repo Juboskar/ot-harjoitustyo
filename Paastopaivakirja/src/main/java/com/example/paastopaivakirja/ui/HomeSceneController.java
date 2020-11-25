@@ -34,7 +34,7 @@ public class HomeSceneController {
     TrafficService trafficService;
 
     @Autowired
-    private MainController main;
+    MainController main;
 
     @FXML
     Text name;
@@ -75,6 +75,11 @@ public class HomeSceneController {
     @FXML
     public void calculateTodaysTraffic(ActionEvent event) {
         main.showTrafficEmissionScene();
+    }
+    
+    @FXML
+    public void calculateTodaysConsumption(ActionEvent event) {
+        main.showConsumptionScene();
     }
 
     @FXML
