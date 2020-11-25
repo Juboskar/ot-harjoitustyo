@@ -13,5 +13,5 @@ public class PaastopaivakirjaApplicationTest {
 
     @Test
     public void contextLoads() {
-    }
+    } 
 }
