@@ -12,7 +12,7 @@ Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiil
 
 [Työaikakirjanpito](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/tyoaikakirjanpito.md)
 
-[Arkkitehtuuri](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/arkkitehtuuri.md) (päivittyy)
+[Arkkitehtuuri](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/arkkitehtuuri.md)
 
 ### Käynnistäminen
 
