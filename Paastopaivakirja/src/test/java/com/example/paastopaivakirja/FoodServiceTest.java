@@ -7,6 +7,7 @@ import com.example.paastopaivakirja.model.Account;
 import com.example.paastopaivakirja.model.FoodEmission;
 import java.time.LocalDate;
 import java.time.Month;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -61,4 +62,39 @@ public class FoodServiceTest {
         assertFalse(foodService.checkIfExists("fakeuser", date));
     }
 
+    @Test
+    public void testDefaulValues() {
+        Account account = new Account();
+        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
+        account.setUsername("default");
+        accountRepository.save(account);
+        FoodEmission foodEmission = new FoodEmission();
+        foodEmission.setLocalDate(date);
+        foodEmission.setAccount(account);
+        foodEmission.setCheese(1);
+        foodEmission.setCow(2);
+        foodEmission.setEgg(3);
+        foodEmission.setFish(4);
+        foodEmission.setMilk(5);
+        foodEmission.setPig(6);
+        foodEmission.setRestaurant(7);
+        foodEmission.setRice(8);
+        foodEmission.setVegetable(9);
+        foodEmissionRepository.save(foodEmission);
+
+        foodService.setDefault("default", date);
+
+        FoodEmission foodTest = foodEmissionRepository.findByAccountAndLocalDate(
+                account, date);
+        assertEquals(58, foodTest.getCow());
+        assertEquals(173, foodTest.getPig());
+        assertEquals( 86, foodTest.getFish());
+        assertEquals(43,foodTest.getCheese());
+        assertEquals(12, foodTest.getRice());
+        assertEquals(1, foodTest.getEgg());
+        assertEquals(10, foodTest.getRestaurant());
+        assertEquals(54, foodTest.getMilk());
+        assertEquals(20, foodTest.getVegetable());
+
+    }
 }
