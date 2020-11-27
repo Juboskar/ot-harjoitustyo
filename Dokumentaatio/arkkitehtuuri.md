@@ -1,6 +1,6 @@
 # Arkkitehtuuri
 
-Sovelluslogiikka koostuu kolmesta entiteetistä: käyttäjästä ja tämän pävittäisistä päästöistä, sekä vuoden kiinteistä päästöistä. Päästöistä talletetaan tiedot niiden eri lähteistä erillisinä kohtina.
+Sovelluslogiikka koostuu viidestä entiteetistä: käyttäjästä ja tämän pävittäisistä päästöistä (liikenne, ruoka ja kulutus), sekä vuoden kiinteistä päästöistä. Päästöistä talletetaan tiedot niiden eri lähteistä erillisinä kohtina.
 
 Datamallin alustava luokkakaavio: 
 
