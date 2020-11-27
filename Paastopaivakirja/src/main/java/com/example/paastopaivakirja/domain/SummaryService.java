@@ -17,8 +17,6 @@ import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,15 +55,15 @@ public class SummaryService {
         List<TrafficEmission> traffics = trafficEmissionRepository.findByAccount(user);
         List<Consumption> consumptions = consumptionRepository.findByAccount(user);
         int total = 0;
-        for (FoodEmission food : foods) {
-            total += foodService.calculateTodaysFoodEmission(username, food.getLocalDate());
-        }
-        for (Consumption consumption : consumptions) {
-            total += consumptionService.calculateTodaysConsumptionEmission(username, consumption.getLocalDate());
-        }
-        for (TrafficEmission traffic : traffics) {
-            total += trafficService.calculateTodaysTrafficEmission(username, traffic.getLocalDate());
-        }
+        total = foods.stream().map((food)
+                -> foodService.calculateTodaysFoodEmission(username, food.getLocalDate()))
+                .reduce(total, Integer::sum);
+        total = consumptions.stream().map((consumption)
+                -> consumptionService.calculateTodaysConsumptionEmission(username, consumption.getLocalDate()))
+                .reduce(total, Integer::sum);
+        total = traffics.stream().map((traffic)
+                -> trafficService.calculateTodaysTrafficEmission(username, traffic.getLocalDate()))
+                .reduce(total, Integer::sum);
         return total;
     }
 

@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
 public interface ConsumptionRepository extends JpaRepository<Consumption, Long> {
 
     public Consumption findByAccountAndLocalDate(Account account, LocalDate date);
-    public List<Consumption> findByAccount(Account user);
+    public List<Consumption> findByAccount(Account account);
 
 }

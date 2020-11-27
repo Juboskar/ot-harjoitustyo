@@ -20,6 +20,6 @@ import org.springframework.stereotype.Repository;
 public interface TrafficEmissionRepository extends JpaRepository<TrafficEmission, Long> {
 
     public TrafficEmission findByAccountAndLocalDate(Account account, LocalDate date);
-    public List<TrafficEmission> findByAccount(Account user);
+    public List<TrafficEmission> findByAccount(Account account);
 
 }
