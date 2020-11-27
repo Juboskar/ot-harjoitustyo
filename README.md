@@ -2,7 +2,7 @@
 
 ## Päästöpäiväkirja
 
-Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiilipäästöistään ja tarkkailla päästöjen kertymistä. Sovellus on suunniteltu erityisesti se mielessä, että sitä käytettäisiin vuoden ajan, mutta mikään ei estä käyttämästä lyhyemmän ajan tai vain laskemaan yksittäisiä päiviä silloin tällöin.
+Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiilipäästöistään ja tarkkailla päästöjen kertymistä. Sovellus on suunniteltu erityisesti se mielessä, että sitä käytettäisiin vuoden ajan, mutta mikään ei estä käyttämästä lyhyemmän ajan tai vain laskemaan yksittäisiä päiviä silloin tällöin. Tällöin kannattaa huomioida että osa päästöistä lasketaan kiinteinä vuosipäästöinä.
 
 ### Linkit
 
