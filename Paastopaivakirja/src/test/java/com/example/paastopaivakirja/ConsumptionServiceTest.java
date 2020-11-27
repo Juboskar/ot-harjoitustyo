@@ -55,7 +55,7 @@ public class ConsumptionServiceTest {
         consumptionRepository.save(consumption);
 
         assertTrue(consumptionService.checkIfExists("consumption", date));
-              
+
         LocalDate fakeDate = LocalDate.of(2020, Month.MARCH, 2);
         assertFalse(consumptionService.checkIfExists("consumption", fakeDate));
         assertFalse(consumptionService.checkIfExists("fakeuser", date));
@@ -67,7 +67,7 @@ public class ConsumptionServiceTest {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
         account.setUsername("consumptiondefault");
         accountRepository.save(account);
-           Consumption consumption = new Consumption();
+        Consumption consumption = new Consumption();
         consumption.setLocalDate(date);
         consumption.setAccount(account);
         consumption.setBooks(1);
@@ -86,11 +86,11 @@ public class ConsumptionServiceTest {
         assertEquals(0, consumptionTest.getBooks());
         assertEquals(0, consumptionTest.getClothes());
         assertEquals(0, consumptionTest.getElectronics());
-        assertEquals(0,consumptionTest.getFreetime());
+        assertEquals(0, consumptionTest.getFreetime());
         assertEquals(0, consumptionTest.getMiscellaneous());
         assertEquals(0, consumptionTest.getPhone());
         assertEquals(0, consumptionTest.getShoes());
 
     }
-    
+
 }

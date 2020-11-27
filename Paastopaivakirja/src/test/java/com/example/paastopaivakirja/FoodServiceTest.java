@@ -66,7 +66,7 @@ public class FoodServiceTest {
     public void testDefaulValues() {
         Account account = new Account();
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
-        account.setUsername("default");
+        account.setUsername("fooddefault");
         accountRepository.save(account);
         FoodEmission foodEmission = new FoodEmission();
         foodEmission.setLocalDate(date);
@@ -82,14 +82,14 @@ public class FoodServiceTest {
         foodEmission.setVegetable(9);
         foodEmissionRepository.save(foodEmission);
 
-        foodService.setDefault("default", date);
+        foodService.setDefault("fooddefault", date);
 
         FoodEmission foodTest = foodEmissionRepository.findByAccountAndLocalDate(
                 account, date);
         assertEquals(58, foodTest.getCow());
         assertEquals(173, foodTest.getPig());
-        assertEquals( 86, foodTest.getFish());
-        assertEquals(43,foodTest.getCheese());
+        assertEquals(86, foodTest.getFish());
+        assertEquals(43, foodTest.getCheese());
         assertEquals(12, foodTest.getRice());
         assertEquals(1, foodTest.getEgg());
         assertEquals(10, foodTest.getRestaurant());
