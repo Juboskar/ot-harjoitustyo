@@ -1,11 +1,19 @@
 package com.example.paastopaivakirja.domain;
 
 import com.example.paastopaivakirja.dao.AccountRepository;
+import com.example.paastopaivakirja.dao.ConsumptionRepository;
+import com.example.paastopaivakirja.dao.FoodEmissionRepository;
+import com.example.paastopaivakirja.dao.TrafficEmissionRepository;
 import com.example.paastopaivakirja.model.YearlyEmission;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.paastopaivakirja.dao.YearlyEmissionRepository;
+import com.example.paastopaivakirja.model.Account;
+import java.time.LocalDate;
+import static java.time.temporal.ChronoUnit.DAYS;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *

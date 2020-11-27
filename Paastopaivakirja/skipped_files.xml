@@ -9,4 +9,5 @@
     <suppress files="com.example.paastopaivakirja.ui.TrafficEmissionSceneController.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="com.example.paastopaivakirja.ui.FoodEmissionSceneController.java" checks="[a-zA-Z0-9]*"/>
     <suppress files="com.example.paastopaivakirja.ui.ConsumptionSceneController.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="com.example.paastopaivakirja.ui.HomeSceneController.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

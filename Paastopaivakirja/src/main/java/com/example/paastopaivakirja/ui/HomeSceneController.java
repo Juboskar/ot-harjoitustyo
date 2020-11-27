@@ -4,8 +4,11 @@ import com.example.paastopaivakirja.domain.ConsumptionService;
 import com.example.paastopaivakirja.domain.EmissionService;
 import com.example.paastopaivakirja.domain.FoodService;
 import com.example.paastopaivakirja.domain.LoginService;
+import com.example.paastopaivakirja.domain.SummaryService;
 import com.example.paastopaivakirja.domain.TrafficService;
 import java.time.LocalDate;
+import static java.time.temporal.ChronoUnit.DAYS;
+import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +24,9 @@ import org.springframework.stereotype.Component;
 @Component
 @FxmlView("/fxml/HomeScene.fxml")
 public class HomeSceneController {
+
+    @Autowired
+    SummaryService summaryService;
 
     @Autowired
     LoginService loginService;
@@ -62,6 +68,12 @@ public class HomeSceneController {
     Text consumptionCheck;
 
     @FXML
+    Text summary;
+
+    @FXML
+    Text total;
+
+    @FXML
     public void logOut(ActionEvent event) {
         main.showLoginScene();
     }
@@ -87,17 +99,31 @@ public class HomeSceneController {
     }
 
     @FXML
+    public void fillDays(ActionEvent event) {
+        /*TODO: avaa näkymän jossa lista täyttämättömistä päivistä, 
+        kun päivän valitsee, näkyy täyttämättömät kohdat 
+        (ruoka/liikenne/kulutus)*/
+    }
+
+    @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
         LocalDate date = LocalDate.now();
         name.setText("Tervetuloa " + user);
-        int yearlyEmission = emissionService.calculateYearlyEmission(user) / 1000;
-        yearlyTotal.setText("Kiinteät vuosipäästösi: " + yearlyEmission + "kg/co2");
+        int sum = summaryService.calculateSummary(user);
+        summary.setText("Kertyneet vuosipäästösi: " + sum / 1000 + " kg/co2");
+        int yearlyEmission = emissionService.calculateYearlyEmission(user);
+        int totalSum = sum + yearlyEmission;
+        total.setText("Yhtensä: " + totalSum / 1000 + " kg/co2");
+        yearlyTotal.setText("Kiinteät vuosipäästösi: " + yearlyEmission / 1000 + "kg/co2");
         int calculatedEmission = (foodService.calculateTodaysFoodEmission(user, date)
                 + trafficService.calculateTodaysTrafficEmission(user, date)
                 + consumptionService.calculateTodaysConsumptionEmission(user, date)) / 1000;
         todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " kg/co2");
-        startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + loginService.getStartDate(user));
+        LocalDate localStartDate = loginService.getStartDate(user);
+        Long daysBetween = DAYS.between(localStartDate, date);
+        startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + localStartDate + "\nPäviä: "
+                + daysBetween);
         foodCheck.setVisible(foodService.checkIfExists(user, date));
         trafficCheck.setVisible(trafficService.checkIfExists(user, date));
         consumptionCheck.setVisible(consumptionService.checkIfExists(user, date));
