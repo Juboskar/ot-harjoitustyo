@@ -2,7 +2,7 @@
 
 ## Luokkakaavio
 
-Sovellus koostuu viidestä entiteetistä: käyttäjästä ja tämän pävittäisistä päästöistä (liikenne, ruoka ja kulutus), sekä vuoden kiinteistä päästöistä. Päästöistä talletetaan tiedot niiden eri lähteistä erillisinä kohtina.
+Sovellus koostuu viidestä entiteetistä: käyttäjästä ja tämän pävittäisistä päästöistä (liikenne, ruoka ja kulutus), sekä vuoden kiinteistä päästöistä. Päästöistä talletetaan tiedot niiden eri lähteistä erillisinä kohtina. Tiedot tallennetaan Jpa -repositorioihin ja niitä käsitellään service luokilla.
 
 Datamallin alustava luokkakaavio: 
 
