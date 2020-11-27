@@ -10,11 +10,11 @@ Alkuvaiheessa sovelluksella on ainoastaan yksi käyttäjärooli eli normaali kä
 
 ## Perusversion tarjoama toiminnallisuus
 
-Sovellus tarjoaa mahdollisuuden luoda paikallisen käyttäjätunnuksen, jolla sovellukseen voi kirjautua käyttämään sitä.
+Sovellus tarjoaa mahdollisuuden luoda paikallisen käyttäjätunnuksen, jolla sovellusta voi käyttää. (Tehty)
 
-Sovellus eroaa monesta muusta verkossakin saatavilla olevista laskureista sillä, että sovelluksessa on hiilijalanjäljen laskemisen sijaan pääpainona pitää tarkempaa päiväkirjaa ja saada päiväkohtaista statistiikkaa, tilastoa, faktaa ja ennustetta omista päästöistään.
+Sovellus eroaa monesta muusta verkossakin saatavilla olevista laskureista sillä, että sovelluksessa on hiilijalanjäljen laskemisen sijaan pääpainona pitää tarkempaa päiväkirjaa ja saada päiväkohtaista statistiikkaa, tilastoa, faktaa ja ennustetta omista päästöistään. (Päivittäinen laskeminen toteutettu)
 
-Alkuvaiheessa keskitytään asumisen, liikkumisen ja ruoan päästöihin.
+Alkuvaiheessa keskitytään asumisen, liikkumisen ja ruoan päästöihin (tehty).
 
 Laskentaperusteena käytetään muun muassa ilmastodieetti -palvelun [laskentaperusteita](https://ilmastodieetti.ymparisto.fi/ilmastodieetti/documentation/Laskentaperusteet.pdf). (Huom, päästöt lasketaan erittäin karkeasti arvioina, eikä saadut tulokset ole kovin tarkkoja. Pikemminkin sovellus sopii suhteellisesti oman kulutuksensa vertailuun kuin tarkkaan arviointii. Pääpaino sovelluksessa on tietysti toiminnallisuus eikä tarkka tieto)
 
