@@ -4,4 +4,4 @@ Sovelluslogiikka koostuu kolmesta entiteetistä: käyttäjästä ja tämän päv
 
 Datamallin alustava luokkakaavio: 
 
-<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/luokkakaavio.png" width="750">
+<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/luokkakaavio.png" width="900">
