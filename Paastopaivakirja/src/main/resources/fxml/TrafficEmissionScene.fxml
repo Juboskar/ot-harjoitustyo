@@ -40,8 +40,6 @@
                 <Text layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (kaukoliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="longDistanceTrainSlider" onValueChange="#setLongDistanceTrain"  layoutX="128.0" layoutY="325.0" max="1500.0" prefHeight="14.0" prefWidth="140.0" />
                 <Text fx:id="longDistanceTrainSliderValue" layoutX="277.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
-                
-                <Button layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palauta oletusarvot" />
         
                 <Text layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laiva" wrappingWidth="93.13671875" />
                 <Slider fx:id="shipSlider" onValueChange="#setShip" layoutX="423.0" layoutY="85.0" max="2500.0" />
