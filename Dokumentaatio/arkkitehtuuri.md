@@ -7,3 +7,9 @@ Sovellus koostuu viidestä entiteetistä: käyttäjästä ja tämän pävittäis
 Datamallin alustava luokkakaavio: 
 
 <img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/luokkakaavio.png" width="900">
+
+## Kerrosarkkitehtuurin pakkausrakenne
+
+Sovelluksen kerrosten pakkausrakenne on seuraava: 
+
+<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/pakkauskaavio.png" width="400">
