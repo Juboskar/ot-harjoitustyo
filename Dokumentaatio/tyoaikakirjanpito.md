@@ -11,4 +11,6 @@
 | 20.11. | 8  | Checkstyleä, pakkauksen uudelleennimeämistä ja tietokantojen työstä |
 | 21.11. | 3  | Kiinteiden vuosipäästöjen laskeminen |
 | 23.11. | 9  | Toteutettu ruokapäästöjen laskeminen ja aloitettu liikennepäästölaskuria |
-| Yhteensä | 45  |  |
+| 26.11 | 5 | naputeltu testejä |
+| 27.11. | 5  | Toteutettu yhteenvetotoimintoja |
+| Yhteensä | 53  |  
