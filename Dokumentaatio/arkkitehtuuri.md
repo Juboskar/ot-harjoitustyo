@@ -13,3 +13,8 @@ Datamallin alustava luokkakaavio:
 Sovelluksen kerrosten pakkausrakenne on seuraava: 
 
 <img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/pakkauskaavio.png" width="400">
+
+## Tärkeimpien tiedontallennustoimintojen sekvenssikaaviot
+
+<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/kayttajan_luominen_ja_kirjautuminen.png" width="900">
+<img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/paivittaisten_paastojen_laskeminen.png" width="900">
