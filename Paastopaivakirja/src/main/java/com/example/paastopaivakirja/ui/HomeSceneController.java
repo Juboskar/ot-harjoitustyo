@@ -126,7 +126,7 @@ public class HomeSceneController {
         todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " kg/co2");
         LocalDate localStartDate = loginService.getStartDate(user);
         Long daysBetween = DAYS.between(localStartDate, date);
-        startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + localStartDate + "\nPäviä: "
+        startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + localStartDate + "\nPäiviä: "
                 + daysBetween);
         foodCheck.setVisible(foodService.checkIfExists(user, date));
         trafficCheck.setVisible(trafficService.checkIfExists(user, date));
