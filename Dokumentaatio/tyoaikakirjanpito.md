@@ -13,4 +13,5 @@
 | 23.11. | 9  | Toteutettu ruokapäästöjen laskeminen ja aloitettu liikennepäästölaskuria |
 | 26.11 | 5 | naputeltu testejä |
 | 27.11. | 5  | Toteutettu yhteenvetotoimintoja |
-| Yhteensä | 53  |  
+| 2.11. | 3  | Testejä tehty |
+| Yhteensä | 56  |  
