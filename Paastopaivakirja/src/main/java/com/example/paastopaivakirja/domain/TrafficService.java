@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Calculates and handles users traffic emission info
+ *
  * @author Oskari
  */
 @Service
@@ -33,6 +34,7 @@ public class TrafficService {
 
     /**
      * Checks if user has already given dates traffic emission info
+     *
      * @param username username of user
      * @param date date of traffic emission info
      * @return true if traffic emission info already exists, false if not

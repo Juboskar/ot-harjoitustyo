@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Calculates and handles users yearly stationary emission info
+ *
  * @author Oskari
  */
 @Service

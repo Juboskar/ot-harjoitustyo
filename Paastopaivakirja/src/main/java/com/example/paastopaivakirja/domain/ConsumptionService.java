@@ -4,7 +4,6 @@ import com.example.paastopaivakirja.dao.AccountRepository;
 import com.example.paastopaivakirja.dao.ConsumptionRepository;
 import com.example.paastopaivakirja.model.Account;
 import com.example.paastopaivakirja.model.Consumption;
-import com.example.paastopaivakirja.model.FoodEmission;
 import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
 import java.util.ArrayList;

@@ -53,13 +53,13 @@ public class SummaryService {
         List<Consumption> consumptions = consumptionRepository.findByAccount(user);
         int total = 0;
         total = foods.stream().map((food)
-                -> foodService.calculateTodaysFoodEmission(username, food.getLocalDate()))
+            -> foodService.calculateTodaysFoodEmission(username, food.getLocalDate()))
                 .reduce(total, Integer::sum);
         total = consumptions.stream().map((consumption)
-                -> consumptionService.calculateTodaysConsumptionEmission(username, consumption.getLocalDate()))
+            -> consumptionService.calculateTodaysConsumptionEmission(username, consumption.getLocalDate()))
                 .reduce(total, Integer::sum);
         total = traffics.stream().map((traffic)
-                -> trafficService.calculateTodaysTrafficEmission(username, traffic.getLocalDate()))
+            -> trafficService.calculateTodaysTrafficEmission(username, traffic.getLocalDate()))
                 .reduce(total, Integer::sum);
         return total;
     }
