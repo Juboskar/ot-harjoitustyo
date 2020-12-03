@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.paastopaivakirja.dao.YearlyEmissionRepository;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
- *
+ * Applications logging in and account create handling service
  * @author Oskari
  */
 @Service
@@ -22,8 +21,13 @@ public class LoginService {
     @Autowired
     YearlyEmissionRepository yearlyEmissionRepository;
 
-    String currentUser;
+    private String currentUser;
 
+    /**
+     * @param username username given by user
+     *
+     * @return true if succesfull, false if not
+     */
     public boolean login(String username) {
         if (accountRepository.findByUsername(username) != null) {
             currentUser = username;
@@ -32,6 +36,12 @@ public class LoginService {
         return false;
     }
 
+    /**
+     * @param username username of user
+     * @param date date when users account was created
+     *
+     * @return true if succesfull, false if not
+     */
     public boolean createAccount(String username, LocalDate date) {
         if (accountRepository.findByUsername(username) == null) {
             Account account = new Account();
@@ -51,10 +61,17 @@ public class LoginService {
         return false;
     }
 
+    /**
+     * @return username of latest user logged in
+     */
     public String getCurrentUser() {
         return currentUser;
     }
 
+    /**
+     * @param username username
+     * @return account creation date of user which username was given
+     */
     public LocalDate getStartDate(String username) {
         return accountRepository.findByUsername(username).getStartDate();
     }

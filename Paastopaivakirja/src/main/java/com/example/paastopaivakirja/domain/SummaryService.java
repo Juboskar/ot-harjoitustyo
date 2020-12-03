@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
+ * Calculates summarys of different emission types
  *
  * @author Oskari
  */
@@ -49,6 +50,10 @@ public class SummaryService {
     ConsumptionService consumptionService;
 
     /*TODO: tästä tehokkaampi tietokantojen osalta*/
+    /**
+     * @param username username of user
+     * @return total emissions of user without static yearly emission
+     */
     public int calculateSummary(String username) {
         Account user = accountRepository.findByUsername(username);
         List<FoodEmission> foods = foodEmissionRepository.findByAccount(user);

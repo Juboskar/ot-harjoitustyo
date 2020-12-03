@@ -186,7 +186,7 @@ public class FoodEmissionSceneController {
                         }
                         if (filledDays.contains(item)) {
                             this.setStyle("-fx-background-color: #99FF99");
-                        }
+                        }                        
                     }
                 };
             }
