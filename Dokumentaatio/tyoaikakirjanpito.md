@@ -14,4 +14,5 @@
 | 26.11 | 5 | naputeltu testejä |
 | 27.11. | 5  | Toteutettu yhteenvetotoimintoja |
 | 2.11. | 3  | Testejä tehty |
-| Yhteensä | 56  |  
+| 2.11. | 5  | Toteutettu menneiden päivien päästöjen laskeminen |
+| Yhteensä | 61  |  
