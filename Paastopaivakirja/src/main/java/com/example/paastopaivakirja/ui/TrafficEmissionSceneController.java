@@ -96,7 +96,7 @@ public class TrafficEmissionSceneController {
     @FXML
     public void selectDate() {
         trafficService.setSelectedDate(date.getValue());
-        main.showFoodEmissionScene();
+        main.showTrafficEmissionScene();
     }
 
     @FXML
