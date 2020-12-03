@@ -15,5 +15,5 @@ HUOM: Kun avaat jonkin päivän jonkin päästökategorian, sen oletusarvot tall
 (tähän voi sovelluksen jatkokehityksessä tulla vielä muutoksia). Olisi ihanteellista täyttää päästöt siis päästöt sitä mukaa, kun niitä tulee.
 
 (Vinkki lähdekoodin lukijalle: Jos haluat testata käyttäjää, jonka aloittamispäivä on jonain aiempana ajankohtana, voit etsiä ennen koodin kääntämistä luokan 
-NewUserSceneController.java ja vaihtaa kohdan LocalDate.now() joksikin muuksi päiväksi. 
-Esimerkiksi '''LocalDate.now().minusDays(100L)''' koodinpätkällä sovellus siirtää uusien käyttäjien aloituspäivää sadalla aiemmas.)
+NewUserSceneController.java ja vaihtaa kohdan ```LocalDate.now()``` joksikin muuksi päiväksi. 
+Esimerkiksi ```LocalDate.now().minusDays(100L)``` koodinpätkällä sovellus siirtää uusien käyttäjien aloituspäivää sadalla aiemmas.)
