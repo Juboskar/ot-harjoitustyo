@@ -14,6 +14,8 @@ Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiil
 
 [Arkkitehtuuri](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/kayttoohje.md)
+
 ### Käynnistäminen
 
 Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run```
