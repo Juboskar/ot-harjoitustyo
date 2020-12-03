@@ -74,9 +74,6 @@ public class HomeSceneController {
     @FXML
     Text total;
     
-    @FXML/**/
-    Button button;
-    
     @FXML
     public void logOut(ActionEvent event) {
         main.showLoginScene();
@@ -102,12 +99,6 @@ public class HomeSceneController {
         main.showConsumptionScene();
     }
     
-    @FXML
-    public void fillDays(ActionEvent event) {
-        /*TODO: avaa näkymän jossa lista täyttämättömistä päivistä, 
-        kun päivän valitsee, näkyy täyttämättömät kohdat 
-        (ruoka/liikenne/kulutus)*/
-    }
     
     @FXML
     public void initialize() {
@@ -132,6 +123,8 @@ public class HomeSceneController {
         trafficCheck.setVisible(trafficService.checkIfExists(user, date));
         consumptionCheck.setVisible(consumptionService.checkIfExists(user, date));
         
-        button.setVisible(false);
+        trafficService.setSelectedDate(date);
+        consumptionService.setSelectedDate(date);
+        foodService.setSelectedDate(date);
     }
 }

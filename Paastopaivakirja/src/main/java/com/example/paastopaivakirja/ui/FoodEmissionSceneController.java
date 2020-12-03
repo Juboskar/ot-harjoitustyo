@@ -4,10 +4,14 @@ import com.example.paastopaivakirja.domain.FoodService;
 import com.example.paastopaivakirja.domain.LoginService;
 import com.example.paastopaivakirja.model.FoodEmission;
 import java.time.LocalDate;
+import java.util.List;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.DateCell;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -84,6 +88,18 @@ public class FoodEmissionSceneController {
     Text vegetableSliderValue;
 
     @FXML
+    DatePicker date;
+
+    @FXML
+    Text dateText;
+
+    @FXML
+    public void selectDate() {
+        foodService.setSelectedDate(date.getValue());
+        main.showFoodEmissionScene();
+    }
+
+    @FXML
     public void setCow(ObservableValue<Number> ovn, Number before, Number after) {
         cowSliderValue.setText(after.intValue() + " g");
     }
@@ -130,7 +146,7 @@ public class FoodEmissionSceneController {
 
     @FXML
     public void submit() {
-        foodService.submit(loginService.getCurrentUser(), LocalDate.now(),
+        foodService.submit(loginService.getCurrentUser(), foodService.getSelectedDate(),
                 (int) cowSlider.getValue(),
                 (int) pigSlider.getValue(),
                 (int) fishSlider.getValue(),
@@ -145,14 +161,44 @@ public class FoodEmissionSceneController {
 
     @FXML
     public void setDefaultValues() {
-        foodService.setDefault(loginService.getCurrentUser(), LocalDate.now());
+        foodService.setDefault(loginService.getCurrentUser(), foodService.getSelectedDate());
         main.showFoodEmissionScene();
     }
 
     @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
-        FoodEmission emission = foodService.findEmissionInfo(user, LocalDate.now());
+        List<LocalDate> filledDays = foodService.findFilledDays(user, LocalDate.now());
+
+        final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
+            @Override
+            public DateCell call(final DatePicker datePicker) {
+                return new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item.isBefore(loginService.getStartDate(user))) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        } else if (item.isAfter(LocalDate.now())) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        }
+                        if (filledDays.contains(item)) {
+                            this.setStyle("-fx-background-color: #99FF99");
+                        }
+                    }
+                };
+            }
+        };
+        date.setDayCellFactory(dayCellFactory);
+        date.setEditable(false);
+        
+        LocalDate selectedDate = foodService.getSelectedDate();
+        date.setValue(selectedDate);
+        dateText.setText("Täydennä " + selectedDate + " käyttämäsi ruoka-aineet");
+
+        FoodEmission emission = foodService.findEmissionInfo(user, selectedDate);
 
         int cow = emission.getCow();
         cowSlider.setValue(cow);

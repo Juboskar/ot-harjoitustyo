@@ -19,10 +19,9 @@
                 <Text fx:id="startDate" layoutX="418.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tervetuloa" wrappingWidth="149.0" />
                 <Button onAction="#calculateYearlyEmissions" layoutX="25.0" layoutY="148.0" mnemonicParsing="false" text="Laske kiinteät vuosipäästöt" />
            
-                <Button layoutX="25.0" layoutY="190.0" mnemonicParsing="false" onAction="#calculateTodaysFood" text="Lisää tämän päivän ruokapäästöt" />
-                <Button layoutX="24.0" layoutY="230.0" mnemonicParsing="false" onAction="#calculateTodaysTraffic" text="Lisää tämän päivän liikennepäästöt" />
-                <Button layoutX="26.0" layoutY="270.0" mnemonicParsing="false" onAction="#calculateTodaysConsumption" text="Lisää tämän päivän kulutuspäästöt" />
-                <Button fx:id="button" layoutX="25.0" layoutY="310.0" mnemonicParsing="false" onAction="#fillDays" text="Täydennä menneiden päivien päästöjä" />
+                <Button layoutX="25.0" layoutY="190.0" mnemonicParsing="false" onAction="#calculateTodaysFood" text="Lisää ruokapäästöt" />
+                <Button layoutX="24.0" layoutY="230.0" mnemonicParsing="false" onAction="#calculateTodaysTraffic" text="Lisää liikennepäästöt" />
+                <Button layoutX="26.0" layoutY="270.0" mnemonicParsing="false" onAction="#calculateTodaysConsumption" text="Lisää kulutuspäästöt" />
             
                 <Text fx:id="foodCheck" layoutX="260.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="✔" />
                 <Text fx:id="trafficCheck" layoutX="260.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="✔" />

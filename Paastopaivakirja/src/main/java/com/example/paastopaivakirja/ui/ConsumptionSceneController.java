@@ -9,10 +9,14 @@ import com.example.paastopaivakirja.domain.ConsumptionService;
 import com.example.paastopaivakirja.domain.LoginService;
 import com.example.paastopaivakirja.model.Consumption;
 import java.time.LocalDate;
+import java.util.List;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.DateCell;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -77,6 +81,18 @@ public class ConsumptionSceneController {
     Text miscellaneousSliderValue;
 
     @FXML
+    DatePicker date;
+
+    @FXML
+    Text dateText;
+
+    @FXML
+    public void selectDate() {
+        consumptionService.setSelectedDate(date.getValue());
+        main.showConsumptionScene();
+    }
+
+    @FXML
     public void setClothes(ObservableValue<Number> ovn, Number before, Number after) {
         clothesSliderValue.setText(after.intValue() + " €");
     }
@@ -113,14 +129,14 @@ public class ConsumptionSceneController {
 
     @FXML
     public void setDefault() {
-        consumptionService.setDefault(loginService.getCurrentUser(), LocalDate.now());
+        consumptionService.setDefault(loginService.getCurrentUser(), consumptionService.getSelectedDate());
         main.showConsumptionScene();
     }
 
     @FXML
     public void submit() {
 
-        consumptionService.submit(loginService.getCurrentUser(), LocalDate.now(),
+        consumptionService.submit(loginService.getCurrentUser(), consumptionService.getSelectedDate(),
                 (int) clothesSlider.getValue(),
                 (int) shoesSlider.getValue(),
                 (int) electronicsSlider.getValue(),
@@ -134,7 +150,39 @@ public class ConsumptionSceneController {
     @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
-        Consumption consumption = consumptionService.findEmissionInfo(user, LocalDate.now());
+
+        List<LocalDate> filledDays = consumptionService.findFilledDays(user, consumptionService.getSelectedDate());
+
+        final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
+            @Override
+            public DateCell call(final DatePicker datePicker) {
+                return new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item.isBefore(loginService.getStartDate(user))) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        } else if (item.isAfter(LocalDate.now())) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        }
+                        if (filledDays.contains(item)) {
+                            this.setStyle("-fx-background-color: #99FF99");
+                        }
+                    }
+                };
+            }
+        };
+        date.setDayCellFactory(dayCellFactory);
+        
+        date.setEditable(false);
+
+        LocalDate selectedDate = consumptionService.getSelectedDate();
+        date.setValue(selectedDate);
+        dateText.setText("Täydennä " + selectedDate + " kuluttamasi rahamäärät");
+
+        Consumption consumption = consumptionService.findEmissionInfo(user, selectedDate);
 
         int clothes = consumption.getClothes();
         clothesSlider.setValue(clothes);

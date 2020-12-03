@@ -8,9 +8,6 @@ import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +23,8 @@ public class FoodService {
 
     @Autowired
     FoodEmissionRepository foodEmissionRepository;
+
+    private LocalDate selectedDate;
 
     public boolean checkIfExists(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
@@ -99,5 +98,27 @@ public class FoodService {
         calculated += foodEmission.getVegetable() * 5;
         calculated += foodEmission.getRestaurant() * 140;
         return calculated;
+    }
+
+    public List<LocalDate> findFilledDays(String username, LocalDate dateNow) {
+        Account user = accountRepository.findByUsername(username);
+        LocalDate startDate = user.getStartDate();
+        List<LocalDate> filled = new ArrayList<>();
+        long daysBetween = DAYS.between(startDate, dateNow);
+        for (int i = 0; i < daysBetween; i++) {
+            LocalDate date = startDate.plusDays(i);
+            if (foodEmissionRepository.findByAccountAndLocalDate(user, date) != null) {
+                filled.add(date);
+            }
+        }
+        return filled;
+    }
+
+    public void setSelectedDate(LocalDate date) {
+        this.selectedDate = date;
+    }
+
+    public LocalDate getSelectedDate() {
+        return selectedDate;
     }
 }

@@ -67,20 +67,4 @@ public class SummaryService {
         return total;
     }
 
-    /*tämä metodi ei ole vielä käytössä*/
-    public List<LocalDate> findUnfilledDays(String username, LocalDate dateNow) {
-        Account user = accountRepository.findByUsername(username);
-        LocalDate startDate = user.getStartDate();
-        List<LocalDate> unfilled = new ArrayList<>();
-        long daysBetween = DAYS.between(startDate, dateNow);
-        for (int i = 0; i < daysBetween; i++) {
-            LocalDate date = startDate.plusDays(i);
-            if (foodEmissionRepository.findByAccountAndLocalDate(user, date) == null
-                    || trafficEmissionRepository.findByAccountAndLocalDate(user, date) == null
-                    || consumptionRepository.findByAccountAndLocalDate(user, date) == null) {
-                unfilled.add(date);
-            }
-        }
-        return unfilled;
-    }
 }
