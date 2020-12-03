@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- *
+ * Calculates and handles users traffic emission info
  * @author Oskari
  */
 @Service
@@ -31,6 +31,12 @@ public class TrafficService {
 
     private LocalDate selectedDate;
 
+    /**
+     * Checks if user has already given dates traffic emission info
+     * @param username username of user
+     * @param date date of traffic emission info
+     * @return true if traffic emission info already exists, false if not
+     */
     public boolean checkIfExists(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
         TrafficEmission trafficEmission = trafficEmissionRepository.findByAccountAndLocalDate(user, date);
@@ -106,7 +112,7 @@ public class TrafficService {
         calculated += trafficEmission.getTram() * 1;
         return calculated;
     }
-    
+
     public List<LocalDate> findFilledDays(String username, LocalDate dateNow) {
         Account user = accountRepository.findByUsername(username);
         LocalDate startDate = user.getStartDate();
@@ -120,7 +126,7 @@ public class TrafficService {
         }
         return filled;
     }
-    
+
     public void setSelectedDate(LocalDate date) {
         this.selectedDate = date;
     }

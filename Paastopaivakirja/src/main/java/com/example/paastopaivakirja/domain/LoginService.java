@@ -9,7 +9,7 @@ import com.example.paastopaivakirja.dao.YearlyEmissionRepository;
 import java.time.LocalDate;
 
 /**
- * Applications logging in and account create handling service
+ * Applications logging in and create account handling service
  * @author Oskari
  */
 @Service

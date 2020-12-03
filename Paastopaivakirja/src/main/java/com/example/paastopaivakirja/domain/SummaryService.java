@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.paastopaivakirja.domain;
 
 import com.example.paastopaivakirja.dao.AccountRepository;
@@ -13,9 +8,6 @@ import com.example.paastopaivakirja.model.Account;
 import com.example.paastopaivakirja.model.Consumption;
 import com.example.paastopaivakirja.model.FoodEmission;
 import com.example.paastopaivakirja.model.TrafficEmission;
-import java.time.LocalDate;
-import static java.time.temporal.ChronoUnit.DAYS;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,5 +63,4 @@ public class SummaryService {
                 .reduce(total, Integer::sum);
         return total;
     }
-
 }

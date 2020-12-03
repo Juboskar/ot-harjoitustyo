@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
+ * Calculates and handles users consumption emission info
  *
  * @author Oskari
  */
@@ -93,7 +94,7 @@ public class ConsumptionService {
         calculated += consumption.getShoes() * 290;
         return calculated;
     }
-    
+
     public List<LocalDate> findFilledDays(String username, LocalDate dateNow) {
         Account user = accountRepository.findByUsername(username);
         LocalDate startDate = user.getStartDate();
@@ -107,7 +108,7 @@ public class ConsumptionService {
         }
         return filled;
     }
-    
+
     public void setSelectedDate(LocalDate date) {
         this.selectedDate = date;
     }
