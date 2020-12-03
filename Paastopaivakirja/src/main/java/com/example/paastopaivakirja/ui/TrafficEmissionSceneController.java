@@ -168,8 +168,8 @@ public class TrafficEmissionSceneController {
     @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
-        
-           List<LocalDate> filledDays = trafficService.findFilledDays(user, LocalDate.now());
+
+        List<LocalDate> filledDays = trafficService.findFilledDays(user, LocalDate.now());
 
         final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
             @Override
@@ -194,12 +194,12 @@ public class TrafficEmissionSceneController {
         };
         date.setDayCellFactory(dayCellFactory);
         date.setEditable(false);
-        
+
         LocalDate selectedDate = trafficService.getSelectedDate();
         date.setValue(selectedDate);
         dateText.setText("Täydennä " + selectedDate + " matkustamasi matkat");
-        
-        TrafficEmission emission = trafficService.findEmissionInfo(user, LocalDate.now());
+
+        TrafficEmission emission = trafficService.findEmissionInfo(user, selectedDate);
 
         int car = emission.getCar();
         carSlider.setValue(car);
