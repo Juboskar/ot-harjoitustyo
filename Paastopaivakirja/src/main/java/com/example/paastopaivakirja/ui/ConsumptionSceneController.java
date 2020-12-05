@@ -129,13 +129,11 @@ public class ConsumptionSceneController {
 
     @FXML
     public void setDefault() {
-        consumptionService.setDefault(loginService.getCurrentUser(), consumptionService.getSelectedDate());
-        main.showConsumptionScene();
+        main.showHomeScene();
     }
 
     @FXML
     public void submit() {
-
         consumptionService.submit(loginService.getCurrentUser(), consumptionService.getSelectedDate(),
                 (int) clothesSlider.getValue(),
                 (int) shoesSlider.getValue(),
@@ -175,7 +173,7 @@ public class ConsumptionSceneController {
             }
         };
         date.setDayCellFactory(dayCellFactory);
-        
+
         date.setEditable(false);
 
         LocalDate selectedDate = consumptionService.getSelectedDate();

@@ -1,7 +1,8 @@
 package com.example.paastopaivakirja.domain;
 
 /**
- *
+ * House type
+ * 
  * @author Oskari
  */
 public enum House {
@@ -9,6 +10,11 @@ public enum House {
     ROWHOUSE,
     HOUSE;
 
+    /**
+     * return emissions depending on house type
+     * 
+     * @return emission co2 g eq
+     */
     public int getEmission() {
         switch (this) {
             case HOUSE:

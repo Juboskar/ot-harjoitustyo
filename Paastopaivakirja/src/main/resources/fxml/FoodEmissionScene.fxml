@@ -57,7 +57,7 @@
                  <Text layoutX="328.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" 
                        text="Huom: näiden kategorioiden ulkopuolelle jäävät ruoka-aineet lasketaan suoraan kiinteisiin vuosipäästöihin" wrappingWidth="300.0" />
                 
-                <Button onAction="#setDefaultValues" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palauta oletusarvot" />
+                <Button onAction="#setDefaultValues" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palaa tallentamatta"  />
             </children>
         </AnchorPane>
     </children>

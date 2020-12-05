@@ -67,42 +67,6 @@ public class TrafficServiceTest {
     }
 
     @Test
-    public void testDefaulValues() {
-        Account account = new Account();
-        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
-        account.setUsername("trafficdefault");
-        accountRepository.save(account);
-        TrafficEmission trafficEmission = new TrafficEmission();
-        trafficEmission.setLocalDate(date);
-        trafficEmission.setAccount(account);
-        trafficEmission.setAirplane(1);
-        trafficEmission.setCar(2);
-        trafficEmission.setLongDistanceBus(3);
-        trafficEmission.setLongDistanceTrain(4);
-        trafficEmission.setMetro(5);
-        trafficEmission.setShip(6);
-        trafficEmission.setShortDistanceBus(7);
-        trafficEmission.setShortDistanceTrain(8);
-        trafficEmission.setTram(9);
-        trafficEmissionRepository.save(trafficEmission);
-
-        trafficService.setDefault("trafficdefault", date);
-
-        TrafficEmission trafficTest = trafficEmissionRepository.findByAccountAndLocalDate(
-                account, date);
-        assertEquals(0, trafficTest.getAirplane());
-        assertEquals(0, trafficTest.getCar());
-        assertEquals(0, trafficTest.getLongDistanceBus());
-        assertEquals(0, trafficTest.getLongDistanceTrain());
-        assertEquals(0, trafficTest.getMetro());
-        assertEquals(0, trafficTest.getShip());
-        assertEquals(0, trafficTest.getShortDistanceBus());
-        assertEquals(0, trafficTest.getShortDistanceTrain());
-        assertEquals(0, trafficTest.getTram());
-
-    }
-
-    @Test
     public void testFindEmissionInfo() {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 3);
         TrafficEmission trafficEmission = trafficService.findEmissionInfo("infouser", date);

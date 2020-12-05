@@ -62,38 +62,6 @@ public class ConsumptionServiceTest {
     }
 
     @Test
-    public void testDefaulValues() {
-        Account account = new Account();
-        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
-        account.setUsername("consumptiondefault");
-        accountRepository.save(account);
-        Consumption consumption = new Consumption();
-        consumption.setLocalDate(date);
-        consumption.setAccount(account);
-        consumption.setBooks(1);
-        consumption.setClothes(2);
-        consumption.setElectronics(3);
-        consumption.setFreetime(4);
-        consumption.setMiscellaneous(5);
-        consumption.setPhone(6);
-        consumption.setShoes(7);
-        consumptionRepository.save(consumption);
-
-        consumptionService.setDefault("consumptiondefault", date);
-
-        Consumption consumptionTest = consumptionRepository.findByAccountAndLocalDate(
-                account, date);
-        assertEquals(0, consumptionTest.getBooks());
-        assertEquals(0, consumptionTest.getClothes());
-        assertEquals(0, consumptionTest.getElectronics());
-        assertEquals(0, consumptionTest.getFreetime());
-        assertEquals(0, consumptionTest.getMiscellaneous());
-        assertEquals(0, consumptionTest.getPhone());
-        assertEquals(0, consumptionTest.getShoes());
-
-    }
-
-    @Test
     public void testFindEmissionInfo() {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 3);
         Consumption consumption = consumptionService.findEmissionInfo("infouser", date);

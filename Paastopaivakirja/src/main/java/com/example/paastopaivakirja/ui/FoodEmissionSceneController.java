@@ -161,8 +161,7 @@ public class FoodEmissionSceneController {
 
     @FXML
     public void setDefaultValues() {
-        foodService.setDefault(loginService.getCurrentUser(), foodService.getSelectedDate());
-        main.showFoodEmissionScene();
+        main.showHomeScene();
     }
 
     @FXML

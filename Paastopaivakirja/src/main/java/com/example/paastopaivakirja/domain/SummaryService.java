@@ -41,7 +41,6 @@ public class SummaryService {
     @Autowired
     ConsumptionService consumptionService;
 
-    /*TODO: tästä tehokkaampi tietokantojen osalta*/
     /**
      * @param username username of user
      * @return total emissions of user without static yearly emission

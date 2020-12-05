@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.example.paastopaivakirja.domain;
 
 import com.example.paastopaivakirja.dao.AccountRepository;
@@ -45,6 +40,14 @@ public class TrafficService {
         return trafficEmission != null;
     }
 
+    /**
+     * Checks if user has already given dates traffic emission info, if not
+     * returns TrafficEmission with default values
+     *
+     * @param username username of user
+     * @param date date of traffic emission info
+     * @return TrafficEmission object by user and date
+     */
     public TrafficEmission findEmissionInfo(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
         TrafficEmission trafficEmission = trafficEmissionRepository.findByAccountAndLocalDate(user, date);
@@ -52,18 +55,12 @@ public class TrafficService {
             trafficEmission = new TrafficEmission();
             trafficEmission.setAccount(user);
             trafficEmission.setLocalDate(date);
-            setDefaultValues(trafficEmission);
+            return setDefaultValues(trafficEmission);
         }
         return trafficEmissionRepository.findByAccountAndLocalDate(user, date);
     }
 
-    public void setDefault(String username, LocalDate date) {
-        Account user = accountRepository.findByUsername(username);
-        TrafficEmission trafficEmission = trafficEmissionRepository.findByAccountAndLocalDate(user, date);
-        setDefaultValues(trafficEmission);
-    }
-
-    private void setDefaultValues(TrafficEmission trafficEmission) {
+    private TrafficEmission setDefaultValues(TrafficEmission trafficEmission) {
         trafficEmission.setAirplane(0);
         trafficEmission.setCar(0);
         trafficEmission.setLongDistanceBus(0);
@@ -73,15 +70,39 @@ public class TrafficService {
         trafficEmission.setShortDistanceBus(0);
         trafficEmission.setShortDistanceTrain(0);
         trafficEmission.setTram(0);
-        trafficEmissionRepository.save(trafficEmission);
+        return trafficEmission;
 
     }
 
+    /**
+     * Overwrites and saves matching TrafficEmission with given values
+     *
+     * @param username username of user
+     * @param date date of traffic emission info
+     * @param car kilometres driven by car of selected date
+     * @param shortDistanceBus kilometres driven by short distance bus of
+     * selected date
+     * @param tram kilometres driven by tram of selected date
+     * @param shortDistanceTrain kilometres driven by short distance train of
+     * selected date
+     * @param metro kilometres driven by metro of selected date
+     * @param longDistanceBus kilometres driven by long distance bus of selected
+     * date
+     * @param longDistanceTrain kilometres driven by long distance train of
+     * selected date
+     * @param ship kilometres travelled by ship of selected date
+     * @param airplane kilometres travelled by airplane of selected date
+     */
     public void submit(String username, LocalDate date, int car, int shortDistanceBus,
             int tram, int shortDistanceTrain, int metro, int longDistanceBus,
             int longDistanceTrain, int ship, int airplane) {
         Account user = accountRepository.findByUsername(username);
         TrafficEmission trafficEmission = trafficEmissionRepository.findByAccountAndLocalDate(user, date);
+        if (trafficEmission == null) {
+            trafficEmission = new TrafficEmission();
+            trafficEmission.setAccount(user);
+            trafficEmission.setLocalDate(date);
+        }
         trafficEmission.setAirplane(airplane);
         trafficEmission.setCar(car);
         trafficEmission.setLongDistanceBus(longDistanceBus);
@@ -94,14 +115,20 @@ public class TrafficService {
         trafficEmissionRepository.save(trafficEmission);
     }
 
+    /**
+     * Calculates selected users emission caused by traffic of selected day;
+     * Kilometres * co2/km per transport
+     *
+     * @param username username of user
+     * @param date date of traffic emission info
+     * @return calculated int value (g co2 ekv)
+     */
     public int calculateTodaysTrafficEmission(String username, LocalDate date) {
         Account user = accountRepository.findByUsername(username);
         TrafficEmission trafficEmission = trafficEmissionRepository.findByAccountAndLocalDate(user, date);
         if (trafficEmission == null) {
             return 0;
         }
-        /*kerrotaan kunkin liikennemuodon kilometrimäärät keskimääräisillä päästmäärillä.
-        Lentokoneen ja laivan päästöt WWF:n laskurista.*/
         int calculated = 0;
         calculated += trafficEmission.getAirplane() * 289;
         calculated += trafficEmission.getCar() * 200;
@@ -115,6 +142,13 @@ public class TrafficService {
         return calculated;
     }
 
+    /**
+     * Finds a list of days of users saved emission caused by traffic
+     *
+     * @param username username of user
+     * @param dateNow current date
+     * @return list of already saved TrafficEmission dates
+     */
     public List<LocalDate> findFilledDays(String username, LocalDate dateNow) {
         Account user = accountRepository.findByUsername(username);
         LocalDate startDate = user.getStartDate();
@@ -129,10 +163,18 @@ public class TrafficService {
         return filled;
     }
 
+    /**
+     * Selects a date
+     *
+     * @param date date that should be selected
+     */
     public void setSelectedDate(LocalDate date) {
         this.selectedDate = date;
     }
 
+    /**
+     * @return current selected day
+     */
     public LocalDate getSelectedDate() {
         return selectedDate;
     }

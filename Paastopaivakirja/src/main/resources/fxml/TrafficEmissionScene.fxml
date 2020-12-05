@@ -53,7 +53,7 @@
                 <Slider fx:id="airplaneSlider" onValueChange="#setAirplane" layoutX="423.0" layoutY="125.0" max="2500.0"  />
                 <Text fx:id="airplaneSliderValue" layoutX="585.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
           
-                <Button onAction="#setDefaultValues" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Nollaa" />      
+                <Button onAction="#setDefaultValues" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palaa tallentamatta"  />      
             </children>
         </AnchorPane>
     </children>
