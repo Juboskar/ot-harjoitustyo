@@ -10,9 +10,6 @@ Näitä olisi siis ihanteellisesti tarkoitus sovelluksen käyttötarkoituksen mu
 Päivämäärävalitsimessa on merkitty vihreällä päivät, jolloin päästöt on jo laskettu ja valkoisella laskemattomat. Tulevat päivät ja aloittamisajankohtaa aiemmat päivät näkyvät
 punaisella, eikä niitä voi muokata.
 
-HUOM: Kun avaat jonkin päivän jonkin päästökategorian, sen oletusarvot tallentuvat automaattisesti ja päästökategoria merkitään täytetyksi 
-(tähän voi sovelluksen jatkokehityksessä tulla vielä muutoksia). Olisi siis helppouden kannalta hyvä täyttää päästöt päästöt sitä mukaa, kun niitä tulee.
-
 (Vinkki lähdekoodin lukijalle: Jos haluat testata käyttäjää, jonka aloittamispäivä on jonain aiempana ajankohtana, voit etsiä ennen koodin kääntämistä luokan 
 NewUserSceneController.java ja vaihtaa kohdan ```LocalDate.now()``` joksikin muuksi päiväksi. 
 Esimerkiksi ```LocalDate.now().minusDays(100L)``` koodinpätkällä sovellus siirtää uusien käyttäjien aloituspäivää sadalla aiemmas.)
