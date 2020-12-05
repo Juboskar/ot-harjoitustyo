@@ -15,7 +15,7 @@
                 <Button onAction="#selectDate" layoutX="351.0" layoutY="30.0" mnemonicParsing="false" text="Hae" />
                                 
                 <Button layoutX="470.0" layoutY="340.0" mnemonicParsing="false" onAction="#submit" text="Tallenna ja palaa" />
-                <Text fx:id="dateText" layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Täydennä matkustamasi matkat" wrappingWidth="134.0" />
+                <Text fx:id="dateText" layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Täydennä matkustamasi matkat" wrappingWidth="160.0" />
                 
                 <Text layoutX="25.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto" wrappingWidth="93.13671875" />
                 <Slider fx:id="carSlider" onValueChange="#setCar" layoutX="128.0" layoutY="85.0" max="500.0"  />
