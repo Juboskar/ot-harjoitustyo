@@ -106,15 +106,15 @@ public class HomeSceneController {
         LocalDate date = LocalDate.now();
         name.setText("Tervetuloa " + user);
         int sum = summaryService.calculateSummary(user);
-        summary.setText("Kertyneet vuosipäästösi: " + sum / 1000 + " kg/co2");
+        summary.setText("Kertyneet vuosipäästösi: " + sum / 1000 + " kg co2 ekv");
         int yearlyEmission = emissionService.calculateYearlyEmission(user);
         int totalSum = sum + yearlyEmission;
-        total.setText("Yhtensä: " + totalSum / 1000 + " kg/co2");
-        yearlyTotal.setText("Kiinteät vuosipäästösi: " + yearlyEmission / 1000 + "kg/co2");
+        total.setText("Yhtensä: " + totalSum / 1000 + " kg co2 ekv");
+        yearlyTotal.setText("Kiinteät vuosipäästösi: " + yearlyEmission / 1000 + " kg co2 ekv");
         int calculatedEmission = (foodService.calculateTodaysFoodEmission(user, date)
                 + trafficService.calculateTodaysTrafficEmission(user, date)
                 + consumptionService.calculateTodaysConsumptionEmission(user, date)) / 1000;
-        todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " kg/co2");
+        todaysTotal.setText("Tämänpäiväiset päästösi: " + calculatedEmission + " kg co2 ekv");
         LocalDate localStartDate = loginService.getStartDate(user);
         Long daysBetween = DAYS.between(localStartDate, date);
         startDate.setText("Päästöpäiväkirjan pitäminen aloitettu: " + localStartDate + "\nPäiviä: "
