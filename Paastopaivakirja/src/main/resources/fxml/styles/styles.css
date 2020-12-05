@@ -31,11 +31,11 @@
 }
 
 .check-box .box {
-    -fx-background-color: #9acc69, white, white;
+    -fx-background-color: #9acc69, white, white;ls
 }
 
 .check-box:selected .mark {
-    -fx-background-color: #9acc69;
+    -fx-background-color: black;
 }
 
 .check-box:selected .box {
