@@ -1,1 +1,84 @@
-/*todo*/
+.pane{
+    -fx-background-color:#CCFF99;
+}
+
+.button {
+    -fx-font: 16px "Serif";
+    -fx-padding: 10;
+    -fx-background-color: #9acc69;
+    -fx-border-color:black;
+}
+
+.button:hover {
+    -fx-background-color:#cacc69;
+}
+
+.slider {
+    -fx-color:#9acc69;
+}
+
+.slider .track {
+    -fx-background-color: #9dcf93, white, white;
+}
+
+.slider > .thumb:hover,
+.slider:focused > .thumb {
+    -fx-background-color: #cacc69;
+}
+
+.radio-button .radio{
+    -fx-background-color : #9acc69 ;
+}
+
+.check-box .box {
+    -fx-background-color: #9acc69, white, white;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #9acc69;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #9acc69, white;
+}
+
+.date-picker {
+    -fx-font: 12px "Serif";
+    -fx-padding: 5;
+    -fx-background-color: #9acc69;
+}
+
+.date-picker > .arrow-button {
+    -fx-background-color: #9acc69;
+    -fx-border-color:black;
+}
+
+.date-picker-popup {
+    -fx-font: 12px "Serif";
+    -fx-padding: 10;
+    -fx-background-color: #cacc69;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-font: 12px "Serif";
+    -fx-padding: 10;
+    -fx-background-color: #CCFF99;
+}
+
+.text-field {
+    -fx-background-color: #9dcf93, white, white;
+}
+
+.basicText { 
+    -fx-font: 14px "Serif";
+}
+
+.basicTextBig { 
+    -fx-font: 16px "Serif";
+}
+
+.separator {
+    -fx-color: #9dcf93;
+}
+
+

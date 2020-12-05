@@ -9,49 +9,48 @@
 
 <VBox  fx:controller="com.example.paastopaivakirja.ui.TrafficEmissionSceneController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <AnchorPane  styleClass="pane"  stylesheets="@styles/styles.css" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <DatePicker fx:id="date" layoutX="217.0" layoutY="30.0" prefHeight="25.0" prefWidth="134.0" />
-                <Button onAction="#selectDate" layoutX="351.0" layoutY="30.0" mnemonicParsing="false" text="Hae" />
-                                
+                <DatePicker onAction="#selectDate" fx:id="date" layoutX="217.0" layoutY="30.0" prefHeight="25.0" prefWidth="134.0" />
+           
                 <Button layoutX="470.0" layoutY="340.0" mnemonicParsing="false" onAction="#submit" text="Tallenna ja palaa" />
-                <Text fx:id="dateText" layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Täydennä matkustamasi matkat" wrappingWidth="160.0" />
+                <Text styleClass="basicText" fx:id="dateText" layoutX="30.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Täydennä matkustamasi matkat" wrappingWidth="160.0" />
                 
-                <Text layoutX="25.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto" wrappingWidth="93.13671875" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto" wrappingWidth="93.13671875" />
                 <Slider fx:id="carSlider" onValueChange="#setCar" layoutX="128.0" layoutY="85.0" max="500.0"  />
-                <Text fx:id="carSliderValue" layoutX="277.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="carSliderValue" layoutX="277.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text layoutX="25.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linja-auto (lähiliikenne)" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linja-auto (lähiliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="shortDistanceBusSlider" onValueChange="#setShortDistanceBus" layoutX="125.0" layoutY="125.0" max="500.0"  prefHeight="14.0" prefWidth="140.0" />
-                <Text fx:id="shortDistanceBusSliderValue" layoutX="277.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="shortDistanceBusSliderValue" layoutX="277.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text layoutX="25.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raitiovaunu" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raitiovaunu" wrappingWidth="100.4609375" />
                 <Slider fx:id="tramSlider" onValueChange="#setTram" layoutX="128.0" layoutY="165.0" max="500.0"  prefHeight="14.0" prefWidth="140.0" />
-                <Text fx:id="tramSliderValue" layoutX="277.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="tramSliderValue" layoutX="277.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text layoutX="25.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (lähiliikenne)" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (lähiliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="shortDistanceTrainSlider" onValueChange="#setShortDistanceTrain" layoutX="128.0" layoutY="205.0" max="500.0"  prefHeight="14.0" prefWidth="140.0" />
-                <Text fx:id="shortDistanceTrainSliderValue" layoutX="276.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="shortDistanceTrainSliderValue" layoutX="276.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text layoutX="25.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metro" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metro" wrappingWidth="100.4609375" />
                 <Slider fx:id="metroSlider" onValueChange="#setMetro" layoutX="128.0" layoutY="245.0" max="500.0"  prefHeight="14.0" prefWidth="140.0" />
-                <Text fx:id="metroSliderValue" layoutX="276.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="metroSliderValue" layoutX="276.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text layoutX="25.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linja-auto (kaukoliikenne)" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linja-auto (kaukoliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="longDistanceBusSlider" onValueChange="#setLongDistanceBus" layoutX="128.0" layoutY="285.0" max="1500.0"  prefHeight="14.0" prefWidth="140.0" />
-                <Text fx:id="longDistanceBusSliderValue" layoutX="285.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="longDistanceBusSliderValue" layoutX="285.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                
-                <Text layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (kaukoliikenne)" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (kaukoliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="longDistanceTrainSlider" onValueChange="#setLongDistanceTrain"  layoutX="128.0" layoutY="325.0" max="1500.0" prefHeight="14.0" prefWidth="140.0" />
-                <Text fx:id="longDistanceTrainSliderValue" layoutX="277.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="longDistanceTrainSliderValue" layoutX="277.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
         
-                <Text layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laiva" wrappingWidth="93.13671875" />
+                <Text styleClass="basicText" layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laiva" wrappingWidth="93.13671875" />
                 <Slider fx:id="shipSlider" onValueChange="#setShip" layoutX="423.0" layoutY="85.0" max="2500.0" />
-                <Text fx:id="shipSliderValue" layoutX="585.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="shipSliderValue" layoutX="585.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text layoutX="320.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lentokone" wrappingWidth="93.13671875" />
+                <Text styleClass="basicText" layoutX="320.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lentokone" wrappingWidth="93.13671875" />
                 <Slider fx:id="airplaneSlider" onValueChange="#setAirplane" layoutX="423.0" layoutY="125.0" max="2500.0"  />
-                <Text fx:id="airplaneSliderValue" layoutX="585.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
+                <Text styleClass="basicText" fx:id="airplaneSliderValue" layoutX="585.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
           
                 <Button onAction="#setDefaultValues" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palaa tallentamatta"  />      
             </children>
