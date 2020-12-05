@@ -133,6 +133,18 @@ public class ConsumptionSceneController {
     }
 
     @FXML
+    public void save() {
+        consumptionService.submit(loginService.getCurrentUser(), consumptionService.getSelectedDate(),
+                (int) clothesSlider.getValue(),
+                (int) shoesSlider.getValue(),
+                (int) electronicsSlider.getValue(),
+                (int) booksSlider.getValue(),
+                (int) freetimeSlider.getValue(),
+                (int) phoneSlider.getValue(),
+                (int) miscellaneousSlider.getValue());
+    }
+
+    @FXML
     public void submit() {
         consumptionService.submit(loginService.getCurrentUser(), consumptionService.getSelectedDate(),
                 (int) clothesSlider.getValue(),

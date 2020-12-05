@@ -143,6 +143,20 @@ public class TrafficEmissionSceneController {
     public void setAirplane(ObservableValue<Number> ovn, Number before, Number after) {
         airplaneSliderValue.setText(after.intValue() + " km");
     }
+    
+    @FXML
+    public void save() {
+        trafficService.submit(loginService.getCurrentUser(), trafficService.getSelectedDate(),
+                (int) carSlider.getValue(),
+                (int) shortDistanceBusSlider.getValue(),
+                (int) tramSlider.getValue(),
+                (int) shortDistanceTrainSlider.getValue(),
+                (int) metroSlider.getValue(),
+                (int) longDistanceBusSlider.getValue(),
+                (int) longDistanceTrainSlider.getValue(),
+                (int) shipSlider.getValue(),
+                (int) airplaneSlider.getValue());
+    }
 
     @FXML
     public void submit() {

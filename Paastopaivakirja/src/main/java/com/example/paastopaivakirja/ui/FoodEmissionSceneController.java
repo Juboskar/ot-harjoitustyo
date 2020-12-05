@@ -144,6 +144,21 @@ public class FoodEmissionSceneController {
         vegetableSliderValue.setText(after.intValue() + " g");
     }
 
+    
+    @FXML
+    public void save() {
+         foodService.submit(loginService.getCurrentUser(), foodService.getSelectedDate(),
+                (int) cowSlider.getValue(),
+                (int) pigSlider.getValue(),
+                (int) fishSlider.getValue(),
+                (int) cheeseSlider.getValue(),
+                (int) riceSlider.getValue(),
+                (int) eggSlider.getValue(),
+                (int) restaurantSlider.getValue(),
+                (int) milkSlider.getValue(),
+                (int) vegetableSlider.getValue());
+    }
+    
     @FXML
     public void submit() {
         foodService.submit(loginService.getCurrentUser(), foodService.getSelectedDate(),
