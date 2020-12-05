@@ -94,6 +94,9 @@ public class TrafficEmissionSceneController {
     Text dateText;
 
     @FXML
+    Text infoText;
+
+    @FXML
     public void selectDate() {
         trafficService.setSelectedDate(date.getValue());
         main.showTrafficEmissionScene();
@@ -102,48 +105,57 @@ public class TrafficEmissionSceneController {
     @FXML
     public void setCar(ObservableValue<Number> ovn, Number before, Number after) {
         carSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setShortDistanceBus(ObservableValue<Number> ovn, Number before, Number after) {
         shortDistanceBusSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setTram(ObservableValue<Number> ovn, Number before, Number after) {
         tramSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setShortDistanceTrain(ObservableValue<Number> ovn, Number before, Number after) {
         shortDistanceTrainSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setMetro(ObservableValue<Number> ovn, Number before, Number after) {
         metroSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setLongDistanceBus(ObservableValue<Number> ovn, Number before, Number after) {
         longDistanceBusSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setLongDistanceTrain(ObservableValue<Number> ovn, Number before, Number after) {
         longDistanceTrainSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setShip(ObservableValue<Number> ovn, Number before, Number after) {
         shipSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
 
     @FXML
     public void setAirplane(ObservableValue<Number> ovn, Number before, Number after) {
         airplaneSliderValue.setText(after.intValue() + " km");
+        infoText.setText("");
     }
-    
+
     @FXML
     public void save() {
         trafficService.submit(loginService.getCurrentUser(), trafficService.getSelectedDate(),
@@ -156,6 +168,7 @@ public class TrafficEmissionSceneController {
                 (int) longDistanceTrainSlider.getValue(),
                 (int) shipSlider.getValue(),
                 (int) airplaneSlider.getValue());
+        infoText.setText("Tallennettu!");
     }
 
     @FXML

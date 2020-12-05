@@ -87,6 +87,9 @@ public class ConsumptionSceneController {
     Text dateText;
 
     @FXML
+    Text infoText;
+
+    @FXML
     public void selectDate() {
         consumptionService.setSelectedDate(date.getValue());
         main.showConsumptionScene();
@@ -95,36 +98,43 @@ public class ConsumptionSceneController {
     @FXML
     public void setClothes(ObservableValue<Number> ovn, Number before, Number after) {
         clothesSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setShoes(ObservableValue<Number> ovn, Number before, Number after) {
         shoesSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setElectronics(ObservableValue<Number> ovn, Number before, Number after) {
         electronicsSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setBooks(ObservableValue<Number> ovn, Number before, Number after) {
         booksSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setFreetime(ObservableValue<Number> ovn, Number before, Number after) {
         freetimeSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setPhone(ObservableValue<Number> ovn, Number before, Number after) {
         phoneSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setMiscellaneous(ObservableValue<Number> ovn, Number before, Number after) {
         miscellaneousSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
@@ -142,6 +152,7 @@ public class ConsumptionSceneController {
                 (int) freetimeSlider.getValue(),
                 (int) phoneSlider.getValue(),
                 (int) miscellaneousSlider.getValue());
+        infoText.setText("Tallennettu!");
     }
 
     @FXML

@@ -94,6 +94,9 @@ public class FoodEmissionSceneController {
     Text dateText;
 
     @FXML
+    Text infoText;
+
+    @FXML
     public void selectDate() {
         foodService.setSelectedDate(date.getValue());
         main.showFoodEmissionScene();
@@ -102,52 +105,60 @@ public class FoodEmissionSceneController {
     @FXML
     public void setCow(ObservableValue<Number> ovn, Number before, Number after) {
         cowSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
     @FXML
     public void setPig(ObservableValue<Number> ovn, Number before, Number after) {
         pigSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
     @FXML
     public void setFish(ObservableValue<Number> ovn, Number before, Number after) {
         fishSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
     @FXML
     public void setCheese(ObservableValue<Number> ovn, Number before, Number after) {
         cheeseSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
     @FXML
     public void setRice(ObservableValue<Number> ovn, Number before, Number after) {
         riceSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
     @FXML
     public void setEgg(ObservableValue<Number> ovn, Number before, Number after) {
         eggSliderValue.setText(after.intValue() + " kpl");
+        infoText.setText("");
     }
 
     @FXML
     public void setRestaurant(ObservableValue<Number> ovn, Number before, Number after) {
         restaurantSliderValue.setText(after.intValue() + " €");
+        infoText.setText("");
     }
 
     @FXML
     public void setMilk(ObservableValue<Number> ovn, Number before, Number after) {
         milkSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
     @FXML
     public void setVegetable(ObservableValue<Number> ovn, Number before, Number after) {
         vegetableSliderValue.setText(after.intValue() + " g");
+        infoText.setText("");
     }
 
-    
     @FXML
     public void save() {
-         foodService.submit(loginService.getCurrentUser(), foodService.getSelectedDate(),
+        foodService.submit(loginService.getCurrentUser(), foodService.getSelectedDate(),
                 (int) cowSlider.getValue(),
                 (int) pigSlider.getValue(),
                 (int) fishSlider.getValue(),
@@ -157,8 +168,9 @@ public class FoodEmissionSceneController {
                 (int) restaurantSlider.getValue(),
                 (int) milkSlider.getValue(),
                 (int) vegetableSlider.getValue());
+        infoText.setText("Tallennettu!");
     }
-    
+
     @FXML
     public void submit() {
         foodService.submit(loginService.getCurrentUser(), foodService.getSelectedDate(),
@@ -200,14 +212,14 @@ public class FoodEmissionSceneController {
                         }
                         if (filledDays.contains(item)) {
                             this.setStyle("-fx-background-color: #99FF99");
-                        }                        
+                        }
                     }
                 };
             }
         };
         date.setDayCellFactory(dayCellFactory);
         date.setEditable(false);
-        
+
         LocalDate selectedDate = foodService.getSelectedDate();
         date.setValue(selectedDate);
         dateText.setText("Täydennä " + selectedDate + " käyttämäsi ruoka-aineet");

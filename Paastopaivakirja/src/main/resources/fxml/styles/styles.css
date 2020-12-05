@@ -77,6 +77,10 @@
     -fx-font: 16px "Serif";
 }
 
+.welcomeText { 
+    -fx-font: 20px "Serif";
+}
+
 .separator {
     -fx-color: #9dcf93;
 }

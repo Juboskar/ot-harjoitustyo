@@ -41,7 +41,9 @@
                 <Text styleClass="basicText" fx:id="phoneSliderValue" layoutX="275.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 €" />
                                
                 <Button onAction="#setDefault" layoutX="457.0" layoutY="30.0" mnemonicParsing="false" text="Palaa tallentamatta" />
-                <Button layoutX="470.0" layoutY="286.0" mnemonicParsing="false" onAction="#save" text="Tallenna" />
+                <Button layoutX="470.0" layoutY="230.0" mnemonicParsing="false" onAction="#save" text="Tallenna" />
+                <Text styleClass="basicText" fx:id="infoText" layoutX="470.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+          
                 
                 <Text styleClass="basicText" layoutX="345.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Muu kulutus" wrappingWidth="93.13671875" />
                 <Slider fx:id="miscellaneousSlider" layoutX="423.0" layoutY="85.0" max="500.0" onValueChange="#setMiscellaneous" />

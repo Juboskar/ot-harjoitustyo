@@ -33,8 +33,9 @@ public class NewUserSceneController {
 
     @FXML
     private void handleCreateAccount(ActionEvent event) {
-       
-        if (loginService.createAccount(usernameField.getText(), LocalDate.now())) {
+        if (usernameField.getText().length() > 255) {
+            infoText.setText("Käyttäjätunnus liian pitkä");
+        } else if (loginService.createAccount(usernameField.getText(), LocalDate.now())) {
             infoText.setText("Käyttäjä luotu");
         } else {
             infoText.setText("Kokeile jotain muuta käyttäjätunnusta");
