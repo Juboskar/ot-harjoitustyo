@@ -58,6 +58,11 @@
     -fx-border-color:black;
 }
 
+.date-picker > .arrow-button:hover {
+    -fx-background-color: #cacc69;
+    -fx-border-color:black;
+}
+
 .date-picker-popup {
     -fx-font: 12px "Serif";
     -fx-padding: 10;

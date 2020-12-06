@@ -35,7 +35,7 @@ public class NewUserSceneController {
     private void handleCreateAccount(ActionEvent event) {
         if (usernameField.getText().length() > 255) {
             infoText.setText("Käyttäjätunnus liian pitkä");
-        } else if (loginService.createAccount(usernameField.getText(), LocalDate.now())) {
+        } else if (loginService.createAccount(usernameField.getText(), LocalDate.now().minusDays(15))) {
             infoText.setText("Käyttäjä luotu");
         } else {
             infoText.setText("Kokeile jotain muuta käyttäjätunnusta");

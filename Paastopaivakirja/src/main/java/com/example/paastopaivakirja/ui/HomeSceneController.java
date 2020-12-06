@@ -22,86 +22,89 @@ import org.springframework.stereotype.Component;
 @Component
 @FxmlView("/fxml/HomeScene.fxml")
 public class HomeSceneController {
-    
+
     @Autowired
     SummaryService summaryService;
-    
+
     @Autowired
     LoginService loginService;
-    
+
     @Autowired
     EmissionService emissionService;
-    
+
     @Autowired
     FoodService foodService;
-    
+
     @Autowired
     TrafficService trafficService;
-    
+
     @Autowired
     ConsumptionService consumptionService;
-    
+
     @Autowired
     MainController main;
-    
+
     @FXML
     Text name;
-    
+
     @FXML
     Text yearlyTotal;
-    
+
     @FXML
     Text todaysTotal;
-    
+
     @FXML
     Text startDate;
-    
+
     @FXML
     Text foodCheck;
-    
+
     @FXML
     Text trafficCheck;
-    
+
     @FXML
     Text consumptionCheck;
-    
+
     @FXML
     Text summary;
-    
+
     @FXML
     Text total;
-    
+
     @FXML
     public void logOut(ActionEvent event) {
         main.showLoginScene();
     }
-    
+
     @FXML
     public void calculateYearlyEmissions(ActionEvent event) {
         main.showYearlyEmissionScene();
     }
-    
+
     @FXML
     public void calculateTodaysFood(ActionEvent event) {
         main.showFoodEmissionScene();
     }
-    
+
     @FXML
     public void calculateTodaysTraffic(ActionEvent event) {
         main.showTrafficEmissionScene();
     }
-    
+
     @FXML
     public void calculateTodaysConsumption(ActionEvent event) {
         main.showConsumptionScene();
     }
-    
-    
+
     @FXML
     public void initialize() {
         String user = loginService.getCurrentUser();
         LocalDate date = LocalDate.now();
-        name.setText("Tervetuloa " + user);
+        String visibleName = user;
+        if (visibleName.length() > 15) {
+            visibleName = user.substring(0, 15) + "...";
+        }
+        name.setText("Tervetuloa " + visibleName);
         int sum = summaryService.calculateSummary(user);
         summary.setText("Kertyneet vuosipäästösi: " + sum / 1000 + " kg co2 ekv");
         int yearlyEmission = emissionService.calculateYearlyEmission(user);
@@ -119,7 +122,7 @@ public class HomeSceneController {
         foodCheck.setVisible(foodService.checkIfExists(user, date));
         trafficCheck.setVisible(trafficService.checkIfExists(user, date));
         consumptionCheck.setVisible(consumptionService.checkIfExists(user, date));
-        
+
         trafficService.setSelectedDate(date);
         consumptionService.setSelectedDate(date);
         foodService.setSelectedDate(date);
