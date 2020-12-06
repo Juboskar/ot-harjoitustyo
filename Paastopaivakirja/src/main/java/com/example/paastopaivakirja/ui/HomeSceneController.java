@@ -8,11 +8,8 @@ import com.example.paastopaivakirja.domain.SummaryService;
 import com.example.paastopaivakirja.domain.TrafficService;
 import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
-import java.util.List;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;

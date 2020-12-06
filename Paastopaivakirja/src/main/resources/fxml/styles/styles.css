@@ -4,12 +4,17 @@
 
 .button {
     -fx-font: 16px "Serif";
+    -fx-background-color: #CCFF99;
+}
+
+.basicButton {
+    -fx-font: 16px "Serif";
     -fx-padding: 10;
     -fx-background-color: #9acc69;
     -fx-border-color:black;
 }
 
-.button:hover {
+.basicButton:hover {
     -fx-background-color:#cacc69;
 }
 

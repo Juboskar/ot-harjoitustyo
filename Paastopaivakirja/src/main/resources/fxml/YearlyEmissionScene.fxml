@@ -28,8 +28,8 @@
                 <RadioButton fx:id="apartmentRadioButton" layoutX="128.0" layoutY="210.0" mnemonicParsing="false" text="kerrostalo" />
                 <RadioButton fx:id="houseRadioButton" layoutX="128.0" layoutY="230.0" mnemonicParsing="false" text="omakotitalo" />
                 <RadioButton fx:id="rowHouseRadioButton" layoutX="128.0" layoutY="250.0" mnemonicParsing="false" text="rivitalo" />
-                <Button onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Tallenna ja palaa" />          
-                <Button onAction="#returnToHome" layoutX="534.0" layoutY="43.0" mnemonicParsing="false" text="Palaa" />
+                <Button styleClass="basicButton" onAction="#submit" layoutX="294.0" layoutY="296.0" mnemonicParsing="false" text="Tallenna ja palaa" />          
+                <Button styleClass="basicButton" onAction="#returnToHome" layoutX="534.0" layoutY="43.0" mnemonicParsing="false" text="Palaa" />
             </children>
         </AnchorPane>
     </children>

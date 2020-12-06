@@ -11,9 +11,9 @@
     <children>
         <AnchorPane  styleClass="pane"  stylesheets="@styles/styles.css" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <children>
-                <Button onAction="#returnToLogin" layoutX="424.0" layoutY="178.0" mnemonicParsing="false" text="Takaisin" />
+                <Button styleClass="basicButton" onAction="#returnToLogin" layoutX="424.0" layoutY="178.0" mnemonicParsing="false" text="Takaisin" />
                 <Separator layoutX="317.0" layoutY="100.0" orientation="VERTICAL" prefHeight="200.0" />
-                <Button onAction="#handleCreateAccount" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" text="Luo uusi käyttäjä!" />
+                <Button styleClass="basicButton" onAction="#handleCreateAccount" layoutX="81.0" layoutY="213.0" mnemonicParsing="false" text="Luo uusi käyttäjä!" />
                 <TextField fx:id="usernameField" layoutX="81.0" layoutY="178.0" />
                 <Text styleClass="basicTextBig" layoutX="81.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valitse käyttäjätunnus:" />
                 <Text styleClass="basicTextBig" fx:id="infoText" layoutX="81.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="149.0" />     
