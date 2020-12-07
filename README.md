@@ -22,16 +22,15 @@ Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiil
 
 ### Komentorivitoiminnot
 
+Sovelluksen komentorivitoiminnot tulee suorittaa ohjelman juurikansiossa eli repositorion kansiossa Paastopaivakirja. 
+Projektissa on käytössä mm. seuraavat komentorivitoiminnot:
 
-
-Ohjelma voidaan käynnistää komentorivillä komennolla ```mvn spring-boot:run```
-
-- Testit suoritetaan komennolla  ```mvn test```
-- Testikattavuusraportti luodaan komennolla ```mvn jacoco:report```
- Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+- Ohjelma voidaan käynnistää komentorivillä komennolla ```mvn spring-boot:run```.
+- Testit suoritetaan komennolla  ```mvn test```.
+- Testikattavuusraportti luodaan komennolla ```mvn jacoco:report```.
+ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html.
 - Jar -tiedosto generoidaan komennolla ```mvn package```.
-- JavaDoc generoidaan komennolla ```mvn javadoc:javadoc```
-JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
-
-Tiedostoon [checkstyle.xml](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/checkstyle.xml) määritellyt checkstyle -tarkistukset suoritetaan komennolla ```mvn jxr:jxr checkstyle:checkstyle```
+- JavaDoc generoidaan komennolla ```mvn javadoc:javadoc```.
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html.
+- Tiedostoon [checkstyle.xml](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/checkstyle.xml) määritellyt checkstyle -tarkistukset suoritetaan komennolla ```mvn jxr:jxr checkstyle:checkstyle```
 Checkstyle -virheitä voi tutkia avaamalla selaimella tiedosto _target/site/checkstyle.html_
