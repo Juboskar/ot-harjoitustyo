@@ -4,11 +4,13 @@
 
 Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiilipäästöistään ja tarkkailla päästöjen kertymistä. Sovellus on suunniteltu erityisesti se mielessä, että sitä käytettäisiin vuoden ajan, mutta mikään ei estä käyttämästä lyhyemmän ajan tai vain laskemaan yksittäisiä päiviä silloin tällöin. Tällöin kannattaa huomioida että osa päästöistä lasketaan kiinteinä vuosipäästöinä.
 
-### Linkit
+### Releaset
 
 [Toinen Github -release (viikon 6 deadline)](https://github.com/Juboskar/ot-harjoitustyo/releases/tag/viikko6) (toimii linux cubblilla)
 
 [Ensimmäinen Github -release (viikon 5 deadline)](https://github.com/Juboskar/ot-harjoitustyo/releases/tag/viikko5) (toimii linux cubblilla)
+
+### Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/vaatimusmaarittely.md)
 
@@ -18,6 +20,22 @@ Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiil
 
 [Käyttöohje](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/kayttoohje.md)
 
-### Käynnistäminen
+### Komentorivitoiminnot
 
 Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run```
+
+Testit suoritetaan komennolla  ```mvn test```
+
+Testikattavuusraportti luodaan komennolla ```mvn jacoco:report```
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+
+Jar -tiedosto generoidaan komennolla ```mvn package```.
+
+JavaDoc generoidaan komennolla ```mvn javadoc:javadoc```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+
+Tiedostoon [checkstyle.xml](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/checkstyle.xml) määritellyt checkstyle -tarkistukset suoritetaan komennolla ```mvn jxr:jxr checkstyle:checkstyle```
+
+Virheilmoituksia voi tutkia avaamalla selaimella tiedosto _target/site/checkstyle.html_
