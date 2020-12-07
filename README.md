@@ -22,20 +22,16 @@ Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiil
 
 ### Komentorivitoiminnot
 
-Projekti voidaan suorittaa toimivasti netbeansissä run project -napilla ja/tai komentorivillä komennolla ```mvn spring-boot:run```
 
-Testit suoritetaan komennolla  ```mvn test```
 
-Testikattavuusraportti luodaan komennolla ```mvn jacoco:report```
+Ohjelma voidaan käynnistää komentorivillä komennolla ```mvn spring-boot:run```
 
-Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
-
-Jar -tiedosto generoidaan komennolla ```mvn package```.
-
-JavaDoc generoidaan komennolla ```mvn javadoc:javadoc```
-
+- Testit suoritetaan komennolla  ```mvn test```
+- Testikattavuusraportti luodaan komennolla ```mvn jacoco:report```
+ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+- Jar -tiedosto generoidaan komennolla ```mvn package```.
+- JavaDoc generoidaan komennolla ```mvn javadoc:javadoc```
 JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
 
 Tiedostoon [checkstyle.xml](https://github.com/Juboskar/ot-harjoitustyo/blob/master/Paastopaivakirja/checkstyle.xml) määritellyt checkstyle -tarkistukset suoritetaan komennolla ```mvn jxr:jxr checkstyle:checkstyle```
-
-Virheilmoituksia voi tutkia avaamalla selaimella tiedosto _target/site/checkstyle.html_
+Checkstyle -virheitä voi tutkia avaamalla selaimella tiedosto _target/site/checkstyle.html_
