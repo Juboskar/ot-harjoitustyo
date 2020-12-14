@@ -16,4 +16,5 @@
 | 2.11. | 3  | Testejä tehty |
 | 3.11. | 5  | Toteutettu menneiden päivien päästöjen laskeminen |
 | 5.11. | 8  | Korjattu tallentamislogiikkaa intuitiivisemmaksi ja javavadoceja kirjoiteltu. CSS -muotoilu lisätty |
-| Yhteensä | 69  |  
+| 14.11. | 5  | Testejä ja dokumentointia |
+| Yhteensä | 74  |  
