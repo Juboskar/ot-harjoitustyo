@@ -36,11 +36,11 @@
                 <Slider fx:id="metroSlider" onValueChange="#setMetro" layoutX="128.0" layoutY="245.0" max="500.0"  prefHeight="14.0" prefWidth="140.0" />
                 <Text styleClass="basicText" fx:id="metroSliderValue" layoutX="276.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                 
-                <Text styleClass="basicText" layoutX="25.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linja-auto (kaukoliikenne)" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linja-auto (kaukoliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="longDistanceBusSlider" onValueChange="#setLongDistanceBus" layoutX="128.0" layoutY="285.0" max="1500.0"  prefHeight="14.0" prefWidth="140.0" />
                 <Text styleClass="basicText" fx:id="longDistanceBusSliderValue" layoutX="285.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
                
-                <Text styleClass="basicText" layoutX="25.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (kaukoliikenne)" wrappingWidth="100.4609375" />
+                <Text styleClass="basicText" layoutX="25.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Juna (kaukoliikenne)" wrappingWidth="100.4609375" />
                 <Slider fx:id="longDistanceTrainSlider" onValueChange="#setLongDistanceTrain"  layoutX="128.0" layoutY="325.0" max="1500.0" prefHeight="14.0" prefWidth="140.0" />
                 <Text styleClass="basicText" fx:id="longDistanceTrainSliderValue" layoutX="277.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 km" />
         
