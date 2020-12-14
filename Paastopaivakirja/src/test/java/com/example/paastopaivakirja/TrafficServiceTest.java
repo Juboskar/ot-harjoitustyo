@@ -115,19 +115,6 @@ public class TrafficServiceTest {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
         account.setUsername("trafficsubmit");
         accountRepository.save(account);
-        TrafficEmission trafficEmission = new TrafficEmission();
-        trafficEmission.setLocalDate(date);
-        trafficEmission.setAccount(account);
-        trafficEmission.setAirplane(0);
-        trafficEmission.setCar(0);
-        trafficEmission.setLongDistanceBus(0);
-        trafficEmission.setLongDistanceTrain(0);
-        trafficEmission.setMetro(0);
-        trafficEmission.setShip(0);
-        trafficEmission.setShortDistanceBus(0);
-        trafficEmission.setShortDistanceTrain(0);
-        trafficEmission.setTram(0);
-        trafficEmissionRepository.save(trafficEmission);
 
         trafficService.submit("trafficsubmit", date, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         TrafficEmission trafficTest = trafficEmissionRepository.findByAccountAndLocalDate(
@@ -167,5 +154,55 @@ public class TrafficServiceTest {
         assertEquals(0, trafficService.calculateTodaysTrafficEmission("fakeuser", date));
         assertEquals(2355, trafficService.calculateTodaysTrafficEmission("trafficcalc", date));
     }
+    
+    @Test
+    public void testFilledDays() {
+        Account account = new Account();
+        LocalDate dateNow = LocalDate.of(2020, Month.MARCH, 7);
+        LocalDate startDate = LocalDate.of(2020, Month.MARCH, 1);
+        account.setUsername("daytestTraffic");
+        account.setStartDate(startDate);
+        accountRepository.save(account);
 
+          TrafficEmission trafficEmission = new TrafficEmission();
+        trafficEmission.setLocalDate(dateNow.minusDays(1));
+        trafficEmission.setAccount(account);
+        trafficEmission.setAirplane(1);
+        trafficEmission.setCar(2);
+        trafficEmission.setLongDistanceBus(3);
+        trafficEmission.setLongDistanceTrain(4);
+        trafficEmission.setMetro(5);
+        trafficEmission.setShip(6);
+        trafficEmission.setShortDistanceBus(7);
+        trafficEmission.setShortDistanceTrain(8);
+        trafficEmission.setTram(9);
+        trafficEmissionRepository.save(trafficEmission);
+
+         TrafficEmission trafficEmission2 = new TrafficEmission();
+        trafficEmission2.setLocalDate(dateNow.minusDays(2));
+        trafficEmission2.setAccount(account);
+        trafficEmission2.setAirplane(1);
+        trafficEmission2.setCar(2);
+        trafficEmission2.setLongDistanceBus(3);
+        trafficEmission2.setLongDistanceTrain(4);
+        trafficEmission2.setMetro(5);
+        trafficEmission2.setShip(6);
+        trafficEmission2.setShortDistanceBus(7);
+        trafficEmission2.setShortDistanceTrain(8);
+        trafficEmission2.setTram(9);
+        trafficEmissionRepository.save(trafficEmission2);
+
+        assertEquals(2, trafficService.findFilledDays("daytestTraffic", dateNow).size());
+        assertTrue(trafficService.findFilledDays("daytestTraffic", dateNow).contains(dateNow.minusDays(1)));
+        assertTrue(trafficService.findFilledDays("daytestTraffic", dateNow).contains(dateNow.minusDays(2)));
+
+    }
+
+    @Test
+    public void testSelectDates() {
+        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
+        trafficService.setSelectedDate(date);
+        
+        assertEquals(date, trafficService.getSelectedDate());
+    }
 }

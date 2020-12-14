@@ -112,19 +112,6 @@ public class FoodServiceTest {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
         account.setUsername("foodsubmit");
         accountRepository.save(account);
-        FoodEmission foodEmission = new FoodEmission();
-        foodEmission.setLocalDate(date);
-        foodEmission.setAccount(account);
-        foodEmission.setCheese(0);
-        foodEmission.setCow(0);
-        foodEmission.setEgg(0);
-        foodEmission.setFish(0);
-        foodEmission.setMilk(0);
-        foodEmission.setPig(0);
-        foodEmission.setRestaurant(0);
-        foodEmission.setRice(0);
-        foodEmission.setVegetable(0);
-        foodEmissionRepository.save(foodEmission);
 
         foodService.submit("foodsubmit", date, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         FoodEmission foodTest = foodEmissionRepository.findByAccountAndLocalDate(
@@ -163,5 +150,56 @@ public class FoodServiceTest {
 
         assertEquals(0, foodService.calculateTodaysFoodEmission("fakeuser", date));
         assertEquals(1504, foodService.calculateTodaysFoodEmission("foodcalc", date));
+    }
+
+    @Test
+    public void testFilledDays() {
+        Account account = new Account();
+        LocalDate dateNow = LocalDate.of(2020, Month.MARCH, 7);
+        LocalDate startDate = LocalDate.of(2020, Month.MARCH, 1);
+        account.setUsername("daytestFood");
+        account.setStartDate(startDate);
+        accountRepository.save(account);
+
+        FoodEmission foodEmission = new FoodEmission();
+        foodEmission.setLocalDate(dateNow.minusDays(1));
+        foodEmission.setAccount(account);
+        foodEmission.setCheese(1);
+        foodEmission.setCow(2);
+        foodEmission.setEgg(3);
+        foodEmission.setFish(4);
+        foodEmission.setMilk(5);
+        foodEmission.setPig(6);
+        foodEmission.setRestaurant(7);
+        foodEmission.setRice(8);
+        foodEmission.setVegetable(9);
+        foodEmissionRepository.save(foodEmission);
+
+        FoodEmission foodEmission2 = new FoodEmission();
+        foodEmission2.setLocalDate(dateNow.minusDays(2));
+        foodEmission2.setAccount(account);
+        foodEmission2.setCheese(1);
+        foodEmission2.setCow(2);
+        foodEmission2.setEgg(3);
+        foodEmission2.setFish(4);
+        foodEmission2.setMilk(5);
+        foodEmission2.setPig(6);
+        foodEmission2.setRestaurant(7);
+        foodEmission2.setRice(8);
+        foodEmission2.setVegetable(9);
+        foodEmissionRepository.save(foodEmission2);
+
+        assertEquals(2, foodService.findFilledDays("daytestFood", dateNow).size());
+        assertTrue(foodService.findFilledDays("daytestFood", dateNow).contains(dateNow.minusDays(1)));
+        assertTrue(foodService.findFilledDays("daytestFood", dateNow).contains(dateNow.minusDays(2)));
+
+    }
+
+    @Test
+    public void testSelectDates() {
+        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
+        foodService.setSelectedDate(date);
+
+        assertEquals(date, foodService.getSelectedDate());
     }
 }

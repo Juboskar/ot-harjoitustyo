@@ -5,7 +5,6 @@ import com.example.paastopaivakirja.dao.ConsumptionRepository;
 import com.example.paastopaivakirja.domain.ConsumptionService;
 import com.example.paastopaivakirja.model.Account;
 import com.example.paastopaivakirja.model.Consumption;
-import com.example.paastopaivakirja.model.FoodEmission;
 import java.time.LocalDate;
 import java.time.Month;
 import static org.junit.Assert.assertEquals;
@@ -105,17 +104,6 @@ public class ConsumptionServiceTest {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
         account.setUsername("consumptionsubmit");
         accountRepository.save(account);
-        Consumption consumption = new Consumption();
-        consumption.setLocalDate(date);
-        consumption.setAccount(account);
-        consumption.setBooks(0);
-        consumption.setClothes(0);
-        consumption.setElectronics(0);
-        consumption.setFreetime(0);
-        consumption.setMiscellaneous(0);
-        consumption.setPhone(0);
-        consumption.setShoes(0);
-        consumptionRepository.save(consumption);
 
         consumptionService.submit("consumptionsubmit", date, 1, 2, 3, 4, 5, 6, 7);
         Consumption consumptionTest = consumptionRepository.findByAccountAndLocalDate(
@@ -150,5 +138,52 @@ public class ConsumptionServiceTest {
 
         assertEquals(0, consumptionService.calculateTodaysConsumptionEmission("fakeuser", date));
         assertEquals(10400, consumptionService.calculateTodaysConsumptionEmission("consumptioncalc", date));
+    }
+
+    @Test
+    public void testFilledDays() {
+        Account account = new Account();
+        LocalDate dateNow = LocalDate.of(2020, Month.MARCH, 7);
+        LocalDate startDate = LocalDate.of(2020, Month.MARCH, 1);
+        account.setUsername("daytestConsumption");
+        account.setStartDate(startDate);
+        accountRepository.save(account);
+
+        Consumption consumptionTest = new Consumption();
+        consumptionTest.setLocalDate(dateNow.minusDays(1));
+        consumptionTest.setAccount(account);
+        consumptionTest.setBooks(1);
+        consumptionTest.setClothes(2);
+        consumptionTest.setElectronics(3);
+        consumptionTest.setFreetime(4);
+        consumptionTest.setMiscellaneous(5);
+        consumptionTest.setPhone(6);
+        consumptionTest.setShoes(7);
+        consumptionRepository.save(consumptionTest);
+
+        Consumption consumptionTest2 = new Consumption();
+        consumptionTest2.setLocalDate(dateNow.minusDays(2));
+        consumptionTest2.setAccount(account);
+        consumptionTest2.setBooks(1);
+        consumptionTest2.setClothes(2);
+        consumptionTest2.setElectronics(3);
+        consumptionTest2.setFreetime(4);
+        consumptionTest2.setMiscellaneous(5);
+        consumptionTest2.setPhone(6);
+        consumptionTest2.setShoes(7);
+        consumptionRepository.save(consumptionTest2);
+
+        assertEquals(2, consumptionService.findFilledDays("daytestConsumption", dateNow).size());
+        assertTrue(consumptionService.findFilledDays("daytestConsumption", dateNow).contains(dateNow.minusDays(1)));
+        assertTrue(consumptionService.findFilledDays("daytestConsumption", dateNow).contains(dateNow.minusDays(2)));
+
+    }
+
+    @Test
+    public void testSelectDates() {
+        LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
+        consumptionService.setSelectedDate(date);
+        
+        assertEquals(date, consumptionService.getSelectedDate());
     }
 }
