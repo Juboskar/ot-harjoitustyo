@@ -183,7 +183,6 @@ public class ConsumptionServiceTest {
     public void testSelectDates() {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
         consumptionService.setSelectedDate(date);
-        
         assertEquals(date, consumptionService.getSelectedDate());
     }
 }

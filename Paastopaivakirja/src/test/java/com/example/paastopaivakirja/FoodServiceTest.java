@@ -30,10 +30,10 @@ public class FoodServiceTest {
     AccountRepository accountRepository;
 
     @Autowired
-    FoodEmissionRepository foodEmissionRepository;
+    FoodService foodService;
 
     @Autowired
-    FoodService foodService;
+    FoodEmissionRepository foodEmissionRepository;
 
     @Test
     public void testCheckIfExists() {

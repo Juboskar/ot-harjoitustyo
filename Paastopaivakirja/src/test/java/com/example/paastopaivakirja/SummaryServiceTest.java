@@ -35,13 +35,13 @@ public class SummaryServiceTest {
     TrafficEmissionRepository trafficEmissionRepository;
 
     @Autowired
+    FoodEmissionRepository foodEmissionRepository;
+    
+    @Autowired
     AccountRepository accountRepository;
 
     @Autowired
     ConsumptionRepository consumptionRepository;
-
-    @Autowired
-    FoodEmissionRepository foodEmissionRepository;
 
     @Test
     public void testCalculateSummary() {

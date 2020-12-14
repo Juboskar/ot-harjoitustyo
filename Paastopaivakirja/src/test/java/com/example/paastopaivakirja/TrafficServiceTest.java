@@ -154,7 +154,7 @@ public class TrafficServiceTest {
         assertEquals(0, trafficService.calculateTodaysTrafficEmission("fakeuser", date));
         assertEquals(2355, trafficService.calculateTodaysTrafficEmission("trafficcalc", date));
     }
-    
+
     @Test
     public void testFilledDays() {
         Account account = new Account();
@@ -164,7 +164,7 @@ public class TrafficServiceTest {
         account.setStartDate(startDate);
         accountRepository.save(account);
 
-          TrafficEmission trafficEmission = new TrafficEmission();
+        TrafficEmission trafficEmission = new TrafficEmission();
         trafficEmission.setLocalDate(dateNow.minusDays(1));
         trafficEmission.setAccount(account);
         trafficEmission.setAirplane(1);
@@ -178,7 +178,7 @@ public class TrafficServiceTest {
         trafficEmission.setTram(9);
         trafficEmissionRepository.save(trafficEmission);
 
-         TrafficEmission trafficEmission2 = new TrafficEmission();
+        TrafficEmission trafficEmission2 = new TrafficEmission();
         trafficEmission2.setLocalDate(dateNow.minusDays(2));
         trafficEmission2.setAccount(account);
         trafficEmission2.setAirplane(1);
@@ -202,7 +202,7 @@ public class TrafficServiceTest {
     public void testSelectDates() {
         LocalDate date = LocalDate.of(2020, Month.MARCH, 1);
         trafficService.setSelectedDate(date);
-        
+
         assertEquals(date, trafficService.getSelectedDate());
     }
 }
