@@ -10,15 +10,15 @@ Alkuvaiheessa sovelluksella on ainoastaan yksi käyttäjärooli eli normaali kä
 
 ## Perusversion tarjoama toiminnallisuus
 
-Sovellus tarjoaa mahdollisuuden luoda paikallisen käyttäjätunnuksen, jolla sovellusta voi käyttää. (Tehty)
+Sovellus tarjoaa mahdollisuuden luoda paikallisen käyttäjätunnuksen, jolla sovellusta voi käyttää.
 
-Sovellus eroaa monesta muusta verkossakin saatavilla olevista laskureista sillä, että sovelluksessa on hiilijalanjäljen laskemisen sijaan pääpainona pitää tarkempaa päiväkirjaa ja saada päiväkohtaista statistiikkaa, tilastoa, faktaa ja ennustetta omista päästöistään. (Päivittäinen laskeminen toteutettu)
+Sovellus eroaa monesta muusta verkossakin saatavilla olevista laskureista sillä, että sovelluksessa on hiilijalanjäljen laskemisen sijaan pääpainona pitää tarkempaa päiväkirjaa ja saada päiväkohtaista statistiikkaa, tilastoa, faktaa ja ennustetta omista päästöistään.
 
-Alkuvaiheessa keskitytään asumisen, liikkumisen ja ruoan päästöihin (tehty).
+Sovelluksessa keskitytään asumisen, liikkumisen ja ruoan päästöihin, sillä ne ovat isoimmat yksittäiset päästökategoriat.
 
-Laskentaperusteena käytetään muun muassa ilmastodieetti -palvelun [laskentaperusteita](https://ilmastodieetti.ymparisto.fi/ilmastodieetti/documentation/Laskentaperusteet.pdf). (Huom, päästöt lasketaan erittäin karkeasti arvioina, eikä saadut tulokset ole kovin tarkkoja. Pikemminkin sovellus sopii suhteellisesti oman kulutuksensa vertailuun kuin tarkkaan arviointii. Pääpaino sovelluksessa on tietysti toiminnallisuus eikä tarkka tieto)
+Laskentaperusteena käytetään muun muassa ilmastodieetti -palvelun [laskentaperusteita](https://ilmastodieetti.ymparisto.fi/ilmastodieetti/documentation/Laskentaperusteet.pdf). (Huom, päästöt lasketaan erittäin karkeasti arvioina, eikä saadut tulokset ole kovin tarkkoja. Pikemminkin sovellus sopii suhteellisesti oman kulutuksensa vertailuun kuin tarkkaan arviointii. Pääpaino sovelluksessa on tietysti päiväkirjatoiminnallisuus, jolla omaa kulutustaan voi seurata, eikä tarkka laskennallinen tieto)
 
-## Alustava käyttöliittymäluonnos
+## Käyttöliittymäluonnos
 
 <img src="https://github.com/Juboskar/ot-harjoitustyo/blob/master/Dokumentaatio/Kuvat/kayttoliittymaluonnos.png" width="1000">
 
