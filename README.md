@@ -6,6 +6,8 @@ Päästöpäiväkirja on sovellus, jolla voi pitää päivittäistä kirjaa hiil
 
 ### Releaset
 
+[Loppupalautus](https://github.com/Juboskar/ot-harjoitustyo/releases/tag/viikko7)
+
 [Toinen Github -release (viikon 6 deadline)](https://github.com/Juboskar/ot-harjoitustyo/releases/tag/viikko6) (toimii linux cubblilla) 
 Tämä versio ei vielä sisällä myöhemmin viikolla 6 päivitettyä ulkoasua, sillä sen toimivuutta ei ole testattu laitoksen linux cubblilla.
 
